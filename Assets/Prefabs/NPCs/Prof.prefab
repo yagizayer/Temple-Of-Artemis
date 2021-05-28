@@ -598,7 +598,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4141240524941599080}
   - component: {fileID: 8041327237198609170}
-  - component: {fileID: 4535719857805184068}
   m_Layer: 0
   m_Name: Prof
   m_TagString: NPC
@@ -641,20 +640,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!136 &4535719857805184068
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3617363553136737234}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 1.8
-  m_Direction: 1
-  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &4390234851106391237
 GameObject:
   m_ObjectHideFlags: 0
