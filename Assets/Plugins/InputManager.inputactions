@@ -142,6 +142,33 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "Menu",
+            "id": "8bd9d2c8-b57e-42ee-ae65-aac953820976",
+            "actions": [
+                {
+                    "name": "ScreenPosition",
+                    "type": "Value",
+                    "id": "c65000b7-451b-4084-991f-c1824c184e0f",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "ad7b2244-be4a-41bf-8a3c-1434a064eff8",
+                    "path": "<Mouse>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ScreenPosition",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []

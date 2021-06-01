@@ -60,7 +60,6 @@ public class NpcMovement : MonoBehaviour
                 if (targetQueue.Count > 0) currentTarget = targetQueue.Dequeue();
             }
         }
-        Debug.Log(navMeshAgent.remainingDistance);
         if (navMeshAgent.remainingDistance < navMeshAgent.stoppingDistance)
         {
             isMoving = false;
