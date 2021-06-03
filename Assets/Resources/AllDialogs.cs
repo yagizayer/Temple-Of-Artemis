@@ -5,32 +5,46 @@ static public class AllDialogs
 {
 
 }
-public struct Phase
+public class Phase
 {
     // Bölüm içerisindeki tüm konuşmaların saklandığı sınıf.
+
+    public Phase(){
+
+    }
+
+    
 }
 public class Conversation
 {
     // birden çok birey arasındaki tek bir seferde yapılan karşılıklı konuşma.
-    // Doldurma : Conversation(person1,person2)
+    // Doldurma : // SIRALI eklenmek zorunda
+    /*
+        Conversation(
+            [
+                new Paragraph("KonuşanKişi1", List<string>),
+                new Paragraph("KonuşanKişi2", List<string>),
+                new Paragraph("KonuşanKişi1", List<string>),
+                new Paragraph("KonuşanKişi2", List<string>),
+            ] 
+        );
+    */
 
-    public Conversation(List<string> speakers, )
+    public Conversation(List<Paragraph> completeConversation)
     {
+        foreach (Paragraph item in completeConversation)
+        {
+            _speakers.Add(item.Speaker);
+            _allParagraphs.Add(item);
+        }
     }
     private List<string> _speakers;
     public List<string> Speakers => _speakers;
     private int _currentParagraphNo = 0;
     public int CurrentParagraphNo => _currentParagraphNo;
-
     private List<Paragraph> _allParagraphs;
-
-    public Paragraph NextParagraph
-    {
-        get
-        {
-            return null;
-        }
-    }
+    public List<Paragraph> AllParagraphs => _allParagraphs;
+    public Paragraph NextParagraph => _allParagraphs[_currentParagraphNo++];
 
 }
 
@@ -40,38 +54,23 @@ public class Paragraph
     // Doldurma : Paragraph("karakterAdı",15,karakterinTekSeferdeSoyleyecegiButunSatirlar);
     // Boşaltma : Debug.Log(personTemp.NextLine);
 
-    public Paragraph(string name, int orderOfLines, List<string> allLines)
+    public Paragraph(string name, List<string> allLines)
     {
-        Character = name;
-        _order = orderOfLines;
+        Speaker = name;
         _lines = allLines;
     }
     // Konuşan karakterin adı
-    private string _character;
-    public string Character
+    private string _speaker;
+    public string Speaker
     {
-        get { return _character; }
+        get { return _speaker; }
         set
         {
-            _character = value;
+            _speaker = value;
 
         }
     }
 
-    // Karakterin Sözünün bittiğini işaret eden String
-    private string _triggerString = "__!";
-    public string TriggerString
-    {
-        get { return _triggerString; }
-        set
-        {
-            _triggerString = value;
-        }
-    }
-
-    // Bu Dizelerin konuşmadaki sırasını belirten int
-    private int _order;
-    public int Order => _order;
     // Dizeler arasında kaçıncı sırada olduğunu tutan int
     private int _currentLineNo = 0;
     public int CurrentLineNo => _currentLineNo;
@@ -83,7 +82,6 @@ public class Paragraph
     {
         get
         {
-            if ((CurrentLineNo + 1) == Lines.Count) return TriggerString;
             return Lines[_currentLineNo++];
         }
     }
