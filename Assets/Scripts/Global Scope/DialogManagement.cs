@@ -7,7 +7,7 @@ public class DialogManagement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        AllDialogs.SetAllDialogs();
+        
     }
 
 }
