@@ -6,8 +6,10 @@ static public class GlobalVariables
 {
 
 
-    static private string _NPCs_List_Path = "NPC_SOs";
-    static public string NPCs_List_Path => _NPCs_List_Path;
+    static private string _npcListPath = "NPC_SOs";
+    static public string NPCsListPath => _npcListPath;
+    static private string _allConversationsJsonPath = "AllConversations";
+    static public string AllConversationsPath => _allConversationsJsonPath;
 
     static private bool _isThereAnySaveFiles;
     static public bool IsThereAnySaveFiles
