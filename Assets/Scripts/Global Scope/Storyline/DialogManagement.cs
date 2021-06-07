@@ -241,7 +241,154 @@ public class DialogManagement : MonoBehaviour
 
         #endregion EarlyPhase
 
+        #region FirstTemple
 
+        Phase firstTemple = new Phase();
+
+        gatherInformationAroundTemple = new Quest();
+        gatherInformationAroundTemple.QuestObjects.AddRange<string, QuestObject>(new Dictionary<string, QuestObject>(){
+            {
+                "Sculpture",
+                new QuestObject(
+                    "Heykel",
+                    Npcs.SanatTarihiUzmani,
+                    new List<string>(){
+                        "Demek bir heykel daha buldun Jones. ",
+                        "Bu tür heykellerinin yapılması ve tapınaklara bırakılması çok pahalıya mal olurmuş o zamanlar.",
+                        "Bu küçük çocuğun ailesi oldukça varlıklı olmalı. "
+                    }
+                )
+            },
+            {
+                "GoldCoins",
+                new QuestObject(
+                    "Altın Sikkeler",
+                    Npcs.Jeolog,
+                    new List<string>(){
+                        "Ah. her zamanki gibi küçük taşlar kayalar bana gelir. ",
+                        "Neden sanat tarihi okumadım ki sank... Bir saniye bu normal bir taş değil.",
+                        "Altın! Bu Altın! Hemde sıradan bir altın para değil. ",
+                        "Şimdiye kadar bilinen en eski altın paralardan bile eski bir altın bu!",
+                        "Milattan önce 6. yüzyıldan kalma bir altın bu Jones!"
+                    }
+                )
+            },
+            {
+                "BurnMarks",
+                new QuestObject(
+                    "Yanık izleri",
+                    Npcs.Jeolog,
+                    new List<string>(){
+                        "Evet etrafta dolaşırken bazı yanık izleri görmüştüm. Çok eski yanık izleri olmalarına rağmen solmamışlardı bile.",
+                        "Mermerin bile içine işleyecek kadar güçlü izler oluşturduğuna göre devasa bir yangın olmalı."
+                    }
+                )
+            },
+            {
+                "PieceOfFineClothing",
+                new QuestObject(
+                    "Kralın birinden Bir parça kumaş",
+                    Npcs.Profesor,
+                    new List<string>(){
+                        "Jones bu bulduğun kumaş parçası döneminin en kaliteli terzileri tarafından çok pahalı kumaşlardan yapılmış bir kıyafete ait gibi görünüyor.",
+                        "Muhtemelen bir krala yada çok zengin bir tüccara aitti bu kıyafet.",
+                        "Düşünce şaşırtıcı değil. Zamanında bu tür tapınaklar çok az bulunurdu ve dünyanın dört bir yanından zenginleri kendisine çekerdi.",
+                        "Bu tapınaklara gelen zenginler başıta bulunup dua ederler ve ihtiyacı olanlar da buralarda toplanarak gelen zenginlerden yardım kabul ederlerdi."
+                    }
+                )
+            },
+            {
+                "0",
+                new QuestObject(
+                    "Heykel",
+                    Npcs.SanatTarihiUzmani,
+                    new List<string>(){
+                        "Demek bir heykel daha buldun Jones. ",
+                        "Bu tür heykellerinin yapılması ve tapınaklara bırakılması çok pahalıya mal olurmuş o zamanlar.",
+                        "Bu küçük çocuğun ailesi oldukça varlıklı olmalı. "
+                    }
+                )
+            },
+            {
+                "1",
+                new QuestObject(
+                    "Altın Sikkeler",
+                    Npcs.Jeolog,
+                    new List<string>(){
+                        "Ah. her zamanki gibi küçük taşlar kayalar bana gelir. ",
+                        "Neden sanat tarihi okumadım ki sank... Bir saniye bu normal bir taş değil.",
+                        "Altın! Bu Altın! Hemde sıradan bir altın para değil. ",
+                        "Şimdiye kadar bilinen en eski altın paralardan bile eski bir altın bu!",
+                        "Milattan önce 6. yüzyıldan kalma bir altın bu Jones!"
+                    }
+                )
+            },
+            {
+                "2",
+                new QuestObject(
+                    "Yanık izleri",
+                    Npcs.Jeolog,
+                    new List<string>(){
+                        "Evet etrafta dolaşırken bazı yanık izleri görmüştüm. Çok eski yanık izleri olmalarına rağmen solmamışlardı bile.",
+                        "Mermerin bile içine işleyecek kadar güçlü izler oluşturduğuna göre devasa bir yangın olmalı."
+                    }
+                )
+            },
+            {
+                "3",
+                new QuestObject(
+                    "Kralın birinden Bir parça kumaş",
+                    Npcs.Profesor,
+                    new List<string>(){
+                        "Jones bu bulduğun kumaş parçası döneminin en kaliteli terzileri tarafından çok pahalı kumaşlardan yapılmış bir kıyafete ait gibi görünüyor.",
+                        "Muhtemelen bir krala yada çok zengin bir tüccara aitti bu kıyafet.",
+                        "Düşünce şaşırtıcı değil. Zamanında bu tür tapınaklar çok az bulunurdu ve dünyanın dört bir yanından zenginleri kendisine çekerdi.",
+                        "Bu tapınaklara gelen zenginler başıta bulunup dua ederler ve ihtiyacı olanlar da buralarda toplanarak gelen zenginlerden yardım kabul ederlerdi."
+                    }
+                )
+            }
+        });
+        gatherInformationAroundTemple.QuestConversations.AddRange(new List<QuestConversation>(){
+            new QuestConversation("Profesör",new List<string>(){
+                "Demek efsanelerde bahsedilen kayıp artemis tapınağı burasıymış.",
+                "Peki ama sonra ne oldu acaba. Yani milattan önce 7. yüzyıldan bu yana hiç kimse gelmedi mi acaba bu tapınağa?",
+                "Bence bu doğru olamaz ipuçları aramalıyız! Buranın tarihini öğrenmeliyiz!"
+            })
+        });
+
+        firstTemple.Quests.AddRange<string, Quest>(new Dictionary<string, Quest>(){
+            {"GatherInformationAroundTemple",gatherInformationAroundTemple}
+        });
+
+        firstTemple.PhaseEnd = new PhaseEnd
+        (
+            new List<string>()
+            {
+                "Jones topladığın ipuçlarını bir araya geldiğinde Antik Artemis Tapınağına ne olduğu ve burada neler yaşandığı biraz daha açıklanıyor."
+            },
+            new TempleInfo(
+                "Artemis Tapınağı",
+                "MÖ 550",
+                new List<string>(){
+                    "Mimar : Chersiphron ve onun oğlu Metagenes(Vitruvius), Kral Croesus tarafından fonlandı.",
+                    "Kullanımı : Krallar ve Tacirler tarafından sıkça ziyaret edilen turistik bir yapı haline gelen bu tapınak, Aciz durumda olan veya Zulümden kaçanlar için de güvenli bir sığınak oldu. ",
+                    "Yıkımı : MÖ 356'da Herostratos adındaki bir meczup yerel halktaki kötü niyetli kişiler tarafından \"Bu tapınağı yıkan kişinin adı bütün tarih kitaplarında geçer\" söylemleri ile kışkırtılarak yangına teşfik edilmiştir. ",
+                    "Günümüzde \"Herostratik ün\" deyimi \"Ne pahasına olursa olsun ünlenmek\" manasında kullanılmaktadır. ",
+                    "Efsanelerde bu yangın sırasında bereket tanrıçası Artemis'in neden tapınağını korumak için burada olmadığı, çok önemli bir kişinin doğumuna yardım etmek için gittiğinden dolayı burada olmamasına bağlanmaktadır."
+                }
+            ),
+            new List<string>()
+            {
+                "Demek \"Herostratik ün\" bu yangını başlatan kişinin adından dolayı çıkmış. ",
+                "Sonra ne oldu acaba? Yani milattan önce 356 yılında Büyük iskender doğduktan sonra buraya hiç yolu düştü mü?",
+                "Peki ya yerel halk? Krallar, tüccarlar, burayı yuva edinen kişiler yıkıldıktan sonra bir daha geri dönmediler mi?",
+                "Daha fazla araştırmalıyız. Hikaye burada bitemez!"
+            }
+        );
+
+        Storyline.Add("FirstTemple", firstTemple);
+
+        #endregion FirstTemple
 
 
     }
