@@ -1,4 +1,4 @@
-// GENERATED AUTOMATICALLY FROM 'Assets/CustomAssets/Scripts/InputManager.inputactions'
+// GENERATED AUTOMATICALLY FROM 'Assets/Plugins/InputManager.inputactions'
 
 using System;
 using System.Collections;
@@ -155,6 +155,33 @@ public class @InputManager : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Menu"",
+            ""id"": ""8bd9d2c8-b57e-42ee-ae65-aac953820976"",
+            ""actions"": [
+                {
+                    ""name"": ""ScreenPosition"",
+                    ""type"": ""Value"",
+                    ""id"": ""c65000b7-451b-4084-991f-c1824c184e0f"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""ad7b2244-be4a-41bf-8a3c-1434a064eff8"",
+                    ""path"": ""<Mouse>/position"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ScreenPosition"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -164,6 +191,9 @@ public class @InputManager : IInputActionCollection, IDisposable
         m_Gameplay_Move = m_Gameplay.FindAction("Move", throwIfNotFound: true);
         m_Gameplay_Look = m_Gameplay.FindAction("Look", throwIfNotFound: true);
         m_Gameplay_Sprint = m_Gameplay.FindAction("Sprint", throwIfNotFound: true);
+        // Menu
+        m_Menu = asset.FindActionMap("Menu", throwIfNotFound: true);
+        m_Menu_ScreenPosition = m_Menu.FindAction("ScreenPosition", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -258,10 +288,47 @@ public class @InputManager : IInputActionCollection, IDisposable
         }
     }
     public GameplayActions @Gameplay => new GameplayActions(this);
+
+    // Menu
+    private readonly InputActionMap m_Menu;
+    private IMenuActions m_MenuActionsCallbackInterface;
+    private readonly InputAction m_Menu_ScreenPosition;
+    public struct MenuActions
+    {
+        private @InputManager m_Wrapper;
+        public MenuActions(@InputManager wrapper) { m_Wrapper = wrapper; }
+        public InputAction @ScreenPosition => m_Wrapper.m_Menu_ScreenPosition;
+        public InputActionMap Get() { return m_Wrapper.m_Menu; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(MenuActions set) { return set.Get(); }
+        public void SetCallbacks(IMenuActions instance)
+        {
+            if (m_Wrapper.m_MenuActionsCallbackInterface != null)
+            {
+                @ScreenPosition.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnScreenPosition;
+                @ScreenPosition.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnScreenPosition;
+                @ScreenPosition.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnScreenPosition;
+            }
+            m_Wrapper.m_MenuActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @ScreenPosition.started += instance.OnScreenPosition;
+                @ScreenPosition.performed += instance.OnScreenPosition;
+                @ScreenPosition.canceled += instance.OnScreenPosition;
+            }
+        }
+    }
+    public MenuActions @Menu => new MenuActions(this);
     public interface IGameplayActions
     {
         void OnMove(InputAction.CallbackContext context);
         void OnLook(InputAction.CallbackContext context);
         void OnSprint(InputAction.CallbackContext context);
+    }
+    public interface IMenuActions
+    {
+        void OnScreenPosition(InputAction.CallbackContext context);
     }
 }

@@ -390,6 +390,6 @@ public class DialogManagement : MonoBehaviour
 
         #endregion FirstTemple
 
-
+        
     }
 }
