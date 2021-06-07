@@ -390,6 +390,206 @@ public class DialogManagement : MonoBehaviour
 
         #endregion FirstTemple
 
-        
+        #region LastTemple
+
+        Phase lastTemple = new Phase();
+
+        gatherInformationAroundTemple = new Quest();
+        gatherInformationAroundTemple.QuestObjects.AddRange<string, QuestObject>(new Dictionary<string, QuestObject>(){
+            {
+                "PaintingOfAlexanderTheGreat",
+                new QuestObject(
+                    "Büyük İskender'in tablosu",
+                    Npcs.SanatTarihiUzmani,
+                    new List<string>(){
+                        "Evet bu kişiyi tanıyorum. Kendisi zamanında asya kıtasının neredeyse tamamını ve afrika ve avrupanın da bazı bölgelerini yönetmiş olan pek çok sanatçı ve tarihçi tarafından adı sıkça duyulmuş olan Büyük İskender.",
+                        "Tam olarak bu tablosunu hiç görmemiştim ama yapıldığı tarihe bakacak olursak kesinlikle Büyük iskender hala hayattayken yapıldığını söyleyebiliriz."
+                    }
+                )
+            },
+            {
+                "PaintingOfArtemis",
+                new QuestObject(
+                    "Bereket tanrıçası Artemisin, bir doğuma yardım edişinin tablosu",
+                    Npcs.SanatTarihiUzmani,
+                    new List<string>(){
+                        "Bu da ne böyle? Daha önce hiç görmediğim bir sanat jenerasyonunda yapılmışa benziyor.",
+                        "Tabloda en belirgin olan kişi ortadaki doğum yapan kadın ve ona yardımcı oluyor gibi görünen başka bir kadın.",
+                        "Ne anlama geldiğini hiç bilemiyorum."
+                    }
+                )
+            },
+            {
+                "NyxFigure",
+                new QuestObject(
+                    "Nyx Figürü",
+                    Npcs.Jeolog,
+                    new List<string>(){
+                        "Hah bir heykel daha. ",
+                        "Alt tarafında imzaya benzer birşey var sanki.",
+                        "Bu? Bu Rhoecus'un Nyx figürü! ",
+                        "Şuan elimizde tuttuğumuz şey zamanının en değerli Sanatçısının Şaheseri.",
+                        "Daha önce bulduğun altın sikkeden sonra daha ilginç bir şey bulamayacağımızı düşünmüştüm.",
+                        "Yanılmışım. Hem de ne yanılmak. Bu heykel altından bile daha değerli!"
+                    }
+                )
+            },
+            {
+                "TalePiece1",
+                new QuestObject(
+                    "Efsane Parçası 1 (Parşömen)",
+                    Npcs.Profesor,
+                    new List<string>(){
+                        "Bu da ne? Bir parça parşömene benziyor.",
+                        "Antik Yunanca yazıları tercüme etmek biraz zaman alabilir. Bu sırada sen gidip başka Parşömen parçası var mı bak."
+                    }
+                )
+            },
+            {
+                "TalePiece2",
+                new QuestObject(
+                    "Efsane Parçası 2 (Parşömen)",
+                    Npcs.Profesor,
+                    new List<string>(){
+                        "Bu da ne? Bir parça parşömene benziyor.",
+                        "Antik Yunanca yazıları tercüme etmek biraz zaman alabilir. Bu sırada sen gidip başka Parşömen parçası var mı bak."
+                    }
+                )
+            },
+            {
+                "TalePiece3",
+                new QuestObject(
+                    "Efsane Parçası 3 (Parşömen)",
+                    Npcs.Profesor,
+                    new List<string>(){
+                        "Bu da ne? Bir parça parşömene benziyor.",
+                        "Antik Yunanca yazıları tercüme etmek biraz zaman alabilir. Bu sırada sen gidip başka Parşömen parçası var mı bak."
+                    }
+                )
+            },{
+                "0",
+                new QuestObject(
+                    "Büyük İskender'in tablosu",
+                    Npcs.SanatTarihiUzmani,
+                    new List<string>(){
+                        "Evet bu kişiyi tanıyorum. Kendisi zamanında asya kıtasının neredeyse tamamını ve afrika ve avrupanın da bazı bölgelerini yönetmiş olan pek çok sanatçı ve tarihçi tarafından adı sıkça duyulmuş olan Büyük İskender.",
+                        "Tam olarak bu tablosunu hiç görmemiştim ama yapıldığı tarihe bakacak olursak kesinlikle Büyük iskender hala hayattayken yapıldığını söyleyebiliriz."
+                    }
+                )
+            },
+            {
+                "1",
+                new QuestObject(
+                    "Bereket tanrıçası Artemisin, bir doğuma yardım edişinin tablosu",
+                    Npcs.SanatTarihiUzmani,
+                    new List<string>(){
+                        "Bu da ne böyle? Daha önce hiç görmediğim bir sanat jenerasyonunda yapılmışa benziyor.",
+                        "Tabloda en belirgin olan kişi ortadaki doğum yapan kadın ve ona yardımcı oluyor gibi görünen başka bir kadın.",
+                        "Ne anlama geldiğini hiç bilemiyorum."
+                    }
+                )
+            },
+            {
+                "2",
+                new QuestObject(
+                    "Nyx Figürü",
+                    Npcs.Jeolog,
+                    new List<string>(){
+                        "Hah bir heykel daha. ",
+                        "Alt tarafında imzaya benzer birşey var sanki.",
+                        "Bu? Bu Rhoecus'un Nyx figürü! ",
+                        "Şuan elimizde tuttuğumuz şey zamanının en değerli Sanatçısının Şaheseri.",
+                        "Daha önce bulduğun altın sikkeden sonra daha ilginç bir şey bulamayacağımızı düşünmüştüm.",
+                        "Yanılmışım. Hem de ne yanılmak. Bu heykel altından bile daha değerli!"
+                    }
+                )
+            },
+            {
+                "3",
+                new QuestObject(
+                    "Efsane Parçası 1 (Parşömen)",
+                    Npcs.Profesor,
+                    new List<string>(){
+                        "Bu da ne? Bir parça parşömene benziyor.",
+                        "Antik Yunanca yazıları tercüme etmek biraz zaman alabilir. Bu sırada sen gidip başka Parşömen parçası var mı bak."
+                    }
+                )
+            },
+            {
+                "4",
+                new QuestObject(
+                    "Efsane Parçası 2 (Parşömen)",
+                    Npcs.Profesor,
+                    new List<string>(){
+                        "Bu da ne? Bir parça parşömene benziyor.",
+                        "Antik Yunanca yazıları tercüme etmek biraz zaman alabilir. Bu sırada sen gidip başka Parşömen parçası var mı bak."
+                    }
+                )
+            },
+            {
+                "5",
+                new QuestObject(
+                    "Efsane Parçası 3 (Parşömen)",
+                    Npcs.Profesor,
+                    new List<string>(){
+                        "Bu da ne? Bir parça parşömene benziyor.",
+                        "Antik Yunanca yazıları tercüme etmek biraz zaman alabilir. Bu sırada sen gidip başka Parşömen parçası var mı bak."
+                    }
+                )
+            }
+        });
+        gatherInformationAroundTemple.QuestConversations.AddRange(new List<QuestConversation>(){
+            new QuestConversation("Profesör",new List<string>(){
+                "Demek \"Herostratik ün\" bu yangını başlatan kişinin adından dolayı çıkmış. ",
+                "Sonra ne oldu acaba? Yani milattan önce 356 yılında Büyük iskender doğduktan sonra buraya hiç yolu düştü mü?",
+                "Peki ya yerel halk? Krallar, tüccarlar, burayı yuva edinen kişiler yıkıldıktan sonra bir daha geri dönmediler mi?",
+                "Daha fazla araştırmalıyız. Hikaye burada bitemez!"
+            })
+        });
+
+        lastTemple.Quests.AddRange<string, Quest>(new Dictionary<string, Quest>(){
+            {"GatherInformationAroundTemple",gatherInformationAroundTemple}
+        });
+
+        lastTemple.PhaseEnd = new PhaseEnd
+        (
+            new List<string>()
+            {
+                "Jones topladığın Parşömen parçalarını bir araya getirip Tercüme ettim. Ve muhteşem bir Efsane yazıyordu."
+            },
+            new TempleInfo(
+                "Artemis Tapınağı",
+                "MÖ 323",
+                new List<string>(){
+                    "Mimar : Endoeus (ve daha pek çok mimar), Efesliler tarafından fonlandı.",
+                    "\n",
+                    "\tBüyük iskender ve Artemis Tapınağının Öyküsü : ",
+                    "Büyük iskender Savaştan çıkmış ve yorgun şekilde çadırında dinlenirken dışarıda konuşan bir konu dikkatini çeker.",
+                    "Askerler Bir tapınaktan bahsetmektedir. Savaştıkları bölgeye yakın bir kentte kurulmuş fakat yıllar önce yıkılmış olan bir tapınaktır bu.",
+                    "Büyük iskender bu tapınak hakkında ne bildiğini sorduğunda şaşıran asker : \"Bereket ve av tanrıçası Artemis tapınağı efendim. yıllar önce yıkılmış.\" demiştir.",
+                    "Bu olay üstüne rotasını değiştirerek tapınağa yönelen Büyük iskender ne ile karşılaşacağını çok iyi bilmektedir. Bu aynı zamanda Doğurganlık tanrıçası da olan Tanrıça Artemisin Tapınağıdır.",
+                    "Tapınağa vardıklarında yıkık dökük bir mermer yığınıyla karşılaşan Büyük iskender, tapınağın yapılmış olduğu kentin halkı olan Efeslilerin yöneticileri ile konuşarak onlardan tapınağı onarmak için izin almak ister.",
+                    "Çünkü Tanrıça Artemisin Kendi tapınağını koruyamamasına sebep olan yangın sırasında Kendisinin doğumu için annesine yardımcı olduğunu düşünmektedir.",
+                    "Efeslilerden tek dileği tapınağın yapımı tamamlandığında kendisinin de bu tapınakta adına yer verilmesidir.",
+                    "Efes halkının yöneticileri Büyük iskenderin bu isteğini hiç hoş görmezler, fakat yanında getirdiği orduyu göz önüne alarak isteğini reddetmekten çekinirler.",
+                    "Yöneticilerden biri sonunda Büyük iskenderin huzuruna çıkarak der ki : \"Bir tanrı bir başka tanrının tapınağını yapmamalı.\"",
+                    "Yöneticinin bu sözünden etkilenen Büyük İskender, övgüden memnun kalarak efes kentinden tapınağı onarmadan ayrılır.",
+                    "Aradan geçen zamanda Büyük İskender anadoluda ve sonrasında pers imparatorluğu ile savaşırken efes kentinin halkı da yavaş yavaş Tapınağı onarmaya başlarlar.",
+                    "Önceki iki tapınaktan bile büyük olacak şekilde neredeyse bir stadyum boyutunda olacaktır(137m x 69m x 18m). Ortasında devasa bir Artemis Heykeli bulunan Cella'yı 127 den fazla sütun çevreleyecektir. Haliyle bu muazzam yapıyı bitirmeleri yıllar alır. ",
+                    "\n",
+                    "\tTanrıça Artemisin Unutulması ve Tapınağın yıkılışı",
+                    "Tapınak onarıldıktan sonra yaklaşık 600 yıl ayakta kaldı. Hristiyanlığın yayılması ile birlikte Gerçekleşen haçlı seferlerinde Efesliler Tapınağın hristiyanlılar tarafından lekelenmesinden endişe duysalarda ellerinden bir şey gelmemekteydi.",
+                    "Milattan sonra 2. yüzyılda gerçekleşen Tapınakta yapılan bir Hristiyan Şeytan çıkarma ayini sırasında Artemisin sunağı bir anda paramparça olunca, oradaki efeslilerin çoğu kaçsa da bir kısmı da hristiyan olmayı kabul etti. ",
+                    "Böylece Artemis tapınağı İhtiyacı olanlar için bir sığınak, Büyük tüccarlar için bir turizm mekanı olmaktan çıkıp tarihin tozlu sayfalarına gömülmeye başladı."
+                }
+            ),
+            new List<string>()
+            {
+            }
+        );
+
+        Storyline.Add("LastTemple", lastTemple);
+
+        #endregion LastTemple
     }
 }
