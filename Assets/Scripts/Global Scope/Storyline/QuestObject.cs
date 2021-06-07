@@ -12,7 +12,7 @@ public class QuestObject
         this.TargetNpc = TargetNpc;
         this.Lines = Lines;
     }
-    public string Name { get; set; }
-    public Npcs TargetNpc { get; set; }
-    public List<string> Lines { get; set; }
+    public string Name { get; set; } = string.Empty;
+    public Npcs TargetNpc { get; set; } = Npcs.Profesor;
+    public List<string> Lines { get; set; } = new List<string>();
 }

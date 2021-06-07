@@ -12,7 +12,7 @@ public class PhaseEnd
         this.templeInfo = templeInfo;
         this.AfterInfo = AfterInfo;
     }
-    public List<string> BeforeInfo { get; set; }
-    public TempleInfo templeInfo { get; set; }
-    public List<string> AfterInfo { get; set; }
+    public List<string> BeforeInfo { get; set; } = new List<string>();
+    public TempleInfo templeInfo { get; set; } = new TempleInfo();
+    public List<string> AfterInfo { get; set; } = new List<string>();
 }

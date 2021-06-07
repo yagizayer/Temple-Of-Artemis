@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-
+using System.Collections.Generic;
 
 public static class _Extesions
 {
@@ -41,6 +41,11 @@ public static class _Extesions
         }
         return transform;
     }
-
+    public static Dictionary<T1, T2> AddRange<T1,T2>(this Dictionary<T1, T2> me, Dictionary<T1, T2> other)
+    {
+        foreach (KeyValuePair<T1, T2> item in other)
+            me.Add(item.Key, item.Value);
+        return me;
+    }
 
 }

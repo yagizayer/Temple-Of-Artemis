@@ -12,6 +12,6 @@ public class Phase
         this.Quests = Quests;
         this.PhaseEnd = PhaseEnd;
     }
-    public Dictionary<string, Quest> Quests { get; set; }
-    public PhaseEnd PhaseEnd { get; set; }
+    public Dictionary<string, Quest> Quests { get; set; } = new Dictionary<string, Quest>();
+    public PhaseEnd PhaseEnd { get; set; } = new PhaseEnd();
 }

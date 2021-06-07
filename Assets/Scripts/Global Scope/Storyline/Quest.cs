@@ -11,6 +11,6 @@ public class Quest
         this.QuestObjects = QuestObjects;
         this.QuestConversations = QuestConversations;
     }
-    public Dictionary<string, QuestObject> QuestObjects { get; set; }
-    public List<QuestConversation> QuestConversations { get; set; }
+    public Dictionary<string, QuestObject> QuestObjects { get; set; } = new Dictionary<string, QuestObject>();
+    public List<QuestConversation> QuestConversations { get; set; } = new List<QuestConversation>();
 }

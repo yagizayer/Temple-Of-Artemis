@@ -12,7 +12,7 @@ public class TempleInfo
         this.BuildingDate = BuildingDate;
         this.Lines = Lines;
     }
-    public string Header { get; set; }
-    public string BuildingDate { get; set; }
-    public List<string> Lines { get; set; }
+    public string Header { get; set; } = string.Empty;
+    public string BuildingDate { get; set; } = string.Empty;
+    public List<string> Lines { get; set; } = new List<string>();
 }
