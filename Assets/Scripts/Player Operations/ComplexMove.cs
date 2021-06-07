@@ -9,8 +9,6 @@ public class ComplexMove : MonoBehaviour
     public Transform currentCamera;
     public Animator animator;
 
-
-
     public float moveSpeed = 12f, rotationSpeed = 200;
     bool isGrounded, moving = false, isSprinting = false;
 
@@ -47,7 +45,6 @@ public class ComplexMove : MonoBehaviour
         }
 
         animator.SetBool("Moving", moving);
-        // animator.SetFloat("HorizontalSpeed", horizontal);
         animator.SetFloat("VerticalSpeed", vertical);
 
 
@@ -73,4 +70,6 @@ public class ComplexMove : MonoBehaviour
     {
         this.isSprinting = sprintInput;
     }
+
+    
 }

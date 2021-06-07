@@ -26,6 +26,10 @@ public class InputHandler : MonoBehaviour
         inputManager.Gameplay.Move.canceled += OnMovePerformed;
         inputManager.Gameplay.Sprint.started += OnSprintStarted;
         inputManager.Gameplay.Sprint.canceled += OnSprintStarted;
+
+
+        // TODO : close this on build
+        inputManager.Gameplay.Sandbox.performed += Sandbox;
     }
     void OnMovePerformed(InputAction.CallbackContext context)
     {
@@ -38,5 +42,15 @@ public class InputHandler : MonoBehaviour
             sprintInputEvent.Invoke(true);
         if (context.canceled)
             sprintInputEvent.Invoke(false);
+    }
+
+    void Sandbox(InputAction.CallbackContext context)
+    {
+        DialogManagement DM = FindObjectOfType<DialogManagement>();
+
+        string absouluteNextLine = DM.Storyline["EarlyPhase"].Quests["Tutorial"].CurrentConvarsation.NextLine;
+        if (absouluteNextLine == null) absouluteNextLine = DM.Storyline["EarlyPhase"].Quests["Tutorial"].NextConversation?.NextLine;
+        
+        Debug.Log(absouluteNextLine);
     }
 }

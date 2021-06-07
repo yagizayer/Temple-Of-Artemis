@@ -1,4 +1,4 @@
-// GENERATED AUTOMATICALLY FROM 'Assets/Plugins/InputManager.inputactions'
+// GENERATED AUTOMATICALLY FROM 'Assets/Scripts/Input Operations/InputManager.inputactions'
 
 using System;
 using System.Collections;
@@ -38,6 +38,14 @@ public class @InputManager : IInputActionCollection, IDisposable
                     ""name"": ""Sprint"",
                     ""type"": ""Button"",
                     ""id"": ""b5dab52c-9b70-48b8-a415-1b168d2d04e7"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Sandbox"",
+                    ""type"": ""Button"",
+                    ""id"": ""b9fba828-3459-489a-8b71-eadbbc35c30d"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
@@ -153,6 +161,17 @@ public class @InputManager : IInputActionCollection, IDisposable
                     ""action"": ""Sprint"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""fd78c3ff-7da5-4582-9cff-c6586a2ffcff"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Sandbox"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -191,6 +210,7 @@ public class @InputManager : IInputActionCollection, IDisposable
         m_Gameplay_Move = m_Gameplay.FindAction("Move", throwIfNotFound: true);
         m_Gameplay_Look = m_Gameplay.FindAction("Look", throwIfNotFound: true);
         m_Gameplay_Sprint = m_Gameplay.FindAction("Sprint", throwIfNotFound: true);
+        m_Gameplay_Sandbox = m_Gameplay.FindAction("Sandbox", throwIfNotFound: true);
         // Menu
         m_Menu = asset.FindActionMap("Menu", throwIfNotFound: true);
         m_Menu_ScreenPosition = m_Menu.FindAction("ScreenPosition", throwIfNotFound: true);
@@ -246,6 +266,7 @@ public class @InputManager : IInputActionCollection, IDisposable
     private readonly InputAction m_Gameplay_Move;
     private readonly InputAction m_Gameplay_Look;
     private readonly InputAction m_Gameplay_Sprint;
+    private readonly InputAction m_Gameplay_Sandbox;
     public struct GameplayActions
     {
         private @InputManager m_Wrapper;
@@ -253,6 +274,7 @@ public class @InputManager : IInputActionCollection, IDisposable
         public InputAction @Move => m_Wrapper.m_Gameplay_Move;
         public InputAction @Look => m_Wrapper.m_Gameplay_Look;
         public InputAction @Sprint => m_Wrapper.m_Gameplay_Sprint;
+        public InputAction @Sandbox => m_Wrapper.m_Gameplay_Sandbox;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -271,6 +293,9 @@ public class @InputManager : IInputActionCollection, IDisposable
                 @Sprint.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnSprint;
                 @Sprint.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnSprint;
                 @Sprint.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnSprint;
+                @Sandbox.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnSandbox;
+                @Sandbox.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnSandbox;
+                @Sandbox.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnSandbox;
             }
             m_Wrapper.m_GameplayActionsCallbackInterface = instance;
             if (instance != null)
@@ -284,6 +309,9 @@ public class @InputManager : IInputActionCollection, IDisposable
                 @Sprint.started += instance.OnSprint;
                 @Sprint.performed += instance.OnSprint;
                 @Sprint.canceled += instance.OnSprint;
+                @Sandbox.started += instance.OnSandbox;
+                @Sandbox.performed += instance.OnSandbox;
+                @Sandbox.canceled += instance.OnSandbox;
             }
         }
     }
@@ -326,6 +354,7 @@ public class @InputManager : IInputActionCollection, IDisposable
         void OnMove(InputAction.CallbackContext context);
         void OnLook(InputAction.CallbackContext context);
         void OnSprint(InputAction.CallbackContext context);
+        void OnSandbox(InputAction.CallbackContext context);
     }
     public interface IMenuActions
     {
