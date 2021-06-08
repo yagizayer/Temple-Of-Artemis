@@ -1,8 +1,14 @@
 ﻿using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class DialogManagement : MonoBehaviour
 {
+    [SerializeField] private GameObject TalkingScreen;
+    [SerializeField] private Text Context;
+    [SerializeField] private RawImage LeftSprite;
+    [SerializeField] private RawImage RightSprite;
+
     [SerializeField] private Dictionary<PhaseNames, Phase> _storyline = new Dictionary<PhaseNames, Phase>();
     public Dictionary<PhaseNames, Phase> Storyline => _storyline;
     void Start()
@@ -598,6 +604,17 @@ public class DialogManagement : MonoBehaviour
 
     public void NextLineOrExit()
     {
-        Debug.Log(Storyline[PhaseNames.EarlyPhase].Quests[QuestNames.Tutorial].NextLine);
+
+        // burda kaldın
+        // Todo : yazılar yavaşça eklensin
+        string nextLine = Storyline[PhaseNames.EarlyPhase].Quests[QuestNames.Tutorial].NextLine;
+        if (nextLine == null)
+        {
+            TalkingScreen.SetActive(false);
+        }
+        else
+        {
+            Context.text = nextLine;
+        }
     }
 }

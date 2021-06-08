@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using UnityEngine;
 
 public class Quest
 {
@@ -47,13 +48,10 @@ public class Quest
     {
         get
         {
-            if (CurrentConvarsation.NextLine == null) return NextConversation.NextLine;
-            else return CurrentConvarsation.NextLine;
+            // if (CurrentConversationNo == QuestConversations.Count) return null;
+            return CurrentConvarsation?.NextLine ?? NextConversation?.NextLine;
         }
     }
-
-
-
 
 
     public Dictionary<string, QuestObject> QuestObjects { get; set; } = new Dictionary<string, QuestObject>();
