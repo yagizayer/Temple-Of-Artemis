@@ -3,14 +3,11 @@ using UnityEngine;
 
 public class DialogManagement : MonoBehaviour
 {
-    [SerializeField] private Dictionary<string, Phase> _storyline = new Dictionary<string, Phase>();
-    public Dictionary<string, Phase> Storyline => _storyline;
+    [SerializeField] private Dictionary<PhaseNames, Phase> _storyline = new Dictionary<PhaseNames, Phase>();
+    public Dictionary<PhaseNames, Phase> Storyline => _storyline;
     void Start()
     {
         SetStoryline();
-
-        GameProgression.CurrentPhase = Storyline["EarlyPhase"];
-        GameProgression.CurrentQuest = GameProgression.CurrentPhase.CurrentQuest;
     }
     void SetStoryline()
     {
@@ -209,11 +206,11 @@ public class DialogManagement : MonoBehaviour
         };
         gatherInformationAroundTemple.QuestConversations = tempConversationList;
 
-        earlyPhase.Quests.AddRange<string, Quest>(new Dictionary<string, Quest>(){
-            {"Tutorial",tutorial},
-            {"FindAncientColumns",findAncientColumns},
-            {"TalkToProfessor",talkToProfessor},
-            {"GatherInformationAroundTemple",gatherInformationAroundTemple}
+        earlyPhase.Quests.AddRange<QuestNames, Quest>(new Dictionary<QuestNames, Quest>(){
+            {QuestNames.Tutorial,tutorial},
+            {QuestNames.FindAncientColumns,findAncientColumns},
+            {QuestNames.TalkToProfessor,talkToProfessor},
+            {QuestNames.GatherInformationAroundTemple,gatherInformationAroundTemple}
         });
 
         earlyPhase.PhaseEnd = new PhaseEnd
@@ -239,7 +236,7 @@ public class DialogManagement : MonoBehaviour
             }
         );
 
-        Storyline.Add("EarlyPhase", earlyPhase);
+        Storyline.Add(PhaseNames.EarlyPhase, earlyPhase);
 
         #endregion EarlyPhase
 
@@ -360,8 +357,8 @@ public class DialogManagement : MonoBehaviour
         });
         gatherInformationAroundTemple.QuestConversations = tempConversationList;
 
-        firstTemple.Quests.AddRange<string, Quest>(new Dictionary<string, Quest>(){
-            {"GatherInformationAroundTemple",gatherInformationAroundTemple}
+        firstTemple.Quests.AddRange<QuestNames, Quest>(new Dictionary<QuestNames, Quest>(){
+            {QuestNames.GatherInformationAroundTemple,gatherInformationAroundTemple}
         });
 
         firstTemple.PhaseEnd = new PhaseEnd
@@ -390,7 +387,7 @@ public class DialogManagement : MonoBehaviour
             }
         );
 
-        Storyline.Add("FirstTemple", firstTemple);
+        Storyline.Add(PhaseNames.FirstTemple, firstTemple);
 
         #endregion FirstTemple
 
@@ -553,8 +550,8 @@ public class DialogManagement : MonoBehaviour
         };
         gatherInformationAroundTemple.QuestConversations = tempConversationList;
 
-        lastTemple.Quests.AddRange<string, Quest>(new Dictionary<string, Quest>(){
-            {"GatherInformationAroundTemple",gatherInformationAroundTemple}
+        lastTemple.Quests.AddRange<QuestNames, Quest>(new Dictionary<QuestNames, Quest>(){
+            {QuestNames.GatherInformationAroundTemple,gatherInformationAroundTemple}
         });
 
         lastTemple.PhaseEnd = new PhaseEnd
@@ -594,10 +591,13 @@ public class DialogManagement : MonoBehaviour
             }
         );
 
-        Storyline.Add("LastTemple", lastTemple);
+        Storyline.Add(PhaseNames.LastTemple, lastTemple);
 
         #endregion LastTemple
     }
 
-
+    public void NextLineOrExit()
+    {
+        Debug.Log(Storyline[PhaseNames.EarlyPhase].Quests[QuestNames.Tutorial].NextLine);
+    }
 }

@@ -7,12 +7,11 @@ public class Phase
     {
     }
 
-    public Phase(Dictionary<string, Quest> Quests, PhaseEnd PhaseEnd)
+    public Phase(Dictionary<QuestNames, Quest> Quests, PhaseEnd PhaseEnd)
     {
         this.Quests = Quests;
         this.PhaseEnd = PhaseEnd;
     }
-    public Quest CurrentQuest { get; set; } = new Quest();
-    public Dictionary<string, Quest> Quests { get; set; } = new Dictionary<string, Quest>();
+    public Dictionary<QuestNames, Quest> Quests { get; set; } = new Dictionary<QuestNames, Quest>();
     public PhaseEnd PhaseEnd { get; set; } = new PhaseEnd();
 }

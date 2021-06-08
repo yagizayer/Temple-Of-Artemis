@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using UnityEngine;
 
 public class Quest
 {
@@ -16,32 +15,60 @@ public class Quest
 
 
     public int CurrentConversationNo { get; private set; } = -1;
+
+
+    private QuestConversation _currentConvarsation = new QuestConversation();
     public QuestConversation CurrentConvarsation
     {
-        get => (CurrentConversationNo == -1) ? QuestConversations[++CurrentConversationNo] : QuestConversations[CurrentConversationNo];
-        set => CurrentConvarsation = value;
+        get
+        {
+            if (QuestConversations.Count == 0) return null;
+            if (CurrentConversationNo == -1) return QuestConversations[0];
+            if (CurrentConversationNo == QuestConversations.Count) return null;
+            return QuestConversations[CurrentConversationNo];
+        }
+        set { _currentConvarsation = value; }
     }
 
+    private QuestConversation _nextConversation = new QuestConversation();
     public QuestConversation NextConversation
     {
-        get => (CurrentConversationNo + 1 < QuestConversations.Count) ? QuestConversations[++CurrentConversationNo] : null;
-        private set => NextConversation = value;
+        get
+        {
+            if (QuestConversations.Count == 0) return null;
+            if (CurrentConversationNo == -1) return QuestConversations[0];
+            if (CurrentConversationNo + 1 == QuestConversations.Count) return null;
+            return QuestConversations[++CurrentConversationNo];
+        }
+        private set { _nextConversation = value; }
     }
+
+    public string NextLine
+    {
+        get
+        {
+            if (CurrentConvarsation.NextLine == null) return NextConversation.NextLine;
+            else return CurrentConvarsation.NextLine;
+        }
+    }
+
+
+
 
 
     public Dictionary<string, QuestObject> QuestObjects { get; set; } = new Dictionary<string, QuestObject>();
+    private List<QuestConversation> _questConversations = new List<QuestConversation>();
     public List<QuestConversation> QuestConversations
     {
-        get => new List<QuestConversation>();
+        get => _questConversations;
         set
         {
-            Debug.Log("test");
-            QuestConversations = value;
-            CurrentConvarsation = value[0];
-            NextConversation = value[0];
+            _questConversations = value;
+            CurrentConvarsation = _questConversations[0];
+            NextConversation = _questConversations[0];
             CurrentConversationNo = 0;
         }
     }
 
-    
+
 }

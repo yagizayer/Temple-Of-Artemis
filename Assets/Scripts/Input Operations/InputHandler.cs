@@ -48,9 +48,9 @@ public class InputHandler : MonoBehaviour
     {
         DialogManagement DM = FindObjectOfType<DialogManagement>();
 
-        string absouluteNextLine = DM.Storyline["EarlyPhase"].Quests["Tutorial"].CurrentConvarsation.NextLine;
-        if (absouluteNextLine == null) absouluteNextLine = DM.Storyline["EarlyPhase"].Quests["Tutorial"].NextConversation?.NextLine;
-        
+        string absouluteNextLine = DM.Storyline[PhaseNames.EarlyPhase].Quests[QuestNames.Tutorial].CurrentConvarsation.NextLine;
+        if (absouluteNextLine == null) absouluteNextLine = DM.Storyline[PhaseNames.EarlyPhase].Quests[QuestNames.Tutorial].NextConversation?.NextLine;
+
         Debug.Log(absouluteNextLine);
     }
 }

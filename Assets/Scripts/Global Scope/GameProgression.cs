@@ -4,6 +4,7 @@ using UnityEngine;
 
 public static class GameProgression
 {
+    // TODO : Save system
     public static Phase CurrentPhase { get; set; } = new Phase();
     public static Quest CurrentQuest { get; set; } = new Quest();
     public static Dictionary<string, Quest> EndedQuests { get; set; } = new Dictionary<string, Quest>();
