@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3c887bf1878b5c4ca5756ec79b268be, type: 3}
+  m_Name: Necklace
+  m_EditorClassIdentifier: 
+  mesh: {fileID: 1642066607988742572, guid: e1aad1823fe0593488e1cee58f7d00e0, type: 3}
+  Materials:
+  - {fileID: 4544614639078315466, guid: e1aad1823fe0593488e1cee58f7d00e0, type: 3}
+  - {fileID: 2138608081894791119, guid: e1aad1823fe0593488e1cee58f7d00e0, type: 3}
+  Scale: 0.01
+  Name: Kehribar Kolye
+  QuestNpc: 2
+  QuestLines:
+  - "O elindeki ne \xF6yle Jones?"
+  - "Bakal\u0131m... G\xF6r\xFCn\xFC\u015Fe g\xF6re bu bir kolye ucu."
+  - "Bak iki yan\u0131nda delikler var. B\xFCy\xFCk ihtimalle bu tap\u0131na\u011F\u0131n
+    ithaf edildi\u011Fi Tanr\u0131\xE7a i\xE7in yap\u0131lm\u0131\u015F bir eser."
+  - "Zaman\u0131nda bu t\xFCr kolyeler \xE7ok k\u0131ymetliydi. Kimsenin bunca zaman
+    \xE7almam\u0131\u015F olmas\u0131na \u015Fa\u015F\u0131rd\u0131m do\u011Frusu."

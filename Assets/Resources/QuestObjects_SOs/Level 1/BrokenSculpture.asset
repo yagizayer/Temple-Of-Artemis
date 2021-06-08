@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3c887bf1878b5c4ca5756ec79b268be, type: 3}
+  m_Name: BrokenSculpture
+  m_EditorClassIdentifier: 
+  mesh: {fileID: -1041735211399646861, guid: 58c18b07b2ccb0941aeaae5f8a43c2d4, type: 3}
+  Materials:
+  - {fileID: -4600259663389162779, guid: 58c18b07b2ccb0941aeaae5f8a43c2d4, type: 3}
+  Scale: 1
+  Name: "K\u0131r\u0131k Heykelcik"
+  QuestNpc: 2
+  QuestLines:
+  - "Vay can\u0131na. Ne kadar da iyi muhafaza edilmi\u015F bir heykel bu b\xF6yle."
+  - "Bakal\u0131m ka\xE7 ya\u015F\u0131ndaym\u0131\u015Fs\u0131n sen..."
+  - "Jones. Bu minik dostumuz neredeyse profes\xF6r\xFCn ya\u015F\u0131nda... Tabii
+    40 kat\u0131 oldu\u011Funu saymazsak!"
+  - "Bu \u015Fey tam 2200 y\u0131ld\u0131r k\u0131r\u0131lmadan, bozulmadan burada
+    duruyormu\u015F."

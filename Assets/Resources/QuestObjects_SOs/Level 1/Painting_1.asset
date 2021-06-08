@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3c887bf1878b5c4ca5756ec79b268be, type: 3}
+  m_Name: Painting_1
+  m_EditorClassIdentifier: 
+  mesh: {fileID: 8638719049080605512, guid: 892154015a64e9e42ae8fdb3666e2219, type: 3}
+  Materials:
+  - {fileID: 2100000, guid: 1c5f9dba45297854fbef41bc296b2070, type: 2}
+  - {fileID: -5081792898505675300, guid: 892154015a64e9e42ae8fdb3666e2219, type: 3}
+  Scale: 50
+  Name: "Amazonlar\u0131n Resmi"
+  QuestNpc: 0
+  QuestLines:
+  - "Jones! Bu tabloyu nereden buldun bunca zamand\u0131r neredeyse hi\xE7 zarar
+    g\xF6rmemi\u015F."
+  - "Hmmm. Bu t\xFCr dayan\u0131kl\u0131 tablolar\u0131 yapan Antik \xE7a\u011Fda
+    ya\u015Fam\u0131\u015F olan tek medeniyet Amazonlard\u0131."
+  - "San\u0131r\u0131m bu tabloyu da onlar yapm\u0131\u015F olmal\u0131."

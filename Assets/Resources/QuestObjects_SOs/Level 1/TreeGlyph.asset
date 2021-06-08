@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3c887bf1878b5c4ca5756ec79b268be, type: 3}
+  m_Name: TreeGlyph
+  m_EditorClassIdentifier: 
+  mesh: {fileID: -8301552249313729829, guid: 24434421f9f91b941a1a3e03668f17b9, type: 3}
+  Materials:
+  - {fileID: 6059251622083746725, guid: 24434421f9f91b941a1a3e03668f17b9, type: 3}
+  - {fileID: -4600259663389162779, guid: 24434421f9f91b941a1a3e03668f17b9, type: 3}
+  Scale: 1
+  Name: "Hayat a\u011Fac\u0131 Kabartmas\u0131"
+  QuestNpc: 1
+  QuestLines:
+  - "Evet... \xC7ok ilgin\xE7..."
+  - "Antik zamanlardan kalma Hayat a\u011Fac\u0131 inanc\u0131n\u0131 tasfir eden
+    bir kabartma bulmu\u015Fsun Jones."
+  - "Bu \xF6yle bir a\u011Fa\xE7m\u0131\u015F ki Cennet ve Cehennemi birbirine ba\u011Flar,
+    T\xFCm ya\u015Fam bu a\u011Fa\xE7tan ortaya \xE7\u0131kar ve yine bu a\u011Faca
+    d\xF6nermi\u015F."
+  - "Pek \xE7ok din, felsefe ve mitoloji bu a\u011Fa\xE7tan bahseder. San\u0131r\u0131m
+    bu da Hayat A\u011Fac\u0131n\u0131n i\u015Fledi\u011Fi ilk eserlerden biri."
