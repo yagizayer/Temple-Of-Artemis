@@ -8,6 +8,9 @@ TagManager:
   - NPC
   - UI_Button
   - Canvas
+  - QuestObjects_P1
+  - QuestObjects_P2
+  - QuestObjects_P3
   layers:
   - Default
   - TransparentFX
