@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Collections;
 using UnityEngine.UI;
 using UnityEngine;
 
@@ -8,7 +9,9 @@ public class DialogManagement : MonoBehaviour
     [SerializeField] private Text Context;
     [SerializeField] private RawImage LeftSprite;
     [SerializeField] private RawImage RightSprite;
-
+    private bool _currentlyWriting = false;
+    private bool _breakLoop = false;
+    private string _currentLine = "";
     [SerializeField] private Dictionary<PhaseNames, Phase> _storyline = new Dictionary<PhaseNames, Phase>();
     public Dictionary<PhaseNames, Phase> Storyline => _storyline;
     void Start()
@@ -601,20 +604,44 @@ public class DialogManagement : MonoBehaviour
 
         #endregion LastTemple
     }
-
+    
+    
     public void NextLineOrExit()
     {
-
-        // burda kaldın
-        // Todo : yazılar yavaşça eklensin
-        string nextLine = Storyline[PhaseNames.EarlyPhase].Quests[QuestNames.Tutorial].NextLine;
-        if (nextLine == null)
+        if (!_currentlyWriting)
         {
-            TalkingScreen.SetActive(false);
+            _currentLine = Storyline[PhaseNames.EarlyPhase].Quests[QuestNames.Tutorial].NextLine;
+            if (_currentLine == null)
+            {
+                TalkingScreen.SetActive(false);
+            }
+            else
+            {
+                _breakLoop = false;
+                StartCoroutine(CreateEffect(Context, _currentLine));
+            }
         }
         else
         {
-            Context.text = nextLine;
+            _breakLoop = true;
+            StopCoroutine("CreateEffect");
+            Context.text = _currentLine;
+            _currentlyWriting = false;
         }
+
     }
+    IEnumerator CreateEffect(Text context, string text)
+    {
+        context.text = "";
+        int characterCounter = 0;
+        while (characterCounter < text.Length && !_breakLoop)
+        {
+            _currentlyWriting = true;
+            context.text += text[characterCounter++].ToString();
+            yield return null;
+        }
+        _currentlyWriting = false;
+    }
+
+    
 }
