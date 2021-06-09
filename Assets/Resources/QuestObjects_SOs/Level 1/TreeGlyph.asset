@@ -16,7 +16,11 @@ MonoBehaviour:
   Materials:
   - {fileID: 6059251622083746725, guid: 24434421f9f91b941a1a3e03668f17b9, type: 3}
   - {fileID: -4600259663389162779, guid: 24434421f9f91b941a1a3e03668f17b9, type: 3}
-  Scale: 1
+  Scale: 3
+  colliderType: 0
+  ColliderOffset: {x: 0, y: 0, z: 0}
+  ColliderScale: {x: 0.5, y: 0.1, z: 0.5}
+  ScaleColliderIndependent: 0
   Name: "Hayat a\u011Fac\u0131 Kabartmas\u0131"
   QuestNpc: 1
   QuestLines:

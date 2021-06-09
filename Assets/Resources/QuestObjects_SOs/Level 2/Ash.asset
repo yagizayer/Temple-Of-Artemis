@@ -12,10 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3c887bf1878b5c4ca5756ec79b268be, type: 3}
   m_Name: Ash
   m_EditorClassIdentifier: 
-  Model: {fileID: 4542573763548188204, guid: 6ce3187aae532384f9e24742e76004b8, type: 3}
+  mesh: {fileID: 4542573763548188204, guid: 6ce3187aae532384f9e24742e76004b8, type: 3}
   Materials:
   - {fileID: 6939216825448431750, guid: 6ce3187aae532384f9e24742e76004b8, type: 3}
-  Scale: 1
+  Scale: 50
+  colliderType: 4
+  ColliderOffset: {x: 0, y: 0, z: 0}
+  ColliderScale: {x: 1.5, y: 0.01, z: 1.5}
+  ScaleColliderIndependent: 1
   Name: 
-  QuestNpc: 0
+  QuestNpc: 2
   QuestLines: []

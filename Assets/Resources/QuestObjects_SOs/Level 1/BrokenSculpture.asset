@@ -16,6 +16,10 @@ MonoBehaviour:
   Materials:
   - {fileID: -4600259663389162779, guid: 58c18b07b2ccb0941aeaae5f8a43c2d4, type: 3}
   Scale: 1
+  colliderType: 0
+  ColliderOffset: {x: 0, y: 0.2, z: 0}
+  ColliderScale: {x: 0.7, y: 0.7, z: 0.7}
+  ScaleColliderWithMesh: 1
   Name: "K\u0131r\u0131k Heykelcik"
   QuestNpc: 2
   QuestLines:

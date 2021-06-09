@@ -17,6 +17,10 @@ MonoBehaviour:
   - {fileID: 2100000, guid: df81f22a5aea93c42b1223373332f3f5, type: 2}
   - {fileID: -5081792898505675300, guid: 892154015a64e9e42ae8fdb3666e2219, type: 3}
   Scale: 50
+  colliderType: 0
+  ColliderOffset: {x: 0, y: 0, z: 0}
+  ColliderScale: {x: 1.1, y: 1.1, z: 0.1}
+  ScaleColliderWithMesh: 1
   Name: "Hayat A\u011Fac\u0131n\u0131n resmi"
   QuestNpc: 0
   QuestLines:

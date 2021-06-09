@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3c887bf1878b5c4ca5756ec79b268be, type: 3}
+  m_Name: Painting_3
+  m_EditorClassIdentifier: 
+  mesh: {fileID: -6956048135646167668, guid: 49d77a65b00232c43ad6b20c335efc6f, type: 3}
+  Materials:
+  - {fileID: 2100000, guid: 20b5b03ef023aa94190ddcc0f0934fce, type: 2}
+  - {fileID: -3183861296714639463, guid: 49d77a65b00232c43ad6b20c335efc6f, type: 3}
+  Scale: 50
+  colliderType: 0
+  ColliderOffset: {x: 0, y: 0, z: 0}
+  ColliderScale: {x: 1.1, y: 1.1, z: 0.1}
+  ScaleColliderIndependent: 1
+  Name: 
+  QuestNpc: 0
+  QuestLines: []
