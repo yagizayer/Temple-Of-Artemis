@@ -9,9 +9,12 @@ using UnityEngine.InputSystem;
 public class MoveInputEvent : UnityEvent<float, float> { }
 [Serializable]
 public class SprintInputEvent : UnityEvent<bool> { }
+[Serializable]
+public class InteractionInputEvent : UnityEvent<float, float> { }
 public class InputHandler : MonoBehaviour
 {
     public MoveInputEvent moveInputEvent;
+    public InteractionInputEvent interactionInputEvent;
     public SprintInputEvent sprintInputEvent;
     InputManager inputManager;
 
@@ -26,6 +29,7 @@ public class InputHandler : MonoBehaviour
         inputManager.Gameplay.Move.canceled += OnMovePerformed;
         inputManager.Gameplay.Sprint.started += OnSprintStarted;
         inputManager.Gameplay.Sprint.canceled += OnSprintStarted;
+        inputManager.Gameplay.Interact.performed += OnInteractionPerformed;
 
 
         // TODO : close this on build
@@ -42,6 +46,11 @@ public class InputHandler : MonoBehaviour
             sprintInputEvent.Invoke(true);
         if (context.canceled)
             sprintInputEvent.Invoke(false);
+    }
+    void OnInteractionPerformed(InputAction.CallbackContext context)
+    {
+        Vector3 cursorPos = context.ReadValue<Vector2>();
+        interactionInputEvent.Invoke(cursorPos.x, cursorPos.y);
     }
 
     void Sandbox(InputAction.CallbackContext context)

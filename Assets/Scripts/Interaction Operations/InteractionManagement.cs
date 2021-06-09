@@ -5,12 +5,13 @@ using UnityEngine;
 [RequireComponent(typeof(SphereCollider))]
 public class InteractionManagement : MonoBehaviour
 {
+    [Header("Basics")]
     [SerializeField] private SphereCollider InteractionVolume;
     [SerializeField] [Range(.001f, 30f)] private float InteractionRange = 10f;
     [SerializeField] private Transform mainCamera;
-    private List<InteractableIdentifier> _interactables = new List<InteractableIdentifier>();
+    [SerializeField] private LayerMask Ignore;
 
-    int _knownInteractableCount = 0;
+    private List<InteractableIdentifier> _interactables = new List<InteractableIdentifier>();
 
     private void Start()
     {
@@ -56,6 +57,24 @@ public class InteractionManagement : MonoBehaviour
     {
         _interactables = IdentifyInteractables(transform.position, InteractionRange);
         RotateUI(_interactables);
+    }
+
+    public void test(float cursorPosx, float cursorPosy)
+    {
+        Vector2 cursorPos = new Vector2(cursorPosx, cursorPosy);
+        Ray r = mainCamera.GetComponent<Camera>().ScreenPointToRay(cursorPos);
+        if (Physics.Raycast(r, out RaycastHit hit, 100f, ~Ignore))
+        {
+            InteractableIdentifier id = hit.transform.GetComponent<InteractableIdentifier>();
+            if (id)
+            {
+                if (_interactables.Contains(id))
+                {
+                    // TODO : Make Interaction(questSystem)
+                    Debug.Log("Interaction Happened");
+                }
+            }
+        }
     }
 
 }
