@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.AI;
 using UnityEngine;
 
 public class ComplexMove : MonoBehaviour
@@ -47,8 +48,10 @@ public class ComplexMove : MonoBehaviour
         animator.SetBool("Moving", moving);
         animator.SetFloat("VerticalSpeed", vertical);
 
+        Debug.Log(finalMoveDir * (isSprinting ? moveSpeed * 2 : moveSpeed) * Time.deltaTime);
 
-        controller.Move(finalMoveDir * (isSprinting ? moveSpeed * 2 : moveSpeed) * Time.deltaTime);
+        GetComponent<NavMeshAgent>().Move(finalMoveDir * (isSprinting ? moveSpeed * 2 : moveSpeed) * Time.deltaTime * 100);
+        // controller.Move(finalMoveDir * (isSprinting ? moveSpeed * 2 : moveSpeed) * Time.deltaTime);
     }
     void MakeGravity()
     {
