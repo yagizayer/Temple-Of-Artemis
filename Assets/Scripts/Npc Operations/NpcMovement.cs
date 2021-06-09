@@ -25,8 +25,8 @@ public class NpcMovement : MonoBehaviour
     public bool IsMoving => isMoving;
     private void Start()
     {
-        if (navMeshAgent == null) navMeshAgent = GetComponent<NavMeshAgent>();
-        if (animator == null) animator = GetComponent<NpcDisplay>().NpcGameObject.GetComponent<Animator>();
+        if (navMeshAgent == null) navMeshAgent = transform.GetComponent<NavMeshAgent>();
+        if (animator == null) animator = transform.GetComponent<NpcDisplay>().NpcGameObject.GetComponent<Animator>();
 
         if (targetPoints.Count > 0)
         {
