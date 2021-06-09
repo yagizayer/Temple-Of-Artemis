@@ -6,11 +6,24 @@ public class InteractableIdentifier : MonoBehaviour
 {
     // this object is an Interactable Object
     public InteractionType interactionType = InteractionType.QuestObject;
+    public PhaseNames RlatedPhase;
+    public QuestNames RelatedQuest;
+
+    [HideInInspector]
     public Transform MyUIElement;
+    [HideInInspector]
     public bool isMyUIElementActive = true;
+
+
+    private PrefabDatabaseManager db;
     private void Start()
     {
-        MyUIElement = transform.Find("UI");
+        MyUIElement = transform.Find("Interaction_UI");
+        db = FindObjectOfType<PrefabDatabaseManager>();
+        if (!MyUIElement)
+        {
+            MyUIElement = GameObject.Instantiate(db.PrefabDB["InteractableObjectUI"], transform, false).transform;
+        }
         HideUI();
     }
     public void ShowUI()

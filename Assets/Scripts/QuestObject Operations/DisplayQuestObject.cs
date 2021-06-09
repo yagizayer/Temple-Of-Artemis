@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(MeshFilter), typeof(MeshRenderer))]
+[RequireComponent(typeof(MeshFilter), typeof(MeshRenderer), typeof(BoxCollider))]
 public class DisplayQuestObject : MonoBehaviour
 {
     public QuestObject_SO MyQuestObject;
@@ -10,6 +10,7 @@ public class DisplayQuestObject : MonoBehaviour
     private MeshFilter _meshFilter;
     private MeshRenderer _meshRenderer;
     private MeshCollider _meshCollider;
+    private BoxCollider _detectionCollider;
     private void Start()
     {
         SetAttributes();
@@ -21,7 +22,9 @@ public class DisplayQuestObject : MonoBehaviour
         _meshFilter = GetComponent<MeshFilter>();
         _meshRenderer = GetComponent<MeshRenderer>();
         _meshCollider = GetComponentInChildren<MeshCollider>() ?? CreateColliderObject();
+        _detectionCollider = GetComponent<BoxCollider>();
 
+        _detectionCollider.size = Vector3.one * .001f / MyQuestObject.Scale; // solely for Interaction detection
         _meshFilter.mesh = MyQuestObject.mesh;
         _meshRenderer.materials = MyQuestObject.Materials;
         transform.localScale = Vector3.one * MyQuestObject.Scale;
