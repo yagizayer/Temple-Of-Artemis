@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using UnityEngine;
 
 static public class GlobalVariables
 {
@@ -13,4 +14,6 @@ static public class GlobalVariables
     };
     public static PhaseNames CurrentPhaseName { get; set; } = PhaseNames.EarlyPhase;
     public static QuestNames CurrentQuestName { get; set; } = QuestNames.Tutorial;
+
+
 }
