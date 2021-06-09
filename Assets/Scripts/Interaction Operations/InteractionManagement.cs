@@ -7,18 +7,20 @@ public class InteractionManagement : MonoBehaviour
 {
     [SerializeField] private SphereCollider InteractionVolume;
     [SerializeField] [Range(.001f, 30f)] private float InteractionRange = 10f;
-    [SerializeField] private List<InteractableIdentifier> _interactables = new List<InteractableIdentifier>();
+    [SerializeField] private Transform mainCamera;
+    private List<InteractableIdentifier> _interactables = new List<InteractableIdentifier>();
+
     int _knownInteractableCount = 0;
 
-    private void OnValidate()
+    private void Start()
     {
-        InteractionVolume = InteractionVolume ?? GetComponent<SphereCollider>();
-        InteractionVolume.radius = InteractionRange;
+        mainCamera = Camera.main.transform;
     }
 
     private List<InteractableIdentifier> IdentifyInteractables(Vector3 center, float range)
     {
         Collider[] interactableObjects = Physics.OverlapSphere(center, range);
+        Collider[] unInteractableObjects = Physics.OverlapSphere(center, range + 2);
         List<InteractableIdentifier> result = new List<InteractableIdentifier>();
         foreach (Collider item in interactableObjects)
         {
@@ -29,13 +31,31 @@ public class InteractionManagement : MonoBehaviour
                 result.Add(id);
             }
         }
+
+        foreach (Collider item in unInteractableObjects)
+        {
+            InteractableIdentifier id = item.GetComponent<InteractableIdentifier>();
+            if (id)
+            {
+                if (_interactables.Contains(id)) continue;
+                id.HideUI();
+            }
+        }
         return result;
+    }
+    private void RotateUI(List<InteractableIdentifier> interactables)
+    {
+        foreach (InteractableIdentifier item in interactables)
+        {
+            item.MyUIElement.LookTarget(mainCamera);
+            if (!item.isMyUIElementActive) item.ShowUI();
+        }
     }
 
     private void FixedUpdate()
     {
         _interactables = IdentifyInteractables(transform.position, InteractionRange);
-        Debug.Log(_interactables.Count);
+        RotateUI(_interactables);
     }
 
 }

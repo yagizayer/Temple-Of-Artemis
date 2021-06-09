@@ -41,10 +41,16 @@ public static class _Extesions
         }
         return transform;
     }
-    public static Dictionary<T1, T2> AddRange<T1,T2>(this Dictionary<T1, T2> me, Dictionary<T1, T2> other)
+    public static Dictionary<T1, T2> AddRange<T1, T2>(this Dictionary<T1, T2> me, Dictionary<T1, T2> other)
     {
         foreach (KeyValuePair<T1, T2> item in other)
             me.Add(item.Key, item.Value);
+        return me;
+    }
+
+    public static Transform LookTarget(this Transform me, Transform target)
+    {
+        me.rotation = Quaternion.LookRotation(me.position - target.position, Vector3.up);
         return me;
     }
 
