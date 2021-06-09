@@ -21,6 +21,12 @@ MonoBehaviour:
   ColliderOffset: {x: 0, y: 0, z: 0}
   ColliderScale: {x: 1.1, y: 1.1, z: 0.1}
   ScaleColliderIndependent: 1
-  Name: 
+  Name: "Bereket tanr\u0131\xE7as\u0131 Artemisin, bir do\u011Fuma yard\u0131m edi\u015Finin
+    tablosu"
   QuestNpc: 0
-  QuestLines: []
+  QuestLines:
+  - "Bu da ne b\xF6yle? Daha \xF6nce hi\xE7 g\xF6rmedi\u011Fim bir sanat jenerasyonunda
+    yap\u0131lm\u0131\u015Fa benziyor."
+  - "Tabloda en belirgin olan ki\u015Fi ortadaki do\u011Fum yapan kad\u0131n ve ona
+    yard\u0131mc\u0131 oluyor gibi g\xF6r\xFCnen ba\u015Fka bir kad\u0131n."
+  - "Ne anlama geldi\u011Fini hi\xE7 bilemiyorum."

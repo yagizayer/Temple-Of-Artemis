@@ -20,6 +20,10 @@ MonoBehaviour:
   ColliderOffset: {x: 0, y: 0.5, z: 0}
   ColliderScale: {x: 3, y: 3, z: 3}
   ScaleColliderIndependent: 0
-  Name: 
+  Name: Heykel
   QuestNpc: 0
-  QuestLines: []
+  QuestLines:
+  - Demek bir heykel daha buldun Jones.
+  - "Bu t\xFCr heykellerinin yap\u0131lmas\u0131 ve tap\u0131naklara b\u0131rak\u0131lmas\u0131
+    \xE7ok pahal\u0131ya mal olurmu\u015F o zamanlar."
+  - "Bu k\xFC\xE7\xFCk \xE7ocu\u011Fun ailesi olduk\xE7a varl\u0131kl\u0131 olmal\u0131."

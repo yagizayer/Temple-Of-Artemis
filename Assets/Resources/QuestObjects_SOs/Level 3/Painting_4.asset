@@ -21,6 +21,13 @@ MonoBehaviour:
   ColliderOffset: {x: 0, y: 0, z: 0}
   ColliderScale: {x: 1.1, y: 1.1, z: 0.1}
   ScaleColliderIndependent: 1
-  Name: 
+  Name: "B\xFCy\xFCk \u0130skender'in tablosu"
   QuestNpc: 0
-  QuestLines: []
+  QuestLines:
+  - "Evet bu ki\u015Fiyi tan\u0131yorum. Kendisi zaman\u0131nda asya k\u0131tas\u0131n\u0131n
+    neredeyse tamam\u0131n\u0131 ve afrika ve avrupan\u0131n da baz\u0131 b\xF6lgelerini
+    y\xF6netmi\u015F olan pek \xE7ok sanat\xE7\u0131 ve tarih\xE7i taraf\u0131ndan
+    ad\u0131 s\u0131k\xE7a duyulmu\u015F olan B\xFCy\xFCk \u0130skender."
+  - "Tam olarak bu tablosunu hi\xE7 g\xF6rmemi\u015Ftim ama yap\u0131ld\u0131\u011F\u0131
+    tarihe bakacak olursak kesinlikle B\xFCy\xFCk iskender hala hayattayken yap\u0131ld\u0131\u011F\u0131n\u0131
+    s\xF6yleyebiliriz."

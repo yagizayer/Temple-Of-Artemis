@@ -21,6 +21,9 @@ MonoBehaviour:
   ColliderOffset: {x: 0, y: 0, z: 0}
   ColliderScale: {x: 1.2, y: 1.2, z: 0.2}
   ScaleColliderIndependent: 1
-  Name: 
-  QuestNpc: 0
-  QuestLines: []
+  Name: "Efsane Par\xE7as\u0131 1 (Par\u015F\xF6men)"
+  QuestNpc: 1
+  QuestLines:
+  - "Bu da ne? Bir par\xE7a par\u015F\xF6mene benziyor."
+  - "Antik Yunanca yaz\u0131lar\u0131 terc\xFCme etmek biraz zaman alabilir. Bu s\u0131rada
+    sen gidip ba\u015Fka Par\u015F\xF6men par\xE7as\u0131 var m\u0131 bak."

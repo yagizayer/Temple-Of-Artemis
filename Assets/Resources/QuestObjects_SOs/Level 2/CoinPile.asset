@@ -20,6 +20,13 @@ MonoBehaviour:
   ColliderOffset: {x: 0.005, y: 0.0026, z: 0.015}
   ColliderScale: {x: 0.066, y: 0.014, z: 0.07}
   ScaleColliderIndependent: 0
-  Name: 
-  QuestNpc: 0
-  QuestLines: []
+  Name: "Alt\u0131n Sikkeler"
+  QuestNpc: 2
+  QuestLines:
+  - "Ah. her zamanki gibi k\xFC\xE7\xFCk ta\u015Flar kayalar bana gelir."
+  - "Neden sanat tarihi okumad\u0131m ki sank... Bir saniye bu normal bir ta\u015F
+    de\u011Fil."
+  - "Alt\u0131n! Bu Alt\u0131n! Hemde s\u0131radan bir alt\u0131n para de\u011Fil."
+  - "\u015Eimdiye kadar bilinen en eski alt\u0131n paralardan bile eski bir alt\u0131n
+    bu!"
+  - "Milattan \xF6nce 6. y\xFCzy\u0131ldan kalma bir alt\u0131n bu Jones!"

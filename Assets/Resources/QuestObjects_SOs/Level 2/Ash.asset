@@ -20,6 +20,11 @@ MonoBehaviour:
   ColliderOffset: {x: 0, y: 0, z: 0}
   ColliderScale: {x: 1.5, y: 0.01, z: 1.5}
   ScaleColliderIndependent: 1
-  Name: 
+  Name: "Yan\u0131k izleri"
   QuestNpc: 2
-  QuestLines: []
+  QuestLines:
+  - "Evet etrafta dola\u015F\u0131rken baz\u0131 yan\u0131k izleri g\xF6rm\xFC\u015Ft\xFCm.
+    \xC7ok eski yan\u0131k izleri olmalar\u0131na ra\u011Fmen solmam\u0131\u015Flard\u0131
+    bile."
+  - "Mermerin bile i\xE7ine i\u015Fleyecek kadar g\xFC\xE7l\xFC izler olu\u015Fturdu\u011Funa
+    g\xF6re devasa bir yang\u0131n olmal\u0131."

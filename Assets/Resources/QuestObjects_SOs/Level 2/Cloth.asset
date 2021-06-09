@@ -20,6 +20,16 @@ MonoBehaviour:
   ColliderOffset: {x: 0, y: 0, z: 0}
   ColliderScale: {x: 1, y: 1, z: 1}
   ScaleColliderIndependent: 0
-  Name: 
-  QuestNpc: 0
-  QuestLines: []
+  Name: "Kral\u0131n birinden Bir par\xE7a kuma\u015F"
+  QuestNpc: 1
+  QuestLines:
+  - "Jones bu buldu\u011Fun kuma\u015F par\xE7as\u0131 d\xF6neminin en kaliteli terzileri
+    taraf\u0131ndan \xE7ok pahal\u0131 kuma\u015Flardan yap\u0131lm\u0131\u015F bir
+    k\u0131yafete ait gibi g\xF6r\xFCn\xFCyor."
+  - "Muhtemelen bir krala yada \xE7ok zengin bir t\xFCccara aitti bu k\u0131yafet."
+  - "D\xFC\u015F\xFCnce \u015Fa\u015F\u0131rt\u0131c\u0131 de\u011Fil. Zaman\u0131nda
+    bu t\xFCr tap\u0131naklar \xE7ok az bulunurdu ve d\xFCnyan\u0131n d\xF6rt bir
+    yan\u0131ndan zenginleri kendisine \xE7ekerdi."
+  - "Bu tap\u0131naklara gelen zenginler ba\u015F\u0131ta bulunup dua ederler ve
+    ihtiyac\u0131 olanlar da buralarda toplanarak gelen zenginlerden yard\u0131m
+    kabul ederlerdi."
