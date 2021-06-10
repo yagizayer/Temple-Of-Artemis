@@ -13,7 +13,5 @@ MonoBehaviour:
   m_Name: Miner
   m_EditorClassIdentifier: 
   prefab: {fileID: 137880279250606332, guid: b9e784a49fbce394fa9361d6b034a5aa, type: 3}
-  name: Miner
-  startingPosition: {x: 0, y: 0, z: 0}
-  startingRotation: {x: 0, y: 0.8870109, z: 0, w: 0.4617486}
+  npcs: 2
   startingScale: 1

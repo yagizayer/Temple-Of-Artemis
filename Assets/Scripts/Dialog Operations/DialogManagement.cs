@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class DialogManagement : MonoBehaviour
 {
-    [SerializeField] private GameObject TalkingScreen;
+    public GameObject TalkingScreen;
     [SerializeField] private Text Context;
     [SerializeField] private RawImage LeftSprite;
     [SerializeField] private RawImage RightSprite;
@@ -68,6 +68,7 @@ public class DialogManagement : MonoBehaviour
                 }),
         };
         findAncientColumns.QuestConversations = tempConversationList;
+        
 
         Quest talkToProfessor = new Quest();
         tempConversationList = new List<QuestConversation>(){
@@ -604,8 +605,12 @@ public class DialogManagement : MonoBehaviour
 
         #endregion LastTemple
     }
-    
-    
+
+    public void InteractWithNpc(QuestObject_SO questObject)
+    {
+        // 
+    }
+
     public void NextLineOrExit()
     {
         if (!_currentlyWriting)
@@ -630,6 +635,7 @@ public class DialogManagement : MonoBehaviour
         }
 
     }
+    // typewriting effect
     IEnumerator CreateEffect(Text context, string text)
     {
         context.text = "";
@@ -643,5 +649,5 @@ public class DialogManagement : MonoBehaviour
         _currentlyWriting = false;
     }
 
-    
+
 }

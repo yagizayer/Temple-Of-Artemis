@@ -8,14 +8,20 @@ public class InteractionManagement : MonoBehaviour
     [Header("Basics")]
     [SerializeField] private SphereCollider InteractionVolume;
     [SerializeField] [Range(.001f, 30f)] private float InteractionRange = 10f;
-    [SerializeField] private Transform mainCamera;
     [SerializeField] private LayerMask Ignore;
 
+    [Header("AfterInteraction")]
+    [SerializeField] private GameObject TalkingScreen;
+
+    DialogManagement dialogManagement;
+
     private List<InteractableIdentifier> _interactables = new List<InteractableIdentifier>();
+    private Transform mainCamera;
 
     private void Start()
     {
         mainCamera = Camera.main.transform;
+        dialogManagement = TalkingScreen ? TalkingScreen.GetComponent<DialogManagement>() : null;
     }
 
     private List<InteractableIdentifier> IdentifyInteractables(Vector3 center, float range)
@@ -59,19 +65,26 @@ public class InteractionManagement : MonoBehaviour
         RotateUI(_interactables);
     }
 
-    public void test(float cursorPosx, float cursorPosy)
+    public void GetInteraction(float cursorPosx, float cursorPosy)
     {
         Vector2 cursorPos = new Vector2(cursorPosx, cursorPosy);
-        Ray r = mainCamera.GetComponent<Camera>().ScreenPointToRay(cursorPos);
-        if (Physics.Raycast(r, out RaycastHit hit, 100f, ~Ignore))
+        if (!TalkingScreen.activeSelf)
         {
-            InteractableIdentifier id = hit.transform.GetComponent<InteractableIdentifier>();
-            if (id)
+            Ray r = mainCamera.GetComponent<Camera>().ScreenPointToRay(cursorPos);
+            if (Physics.Raycast(r, out RaycastHit hit, 100f, ~Ignore))
             {
-                if (_interactables.Contains(id))
+                InteractableIdentifier id = hit.transform.GetComponent<InteractableIdentifier>() ?? hit.transform.parent.GetComponent<InteractableIdentifier>();
+                if (id)
                 {
-                    // TODO : Make Interaction(questSystem)
-                    Debug.Log("Interaction Happened");
+                    if (_interactables.Contains(id))
+                    {
+                        // TODO : Make Interaction(questSystem)
+                        Debug.Log("Interaction Happened");
+                        TalkingScreen.SetActive(true);
+                        if(id.interactionType == InteractionType.QuestObject){
+                            
+                        }
+                    }
                 }
             }
         }

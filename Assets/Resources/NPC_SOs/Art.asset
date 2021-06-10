@@ -13,7 +13,5 @@ MonoBehaviour:
   m_Name: Art
   m_EditorClassIdentifier: 
   prefab: {fileID: 6697063886739826061, guid: bd89ead5a98f2024abc20424c1997198, type: 3}
-  name: Art
-  startingPosition: {x: 0, y: 0, z: 0}
-  startingRotation: {x: 0, y: 0.8870109, z: 0, w: 0.4617486}
+  npcs: 0
   startingScale: 1

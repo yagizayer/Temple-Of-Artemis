@@ -8,10 +8,10 @@ using UnityEngine;
 [SelectionBase]
 public class NpcDisplay : MonoBehaviour
 {
+    public Npc_SO MyNPC;
+    public GameObject NpcGameObject { get; private set; }
     [SerializeField] private GameObject previewGFX;
-    [SerializeField] private Npc_SO myNPC; public Npc_SO MyNPC => myNPC;
 
-    [SerializeField] private GameObject npcGameObject; public GameObject NpcGameObject => npcGameObject;
 
     private GameObject GFX, UI;
 
@@ -31,15 +31,15 @@ public class NpcDisplay : MonoBehaviour
     }
     private void InitializeNpc()
     {
-        npcGameObject = GameObject.Instantiate(myNPC.prefab, Vector3.zero, Quaternion.identity);
-        npcGameObject.transform.SetParent(GFX.transform);
-        npcGameObject.transform.localPosition = new Vector3(0, -0.9f, 0);
-        // npcGameObject.transform.localRotation = Quaternion.Euler(0, 90, 0);
-        npcGameObject.transform.localRotation = Quaternion.identity;
-        gameObject.name += "(" + npcGameObject.name + ")";
+        NpcGameObject = GameObject.Instantiate(MyNPC.prefab, Vector3.zero, Quaternion.identity);
+        NpcGameObject.transform.SetParent(GFX.transform);
+        NpcGameObject.transform.localPosition = new Vector3(0, -0.9f, 0);
+        // NpcGameObject.transform.localRotation = Quaternion.Euler(0, 90, 0);
+        NpcGameObject.transform.localRotation = Quaternion.identity;
+        gameObject.name += "(" + NpcGameObject.name + ")";
         // transform.localPosition = previewGFX.transform.position;
         transform.localRotation = previewGFX.transform.rotation;
-        transform.localScale = Vector3.one * myNPC.startingScale;
+        transform.localScale = Vector3.one * MyNPC.startingScale;
     }
     void RemovePreview()
     {
