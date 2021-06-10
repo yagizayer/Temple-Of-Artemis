@@ -32,8 +32,4 @@ public static class QuestTracker
         {(PhaseNames.LastTemple, "TalePiece3"), false},
     };
 
-
-
-
-
 }

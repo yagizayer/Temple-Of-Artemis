@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3c887bf1878b5c4ca5756ec79b268be, type: 3}
   m_Name: Scuplture
   m_EditorClassIdentifier: 
+  KeyName: NyxFigure
   mesh: {fileID: -7970692908322782736, guid: 9622d15486a48454c8f27901c06d1c86, type: 3}
   Materials:
   - {fileID: -4600259663389162779, guid: 9622d15486a48454c8f27901c06d1c86, type: 3}

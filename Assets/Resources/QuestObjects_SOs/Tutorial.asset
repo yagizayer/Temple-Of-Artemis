@@ -21,6 +21,6 @@ MonoBehaviour:
   ColliderOffset: {x: 0, y: 2, z: 0}
   ColliderScale: {x: 2, y: 5, z: 2}
   ScaleColliderIndependent: 1
-  Name: 
-  QuestNpc: 0
+  Name: AncientColumns
+  QuestNpc: 1
   QuestLines: []

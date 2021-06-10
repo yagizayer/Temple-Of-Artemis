@@ -13,15 +13,23 @@ public class InteractionManagement : MonoBehaviour
     [Header("AfterInteraction")]
     [SerializeField] private GameObject TalkingScreen;
 
-    DialogManagement dialogManagement;
 
+    DialogManagement dialogManagement;
     private List<InteractableIdentifier> _interactables = new List<InteractableIdentifier>();
     private Transform mainCamera;
+
+
+    private bool _hasItem = false;
+    private QuestObject_SO _holdingItem;
+
+
+
+
 
     private void Start()
     {
         mainCamera = Camera.main.transform;
-        dialogManagement = TalkingScreen ? TalkingScreen.GetComponent<DialogManagement>() : null;
+        dialogManagement = FindObjectOfType<DialogManagement>();
     }
 
     private List<InteractableIdentifier> IdentifyInteractables(Vector3 center, float range)
@@ -81,8 +89,27 @@ public class InteractionManagement : MonoBehaviour
                         // TODO : Make Interaction(questSystem)
                         Debug.Log("Interaction Happened");
                         TalkingScreen.SetActive(true);
-                        if(id.interactionType == InteractionType.QuestObject){
-                            
+                        if (id.interactionType == InteractionType.QuestObject && !_hasItem)
+                        {
+                            _hasItem = true;
+                            _holdingItem = id.GetComponent<DisplayQuestObject>().MyQuestObject;
+                        }
+                        if (id.interactionType == InteractionType.Npc)
+                        {
+                            DisplayQuestObject displayQuestObject = id.GetComponent<DisplayQuestObject>();
+                            if (displayQuestObject)
+                            {
+                                // Ancient Columns (specialCase)
+
+                            }
+                            else
+                            {
+                                Npc_SO npc = id.GetComponent<NpcDisplay>().MyNPC;
+                                if (_hasItem)
+                                    dialogManagement.InteractWithNpc(npc.NpcName, _holdingItem);
+                                else
+                                    dialogManagement.InteractWithNpc(npc.NpcName);
+                            }
                         }
                     }
                 }

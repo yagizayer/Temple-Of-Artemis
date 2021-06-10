@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3c887bf1878b5c4ca5756ec79b268be, type: 3}
   m_Name: Sculpture
   m_EditorClassIdentifier: 
+  KeyName: Sculpture
   mesh: {fileID: -5015817520424296360, guid: e20ad1b6b37a21546bc2f3ed61642777, type: 3}
   Materials:
   - {fileID: -4600259663389162779, guid: e20ad1b6b37a21546bc2f3ed61642777, type: 3}

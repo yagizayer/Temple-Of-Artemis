@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3c887bf1878b5c4ca5756ec79b268be, type: 3}
   m_Name: Painting_1
   m_EditorClassIdentifier: 
+  KeyName: PaintingOfAmazons
   mesh: {fileID: 8638719049080605512, guid: 892154015a64e9e42ae8fdb3666e2219, type: 3}
   Materials:
   - {fileID: 2100000, guid: 1c5f9dba45297854fbef41bc296b2070, type: 2}

@@ -7,6 +7,7 @@ using UnityEngine.Serialization;
 public class QuestObject_SO : ScriptableObject
 {
     [Header("Basic Attributes")]
+    public string KeyName;
     [FormerlySerializedAs("Model")]
     public Mesh mesh;
     public Material[] Materials;

@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3c887bf1878b5c4ca5756ec79b268be, type: 3}
   m_Name: Painting_2
   m_EditorClassIdentifier: 
+  KeyName: PaintingOfTreeOfLife
   mesh: {fileID: -6956048135646167668, guid: d356f2d79db0aac4795e5be7c12eab03, type: 3}
   Materials:
   - {fileID: 2100000, guid: df81f22a5aea93c42b1223373332f3f5, type: 2}

@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3c887bf1878b5c4ca5756ec79b268be, type: 3}
   m_Name: Painting_3
   m_EditorClassIdentifier: 
+  KeyName: PaintingOfArtemis
   mesh: {fileID: -6956048135646167668, guid: 49d77a65b00232c43ad6b20c335efc6f, type: 3}
   Materials:
   - {fileID: 2100000, guid: 20b5b03ef023aa94190ddcc0f0934fce, type: 2}

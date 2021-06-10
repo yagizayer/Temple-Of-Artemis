@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3c887bf1878b5c4ca5756ec79b268be, type: 3}
   m_Name: Necklace
   m_EditorClassIdentifier: 
+  KeyName: AmberNecklace
   mesh: {fileID: 1642066607988742572, guid: e1aad1823fe0593488e1cee58f7d00e0, type: 3}
   Materials:
   - {fileID: 4544614639078315466, guid: e1aad1823fe0593488e1cee58f7d00e0, type: 3}

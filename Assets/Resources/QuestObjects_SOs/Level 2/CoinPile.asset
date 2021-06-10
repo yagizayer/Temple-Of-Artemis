@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3c887bf1878b5c4ca5756ec79b268be, type: 3}
   m_Name: CoinPile
   m_EditorClassIdentifier: 
+  KeyName: GoldCoins
   mesh: {fileID: 8968856788876634734, guid: dba25b07160405240b0d1be5c0bec965, type: 3}
   Materials:
   - {fileID: -4342424911767312120, guid: dba25b07160405240b0d1be5c0bec965, type: 3}

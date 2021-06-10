@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3c887bf1878b5c4ca5756ec79b268be, type: 3}
   m_Name: Cloth
   m_EditorClassIdentifier: 
+  KeyName: PieceOfFineClothing
   mesh: {fileID: -8884592712571033611, guid: 8cbcb8ec4a40b9d488815aacbb79b68f, type: 3}
   Materials:
   - {fileID: 8256314533186613319, guid: 8cbcb8ec4a40b9d488815aacbb79b68f, type: 3}

@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3c887bf1878b5c4ca5756ec79b268be, type: 3}
   m_Name: Scroll2
   m_EditorClassIdentifier: 
+  KeyName: TalePiece2
   mesh: {fileID: 7774054858252667537, guid: e18d63518a02e7646bee29825c90483a, type: 3}
   Materials:
   - {fileID: 2565534315720911105, guid: e18d63518a02e7646bee29825c90483a, type: 3}

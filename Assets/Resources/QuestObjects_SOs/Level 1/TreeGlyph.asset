@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3c887bf1878b5c4ca5756ec79b268be, type: 3}
   m_Name: TreeGlyph
   m_EditorClassIdentifier: 
+  KeyName: FigureOfTreeOfLife
   mesh: {fileID: -8301552249313729829, guid: 24434421f9f91b941a1a3e03668f17b9, type: 3}
   Materials:
   - {fileID: 6059251622083746725, guid: 24434421f9f91b941a1a3e03668f17b9, type: 3}

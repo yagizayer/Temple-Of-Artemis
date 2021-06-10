@@ -12,8 +12,8 @@ public class DialogManagement : MonoBehaviour
     private bool _currentlyWriting = false;
     private bool _breakLoop = false;
     private string _currentLine = "";
-    [SerializeField] private Dictionary<PhaseNames, Phase> _storyline = new Dictionary<PhaseNames, Phase>();
-    public Dictionary<PhaseNames, Phase> Storyline => _storyline;
+    private Dictionary<PhaseNames, Phase> _storyline = new Dictionary<PhaseNames, Phase>();
+    public Dictionary<PhaseNames, Phase> Storyline { get => _storyline; set => _storyline = value; }
     void Start()
     {
         SetStoryline();
@@ -68,7 +68,7 @@ public class DialogManagement : MonoBehaviour
                 }),
         };
         findAncientColumns.QuestConversations = tempConversationList;
-        
+
 
         Quest talkToProfessor = new Quest();
         tempConversationList = new List<QuestConversation>(){
@@ -606,9 +606,13 @@ public class DialogManagement : MonoBehaviour
         #endregion LastTemple
     }
 
-    public void InteractWithNpc(QuestObject_SO questObject)
+    public void InteractWithNpc(Npcs npcName, QuestObject_SO questObject = null)
     {
-        // 
+        Debug.Log(GlobalVariables.CurrentPhaseName);
+        Debug.Log(GlobalVariables.CurrentQuestName);
+        Debug.Log(npcName);
+        // TODO : QuestObject Listesi taranıp nesne var mı yok mu kontrol edilecek
+        Debug.Log(Storyline[PhaseNames.EarlyPhase].Quests[QuestNames.GatherInformationAroundTemple].QuestObjects[questObject.KeyName]);
     }
 
     public void NextLineOrExit()
