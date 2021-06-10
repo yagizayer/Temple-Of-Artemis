@@ -20,7 +20,7 @@ MonoBehaviour:
   colliderType: 0
   ColliderOffset: {x: 0, y: 0, z: 0}
   ColliderScale: {x: 1.1, y: 1.1, z: 0.1}
-  ScaleColliderWithMesh: 1
+  ScaleColliderIndependent: 1
   Name: "Amazonlar\u0131n Resmi"
   QuestNpc: 0
   QuestLines:

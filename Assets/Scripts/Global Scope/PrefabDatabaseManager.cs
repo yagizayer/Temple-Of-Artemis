@@ -4,20 +4,28 @@ using UnityEngine;
 
 public class PrefabDatabaseManager : MonoBehaviour
 {
-    public Dictionary<string, GameObject> PrefabDB = new Dictionary<string, GameObject>();
-    [SerializeField] List<GameObject> _prefabObjects = new List<GameObject>();
-    [SerializeField] List<string> _prefabNames = new List<string>();
 
-    private void Start()
+    private Dictionary<string, GameObject> _prefabDB = new Dictionary<string, GameObject>();
+    public Dictionary<string, GameObject> PrefabDB
     {
-        if (_prefabObjects.Count != _prefabNames.Count)
+        get
         {
-            Debug.LogError("Different number of keys and values!");
-            return;
+            if (_prefabObjects.Count != _prefabNames.Count)
+            {
+                Debug.LogError("Different number of keys and values!");
+                return null;
+            }
+            for (int pairNo = 0; pairNo < _prefabObjects.Count; pairNo++)
+            {
+                _prefabDB[_prefabNames[pairNo]] = _prefabObjects[pairNo];
+            }
+            return _prefabDB;
         }
-        for (int pairNo = 0; pairNo < _prefabObjects.Count; pairNo++)
+        private set
         {
-            PrefabDB[_prefabNames[pairNo]] = _prefabObjects[pairNo];
+            _prefabDB = value;
         }
     }
+    [SerializeField] List<GameObject> _prefabObjects = new List<GameObject>();
+    [SerializeField] List<string> _prefabNames = new List<string>();
 }

@@ -24,6 +24,10 @@ public class InteractableIdentifier : MonoBehaviour
         {
             MyUIElement = GameObject.Instantiate(db.PrefabDB["InteractableObjectUI"], transform, false).transform;
         }
+        if (interactionType == InteractionType.QuestObject)
+        {
+            GetComponent<DisplayQuestObject>().SetScaleToDefault(MyUIElement);
+        }
         HideUI();
     }
     public void ShowUI()

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[SelectionBase]
 [RequireComponent(typeof(MeshFilter), typeof(MeshRenderer), typeof(BoxCollider))]
 public class DisplayQuestObject : MonoBehaviour
 {
@@ -32,7 +33,6 @@ public class DisplayQuestObject : MonoBehaviour
         _meshCollider.transform.localPosition = MyQuestObject.ColliderOffset;
         _meshCollider.transform.localScale = MyQuestObject.ColliderScale / (MyQuestObject.ScaleColliderIndependent ? MyQuestObject.Scale : 1);
     }
-
 
     private MeshCollider CreateColliderObject()
     {
@@ -74,6 +74,11 @@ public class DisplayQuestObject : MonoBehaviour
         }
         return ColliderMeshPairs[QuestObject.colliderType];
 
+    }
+
+    public void SetScaleToDefault(Transform child)
+    {
+        child.localScale = child.localScale / MyQuestObject.Scale;
     }
 
 }
