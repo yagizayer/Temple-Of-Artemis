@@ -22,6 +22,8 @@ public class InteractionManagement : MonoBehaviour
     private bool _hasItem = false;
     private QuestObject_SO _holdingItem;
 
+    // TODO : created for debug remove it later
+    public QuestObject_SO test;
 
 
 
@@ -86,14 +88,14 @@ public class InteractionManagement : MonoBehaviour
                 {
                     if (_interactables.Contains(id))
                     {
-                        // TODO : Make Interaction(questSystem)
-                        Debug.Log("Interaction Happened");
-                        TalkingScreen.SetActive(true);
                         if (id.interactionType == InteractionType.QuestObject && !_hasItem)
                         {
                             _hasItem = true;
                             _holdingItem = id.GetComponent<DisplayQuestObject>().MyQuestObject;
                         }
+                        // TODO : created for debug remove it later
+                        _hasItem = true;
+                        _holdingItem = test;
                         if (id.interactionType == InteractionType.Npc)
                         {
                             DisplayQuestObject displayQuestObject = id.GetComponent<DisplayQuestObject>();

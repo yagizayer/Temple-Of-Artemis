@@ -3,17 +3,35 @@ using System.Collections;
 using UnityEngine.UI;
 using UnityEngine;
 
-public class DialogManagement : MonoBehaviour
+public partial class DialogManagement : MonoBehaviour
 {
+
+    #region TalkingScreen Variables
     public GameObject TalkingScreen;
     [SerializeField] private Text Context;
     [SerializeField] private RawImage LeftSprite;
     [SerializeField] private RawImage RightSprite;
+
+    [Header("Character Textures")]
+    [SerializeField] private Texture PlayerTexture;
+    [SerializeField] private Texture ProfTexture;
+    [SerializeField] private Texture ArtTexture;
+    [SerializeField] private Texture MinerTexture;
+
     private bool _currentlyWriting = false;
     private bool _breakLoop = false;
     private string _currentLine = "";
+
+    private ConversationType _conversationType;
+    private QuestConversation _currentConversation;
+    private QuestObject _currentObject;
+    #endregion
+
+    #region Storyline Variables
     private Dictionary<PhaseNames, Phase> _storyline = new Dictionary<PhaseNames, Phase>();
     public Dictionary<PhaseNames, Phase> Storyline { get => _storyline; set => _storyline = value; }
+    #endregion
+
     void Start()
     {
         SetStoryline();
@@ -608,18 +626,50 @@ public class DialogManagement : MonoBehaviour
 
     public void InteractWithNpc(Npcs npcName, QuestObject_SO questObject = null)
     {
-        Debug.Log(GlobalVariables.CurrentPhaseName);
-        Debug.Log(GlobalVariables.CurrentQuestName);
-        Debug.Log(npcName);
-        // TODO : QuestObject Listesi taranıp nesne var mı yok mu kontrol edilecek
-        Debug.Log(Storyline[PhaseNames.EarlyPhase].Quests[QuestNames.GatherInformationAroundTemple].QuestObjects[questObject.KeyName]);
+        _currentConversation = null;
+        _currentObject = null;
+        if (questObject)
+        {
+            Dictionary<string, QuestObject> currentQuestObjects = Storyline[QuestTracker.CurrentPhaseName].Quests[QuestTracker.CurrentQuestName].QuestObjects;
+            foreach (KeyValuePair<string, QuestObject> item in currentQuestObjects)
+            {
+                if (item.Key == questObject.KeyName && item.Value.TargetNpc == npcName)
+                {
+                    SetupTalkingScreen(item.Value);
+                    if (npcName == Npcs.Profesor) RightSprite.texture = ProfTexture;
+                    if (npcName == Npcs.SanatTarihiUzmani) RightSprite.texture = ArtTexture;
+                    if (npcName == Npcs.Jeolog) RightSprite.texture = MinerTexture;
+                }
+            }
+        }
+        else
+        {
+            // TODO : check and show conversation of quest
+        }
+    }
+
+    public void SetupTalkingScreen(QuestObject questObject)
+    {
+        _conversationType = ConversationType.ObjectConversation;
+        _currentObject = questObject;
+        TalkingScreen.SetActive(true);
+        NextLineOrExit();
+    }
+    public void SetupTalkingScreen(QuestConversation questConversation)
+    {
+        _currentConversation = questConversation;
+        TalkingScreen.SetActive(true);
+        NextLineOrExit();
     }
 
     public void NextLineOrExit()
     {
         if (!_currentlyWriting)
         {
-            _currentLine = Storyline[PhaseNames.EarlyPhase].Quests[QuestNames.Tutorial].NextLine;
+            if (_conversationType == ConversationType.ObjectConversation)
+                _currentLine = _currentObject.NextLine;
+            if (_conversationType == ConversationType.QuestConversation)
+                _currentLine = _currentConversation.NextLine;
             if (_currentLine == null)
             {
                 TalkingScreen.SetActive(false);

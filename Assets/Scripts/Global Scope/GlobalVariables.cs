@@ -14,8 +14,6 @@ static public class GlobalVariables
         {Npcs.Jeolog, "Jeolog"},
         {Npcs.Profesor, "Profesör"},
     };
-    public static PhaseNames CurrentPhaseName { get; set; } = PhaseNames.EarlyPhase;
-    public static QuestNames CurrentQuestName { get; set; } = QuestNames.Tutorial;
 
 
 }

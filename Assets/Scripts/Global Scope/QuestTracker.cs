@@ -32,4 +32,6 @@ public static class QuestTracker
         {(PhaseNames.LastTemple, "TalePiece3"), false},
     };
 
+    public static PhaseNames CurrentPhaseName { get; set; } = PhaseNames.EarlyPhase;
+    public static QuestNames CurrentQuestName { get; set; } = QuestNames.GatherInformationAroundTemple;
 }

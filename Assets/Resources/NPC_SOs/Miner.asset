@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Miner
   m_EditorClassIdentifier: 
   prefab: {fileID: 137880279250606332, guid: b9e784a49fbce394fa9361d6b034a5aa, type: 3}
-  npcs: 2
+  NpcName: 2
   startingScale: 1

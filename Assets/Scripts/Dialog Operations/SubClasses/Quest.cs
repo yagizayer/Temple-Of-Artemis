@@ -25,7 +25,7 @@ public class Quest
         {
             if (QuestConversations.Count == 0) return null;
             if (CurrentConversationNo == -1) return QuestConversations[0];
-            if (CurrentConversationNo == QuestConversations.Count) return null;
+            if (CurrentConversationNo >= QuestConversations.Count) return null;
             return QuestConversations[CurrentConversationNo];
         }
         set { _currentConvarsation = value; }
@@ -37,8 +37,7 @@ public class Quest
         get
         {
             if (QuestConversations.Count == 0) return null;
-            if (CurrentConversationNo == -1) return QuestConversations[0];
-            if (CurrentConversationNo + 1 == QuestConversations.Count) return null;
+            if (CurrentConversationNo + 1 >= QuestConversations.Count) return null;
             return QuestConversations[++CurrentConversationNo];
         }
         private set { _nextConversation = value; }

@@ -12,8 +12,12 @@ public class QuestObject
         this.TargetNpc = TargetNpc;
         this.Lines = Lines;
     }
-    public int CurrentLineNo { get; private set; }
-    public string NextLine { get => Lines[CurrentLineNo + 1]; private set => NextLine = value; }
+    public string CurrentLine
+    {
+        get => (CurrentLineNo == -1) ? Lines[++CurrentLineNo] : Lines[CurrentLineNo];
+    }
+    public int CurrentLineNo { get; private set; } = -1;
+    public string NextLine { get => (CurrentLineNo + 1 < Lines.Count) ? Lines[++CurrentLineNo] : null; }
     public string Name { get; set; } = string.Empty;
     public Npcs TargetNpc { get; set; } = Npcs.Profesor;
     public List<string> Lines { get; set; } = new List<string>();
