@@ -23,7 +23,7 @@ MonoBehaviour:
   ColliderScale: {x: 1.1, y: 1.1, z: 0.1}
   ScaleColliderIndependent: 1
   Name: "Amazonlar\u0131n Resmi"
-  QuestNpc: 0
+  QuestNpc: 1
   QuestLines:
   - "Jones! Bu tabloyu nereden buldun bunca zamand\u0131r neredeyse hi\xE7 zarar
     g\xF6rmemi\u015F."

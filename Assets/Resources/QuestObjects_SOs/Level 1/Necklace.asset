@@ -23,7 +23,7 @@ MonoBehaviour:
   ColliderScale: {x: 1, y: 1, z: 1}
   ScaleColliderIndependent: 0
   Name: Kehribar Kolye
-  QuestNpc: 2
+  QuestNpc: 3
   QuestLines:
   - "O elindeki ne \xF6yle Jones?"
   - "Bakal\u0131m... G\xF6r\xFCn\xFC\u015Fe g\xF6re bu bir kolye ucu."

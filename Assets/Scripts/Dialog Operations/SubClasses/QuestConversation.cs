@@ -6,7 +6,7 @@ public class QuestConversation
     {
     }
 
-    public QuestConversation(string Speaker, List<string> Lines)
+    public QuestConversation(Npcs Speaker, List<string> Lines)
     {
         this.Speaker = Speaker;
         this.Lines = Lines;
@@ -20,7 +20,7 @@ public class QuestConversation
     {
         get => (CurrentLineNo + 1 < Lines.Count) ? Lines[++CurrentLineNo] : null;
     }
-    public string Speaker { get; set; } = string.Empty;
+    public Npcs Speaker { get; set; }
     public List<string> Lines { get; set; } = new List<string>();
 
 }

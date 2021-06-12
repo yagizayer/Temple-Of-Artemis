@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3c887bf1878b5c4ca5756ec79b268be, type: 3}
   m_Name: SingleCoin
   m_EditorClassIdentifier: 
+  KeyName: 
   mesh: {fileID: -5216581434543980006, guid: 3d1ab8f1febf32c4a8336c4a070a6861, type: 3}
   Materials:
   - {fileID: -4342424911767312120, guid: 3d1ab8f1febf32c4a8336c4a070a6861, type: 3}
@@ -21,5 +22,5 @@ MonoBehaviour:
   ColliderScale: {x: 0.02, y: 0.002, z: 0.02}
   ScaleColliderIndependent: 0
   Name: 
-  QuestNpc: 0
+  QuestNpc: 1
   QuestLines: []

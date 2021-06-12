@@ -22,7 +22,7 @@ MonoBehaviour:
   ColliderScale: {x: 1, y: 1, z: 1}
   ScaleColliderIndependent: 0
   Name: "Kral\u0131n birinden Bir par\xE7a kuma\u015F"
-  QuestNpc: 1
+  QuestNpc: 2
   QuestLines:
   - "Jones bu buldu\u011Fun kuma\u015F par\xE7as\u0131 d\xF6neminin en kaliteli terzileri
     taraf\u0131ndan \xE7ok pahal\u0131 kuma\u015Flardan yap\u0131lm\u0131\u015F bir

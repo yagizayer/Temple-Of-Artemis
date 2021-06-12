@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Art
   m_EditorClassIdentifier: 
   prefab: {fileID: 6697063886739826061, guid: bd89ead5a98f2024abc20424c1997198, type: 3}
-  NpcName: 0
+  NpcName: 1
   startingScale: 1

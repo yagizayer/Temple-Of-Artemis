@@ -12,6 +12,7 @@ public class InteractionManagement : MonoBehaviour
 
     [Header("AfterInteraction")]
     [SerializeField] private GameObject TalkingScreen;
+    [SerializeField] private GameObject AcquiredQuestObjectProjectionParent;
 
 
     DialogManagement dialogManagement;
@@ -21,9 +22,6 @@ public class InteractionManagement : MonoBehaviour
 
     private bool _hasItem = false;
     private QuestObject_SO _holdingItem;
-
-    // TODO : created for debug remove it later
-    public QuestObject_SO test;
 
 
 
@@ -88,35 +86,58 @@ public class InteractionManagement : MonoBehaviour
                 {
                     if (_interactables.Contains(id))
                     {
-                        if (id.interactionType == InteractionType.QuestObject && !_hasItem)
-                        {
-                            _hasItem = true;
-                            _holdingItem = id.GetComponent<DisplayQuestObject>().MyQuestObject;
-                        }
-                        // TODO : created for debug remove it later
-                        _hasItem = true;
-                        _holdingItem = test;
-                        if (id.interactionType == InteractionType.Npc)
-                        {
-                            DisplayQuestObject displayQuestObject = id.GetComponent<DisplayQuestObject>();
-                            if (displayQuestObject)
-                            {
-                                // Ancient Columns (specialCase)
-
-                            }
-                            else
-                            {
-                                Npc_SO npc = id.GetComponent<NpcDisplay>().MyNPC;
-                                if (_hasItem)
-                                    dialogManagement.InteractWithNpc(npc.NpcName, _holdingItem);
-                                else
-                                    dialogManagement.InteractWithNpc(npc.NpcName);
-                            }
-                        }
+                        HandleInteraction(id);
                     }
                 }
             }
         }
     }
+    private void HandleInteraction(InteractableIdentifier id)
+    {
+        if (id.interactionType == InteractionType.QuestObject && !_hasItem)
+        {
+            // Acquired questItem
+            _hasItem = true;
+            _holdingItem = id.GetComponent<DisplayQuestObject>().MyQuestObject;
+            if (!AcquiredQuestObjectProjectionParent.transform.HasChild())
+            {
+                id.GetComponent<InteractableIdentifier>().MyUIElement.gameObject.SetActive(false);
+                GameObject questObjectSpriter = GameObject.Instantiate(id.gameObject, AcquiredQuestObjectProjectionParent.transform, false);
+                questObjectSpriter.transform.Reset();
+                dialogManagement.InteractWithQuestObject(_holdingItem.QuestNpc);
+                id.gameObject.SetActive(false);
+            }
+        }
+        if (id.interactionType == InteractionType.Npc)
+        {
+            DisplayQuestObject displayQuestObject = id.GetComponent<DisplayQuestObject>();
+            if (displayQuestObject)
+            {
+                // Ancient Columns (specialCase)
+
+            }
+            else
+            {
+                Npc_SO npc = id.GetComponent<NpcDisplay>().MyNPC;
+                if (_hasItem)
+                {
+                    // Item Dialogs
+                    dialogManagement.InteractWithNpc(npc.NpcName, _holdingItem, () =>
+                    {
+                        AcquiredQuestObjectProjectionParent.transform.Clear();
+                        _hasItem = false;
+                        _holdingItem = null;
+                    });
+                }
+                else
+                {
+                    // Quest Dialogs
+                    dialogManagement.InteractWithNpc(npc.NpcName);
+                }
+            }
+        }
+    }
+
+
 
 }

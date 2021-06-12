@@ -23,7 +23,7 @@ MonoBehaviour:
   ColliderScale: {x: 1.1, y: 1.1, z: 0.1}
   ScaleColliderIndependent: 1
   Name: "Hayat A\u011Fac\u0131n\u0131n resmi"
-  QuestNpc: 0
+  QuestNpc: 1
   QuestLines:
   - "Vaovv \u015Fu g\xFCzelli\u011Fe bak. Bu a\u011Fa\xE7 san\u0131r\u0131m eski
     \u015Fiirlere konu olmu\u015F Hayat A\u011Fac\u0131."

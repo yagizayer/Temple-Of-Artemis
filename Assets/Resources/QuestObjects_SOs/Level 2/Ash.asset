@@ -22,7 +22,7 @@ MonoBehaviour:
   ColliderScale: {x: 3, y: 0.02, z: 3}
   ScaleColliderIndependent: 1
   Name: "Yan\u0131k izleri"
-  QuestNpc: 2
+  QuestNpc: 3
   QuestLines:
   - "Evet etrafta dola\u015F\u0131rken baz\u0131 yan\u0131k izleri g\xF6rm\xFC\u015Ft\xFCm.
     \xC7ok eski yan\u0131k izleri olmalar\u0131na ra\u011Fmen solmam\u0131\u015Flard\u0131

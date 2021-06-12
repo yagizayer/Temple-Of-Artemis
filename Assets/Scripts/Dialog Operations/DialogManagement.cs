@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Collections;
+using UnityEngine.Events;
 using UnityEngine.UI;
 using UnityEngine;
 
@@ -17,14 +18,19 @@ public partial class DialogManagement : MonoBehaviour
     [SerializeField] private Texture ProfTexture;
     [SerializeField] private Texture ArtTexture;
     [SerializeField] private Texture MinerTexture;
+    [SerializeField] private Texture BlankTexture;
 
     private bool _currentlyWriting = false;
     private bool _breakLoop = false;
     private string _currentLine = "";
 
+
+
     private ConversationType _conversationType;
     private QuestConversation _currentConversation;
     private QuestObject _currentObject;
+    private string _objectsTargetNpc;
+    private bool _reactedToObject = false;
     #endregion
 
     #region Storyline Variables
@@ -44,23 +50,23 @@ public partial class DialogManagement : MonoBehaviour
 
         Quest tutorial = new Quest();
         List<QuestConversation> tempConversationList = new List<QuestConversation>(){
-            new QuestConversation(GlobalVariables.NpcNames[Npcs.Jeolog],new List<string>(){
+            new QuestConversation(Npcs.Jeolog,new List<string>(){
                 "Daha ne kadar yürümemiz gerek? Güneş beni baymaya başladı."
             }),
-            new QuestConversation(GlobalVariables.NpcNames[Npcs.SanatTarihiUzmani],new List<string>(){
+            new QuestConversation(Npcs.SanatTarihiUzmani,new List<string>(){
                 "Sızlanmayı bırak küçük bebek yerel halk Antik kalıntıların buralarda bir yerde olduğunu söyledi."
             }),
-            new QuestConversation(GlobalVariables.NpcNames[Npcs.Jeolog],new List<string>(){
+            new QuestConversation(Npcs.Jeolog,new List<string>(){
                 "Muhtemelen yine sadece bir kaç eski çanak çömlek için bu kadar yol tepmiş olucaz zaten."
             }),
-            new QuestConversation(GlobalVariables.NpcNames[Npcs.Profesor],new List<string>(){
+            new QuestConversation(Npcs.Profesor,new List<string>(){
                 "Sallanmayı bırakın baksanıza ne kadar güzel her yer yeşillik biraz doğanın keyfini çıkartın.",
                 "Sen ne düşünüyorsun Jones ? Buralara kadar gelmeye değer bir manzarayla karşılaşır mıyız sence?"
             }),
-            new QuestConversation(GlobalVariables.PlayerName,new List<string>(){
+            new QuestConversation(Npcs.Player,new List<string>(){
                 "Yerel halkın bahsettiği kalıntıları bulamasak bile bu doğal çevre buraya gelmeye değer."
             }),
-            new QuestConversation(GlobalVariables.NpcNames[Npcs.Profesor],new List<string>(){
+            new QuestConversation(Npcs.Profesor,new List<string>(){
                 "Sanırım haklısın buranın havası çok güzel. Ama yine de antik zamanlardan bazı kalıntılar bulmak zarar vermezdi."
             }),
         };
@@ -68,20 +74,20 @@ public partial class DialogManagement : MonoBehaviour
 
         Quest findAncientColumns = new Quest();
         tempConversationList = new List<QuestConversation>(){
-            new QuestConversation(GlobalVariables.NpcNames[Npcs.Profesor],new List<string>(){
+            new QuestConversation(Npcs.Profesor,new List<string>(){
                     "Vay anassını neler bulmuşsun Jones."
                 }),
-            new QuestConversation(GlobalVariables.NpcNames[Npcs.Jeolog],new List<string>(){
+            new QuestConversation(Npcs.Jeolog,new List<string>(){
                     "Sanırım çömleklerden fazlası varmış burada.",
                     "Ölçümlerime göre bu sütunlar en az 2000 yıllık."
                 }),
-            new QuestConversation(GlobalVariables.NpcNames[Npcs.SanatTarihiUzmani],new List<string>(){
+            new QuestConversation(Npcs.SanatTarihiUzmani,new List<string>(){
                     "Üzerlerindeki işlemeler çok enteresan dana önce hiç böyle motifler görmemiştim."
                 }),
-            new QuestConversation(GlobalVariables.NpcNames[Npcs.Profesor],new List<string>(){
+            new QuestConversation(Npcs.Profesor,new List<string>(){
                     "Acaba etrafta daha fazlası var mıdır?"
                 }),
-            new QuestConversation(GlobalVariables.PlayerName,new List<string>(){
+            new QuestConversation(Npcs.Player,new List<string>(){
                     "Sanırım bunu arıyorsunuz Profesör."
                 }),
         };
@@ -90,7 +96,7 @@ public partial class DialogManagement : MonoBehaviour
 
         Quest talkToProfessor = new Quest();
         tempConversationList = new List<QuestConversation>(){
-            new QuestConversation(GlobalVariables.NpcNames[Npcs.Profesor],new List<string>(){
+            new QuestConversation(Npcs.Profesor,new List<string>(){
                 "Bu yapının bunca yıl gizli kalmış olmasına inanabiliyor musun?",
                 "Jeoloğun dedine bakacak olursak en az 2000 yıllık bir tapınak kalıntısına bakıyoruz şu an.",
                 "Acaba kim ne zaman yaptı, biraz etrafa bakınalım belki ipucu olabilecek bazı eşyalara rastlarız."
@@ -226,7 +232,7 @@ public partial class DialogManagement : MonoBehaviour
         });
 
         tempConversationList = new List<QuestConversation>(){
-            new QuestConversation(GlobalVariables.NpcNames[Npcs.Profesor],new List<string>(){
+            new QuestConversation(Npcs.Profesor,new List<string>(){
                 "Bu yapının bunca yıl gizli kalmış olmasına inanabiliyor musun?",
                 "Jeoloğun dedine bakacak olursak en az 2000 yıllık bir tapınak kalıntısına bakıyoruz şu an.",
                 "Acaba kim ne zaman yaptı, biraz etrafa bakınalım belki ipucu olabilecek bazı eşyalara rastlarız."
@@ -273,7 +279,7 @@ public partial class DialogManagement : MonoBehaviour
         Phase firstTemple = new Phase();
 
         tempConversationList = new List<QuestConversation>(){
-            new QuestConversation(GlobalVariables.NpcNames[Npcs.Profesor],new List<string>(){
+            new QuestConversation(Npcs.Profesor,new List<string>(){
                 "Demek efsanelerde bahsedilen kayıp artemis tapınağı burasıymış.",
                 "Peki ama sonra ne oldu acaba. Yani milattan önce 7. yüzyıldan bu yana hiç kimse gelmedi mi acaba bu tapınağa?",
                 "Bence bu doğru olamaz ipuçları aramalıyız! Buranın tarihini öğrenmeliyiz!"
@@ -569,7 +575,7 @@ public partial class DialogManagement : MonoBehaviour
         });
 
         tempConversationList = new List<QuestConversation>(){
-            new QuestConversation(GlobalVariables.NpcNames[Npcs.Profesor],new List<string>(){
+            new QuestConversation(Npcs.Profesor,new List<string>(){
                 "Demek \"Herostratik ün\" bu yangını başlatan kişinin adından dolayı çıkmış. ",
                 "Sonra ne oldu acaba? Yani milattan önce 356 yılında Büyük iskender doğduktan sonra buraya hiç yolu düştü mü?",
                 "Peki ya yerel halk? Krallar, tüccarlar, burayı yuva edinen kişiler yıkıldıktan sonra bir daha geri dönmediler mi?",
@@ -624,7 +630,17 @@ public partial class DialogManagement : MonoBehaviour
         #endregion LastTemple
     }
 
-    public void InteractWithNpc(Npcs npcName, QuestObject_SO questObject = null)
+    public void InteractWithQuestObject(Npcs targetNpc)
+    {
+        _reactedToObject = false;
+        _conversationType = ConversationType.ObjectReaction;
+        RightSprite.texture = BlankTexture;
+        TalkingScreen.SetActive(true);
+        _objectsTargetNpc = GlobalVariables.NpcNames[targetNpc];
+        NextLineOrExit();
+    }
+
+    public void InteractWithNpc(Npcs npcName, QuestObject_SO questObject = null, UnityAction callback = null)
     {
         _currentConversation = null;
         _currentObject = null;
@@ -635,16 +651,18 @@ public partial class DialogManagement : MonoBehaviour
             {
                 if (item.Key == questObject.KeyName && item.Value.TargetNpc == npcName)
                 {
+                    // remove Item from canvas
+                    callback();
                     SetupTalkingScreen(item.Value);
-                    if (npcName == Npcs.Profesor) RightSprite.texture = ProfTexture;
-                    if (npcName == Npcs.SanatTarihiUzmani) RightSprite.texture = ArtTexture;
-                    if (npcName == Npcs.Jeolog) RightSprite.texture = MinerTexture;
+                    QuestTracker.questObjectTracker[(QuestTracker.CurrentPhaseName, item.Value.Name)] = true;
+
                 }
             }
         }
         else
         {
-            // TODO : check and show conversation of quest
+            _currentConversation = Storyline[QuestTracker.CurrentPhaseName].Quests[QuestTracker.CurrentQuestName].CurrentConvarsation;
+            SetupTalkingScreen(_currentConversation);
         }
     }
 
@@ -652,12 +670,19 @@ public partial class DialogManagement : MonoBehaviour
     {
         _conversationType = ConversationType.ObjectConversation;
         _currentObject = questObject;
+        if (questObject.TargetNpc == Npcs.Profesor) RightSprite.texture = ProfTexture;
+        if (questObject.TargetNpc == Npcs.SanatTarihiUzmani) RightSprite.texture = ArtTexture;
+        if (questObject.TargetNpc == Npcs.Jeolog) RightSprite.texture = MinerTexture;
         TalkingScreen.SetActive(true);
         NextLineOrExit();
     }
-    public void SetupTalkingScreen(QuestConversation questConversation)
+    private void SetupTalkingScreen(QuestConversation questConversation)
     {
+        _conversationType = ConversationType.QuestConversation;
         _currentConversation = questConversation;
+        if (questConversation.Speaker == Npcs.Profesor) RightSprite.texture = ProfTexture;
+        if (questConversation.Speaker == Npcs.SanatTarihiUzmani) RightSprite.texture = ArtTexture;
+        if (questConversation.Speaker == Npcs.Jeolog) RightSprite.texture = MinerTexture;
         TalkingScreen.SetActive(true);
         NextLineOrExit();
     }
@@ -666,10 +691,7 @@ public partial class DialogManagement : MonoBehaviour
     {
         if (!_currentlyWriting)
         {
-            if (_conversationType == ConversationType.ObjectConversation)
-                _currentLine = _currentObject.NextLine;
-            if (_conversationType == ConversationType.QuestConversation)
-                _currentLine = _currentConversation.NextLine;
+            _currentLine = GetNextLine();
             if (_currentLine == null)
             {
                 TalkingScreen.SetActive(false);
@@ -687,8 +709,39 @@ public partial class DialogManagement : MonoBehaviour
             Context.text = _currentLine;
             _currentlyWriting = false;
         }
-
     }
+    private string GetNextLine()
+    {
+        string result = "";
+        if (_conversationType == ConversationType.ObjectReaction)
+        {
+            if (_reactedToObject) return null;
+            _reactedToObject = true;
+            result = "Hmm bu ilginç Bir eşyaya benziyor. Belki de " + _objectsTargetNpc + " görse iyi olur";
+        }
+        if (_conversationType == ConversationType.ObjectConversation)
+            result = _currentObject.NextLine;
+        if (_conversationType == ConversationType.QuestConversation)
+        {
+            result = _currentConversation.NextLine;
+            if (result == null)
+            {
+                Quest currentQuest = Storyline[QuestTracker.CurrentPhaseName].Quests[QuestTracker.CurrentQuestName];
+                if (currentQuest.QuestConversations.IndexOf(_currentConversation) < currentQuest.QuestConversations.Count - 1)
+                {
+                    _currentConversation = currentQuest.NextConversation;
+                    if (_currentConversation.Speaker == Npcs.Profesor) RightSprite.texture = ProfTexture;
+                    if (_currentConversation.Speaker == Npcs.SanatTarihiUzmani) RightSprite.texture = ArtTexture;
+                    if (_currentConversation.Speaker == Npcs.Jeolog) RightSprite.texture = MinerTexture;
+                    result = _currentConversation.NextLine;
+                }
+            }
+        }
+
+
+        return result;
+    }
+
     // typewriting effect
     IEnumerator CreateEffect(Text context, string text)
     {
@@ -701,6 +754,7 @@ public partial class DialogManagement : MonoBehaviour
             yield return null;
         }
         _currentlyWriting = false;
+
     }
 
 

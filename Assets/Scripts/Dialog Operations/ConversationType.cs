@@ -1,5 +1,6 @@
 public enum ConversationType
 {
     QuestConversation,
-    ObjectConversation
+    ObjectConversation,
+    ObjectReaction
 }

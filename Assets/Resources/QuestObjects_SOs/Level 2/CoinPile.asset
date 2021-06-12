@@ -22,7 +22,7 @@ MonoBehaviour:
   ColliderScale: {x: 0.066, y: 0.014, z: 0.07}
   ScaleColliderIndependent: 0
   Name: "Alt\u0131n Sikkeler"
-  QuestNpc: 2
+  QuestNpc: 3
   QuestLines:
   - "Ah. her zamanki gibi k\xFC\xE7\xFCk ta\u015Flar kayalar bana gelir."
   - "Neden sanat tarihi okumad\u0131m ki sank... Bir saniye bu normal bir ta\u015F

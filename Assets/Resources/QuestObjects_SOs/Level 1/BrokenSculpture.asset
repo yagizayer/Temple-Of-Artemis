@@ -22,7 +22,7 @@ MonoBehaviour:
   ColliderScale: {x: 0.7, y: 0.7, z: 0.7}
   ScaleColliderIndependent: 0
   Name: "K\u0131r\u0131k Heykelcik"
-  QuestNpc: 2
+  QuestNpc: 3
   QuestLines:
   - "Vay can\u0131na. Ne kadar da iyi muhafaza edilmi\u015F bir heykel bu b\xF6yle."
   - "Bakal\u0131m ka\xE7 ya\u015F\u0131ndaym\u0131\u015Fs\u0131n sen..."

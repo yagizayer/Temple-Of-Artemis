@@ -24,7 +24,7 @@ MonoBehaviour:
   ScaleColliderIndependent: 1
   Name: "Bereket tanr\u0131\xE7as\u0131 Artemisin, bir do\u011Fuma yard\u0131m edi\u015Finin
     tablosu"
-  QuestNpc: 0
+  QuestNpc: 1
   QuestLines:
   - "Bu da ne b\xF6yle? Daha \xF6nce hi\xE7 g\xF6rmedi\u011Fim bir sanat jenerasyonunda
     yap\u0131lm\u0131\u015Fa benziyor."

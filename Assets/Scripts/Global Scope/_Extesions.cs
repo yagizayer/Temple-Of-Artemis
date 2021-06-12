@@ -15,6 +15,28 @@ public static class _Extesions
         }
         return transform;
     }
+    public static bool HasChild(this Transform transform)
+    {
+        foreach (Transform child in transform)
+            return true;
+        return false;
+    }
+    public static void Reset(this Transform transform)
+    {
+        transform.localPosition = Vector3.zero;
+        transform.localRotation = Quaternion.identity;
+        transform.localScale = Vector3.one;
+    }
+    public static void Reset(this RectTransform transform)
+    {
+        transform.localPosition = Vector3.zero;
+        transform.localRotation = Quaternion.identity;
+        transform.localScale = Vector3.one;
+        transform.anchorMin = Vector2.zero;
+        transform.anchorMax = Vector2.one;
+        transform.sizeDelta = Vector2.zero;
+        transform.rect.Set(0, 0, 100, 100);
+    }
     public static Dictionary<T1, T2> AddRange<T1, T2>(this Dictionary<T1, T2> me, Dictionary<T1, T2> other)
     {
         foreach (KeyValuePair<T1, T2> item in other)
@@ -36,6 +58,6 @@ public static class _Extesions
         }
         return null;
     }
-    
+
 
 }

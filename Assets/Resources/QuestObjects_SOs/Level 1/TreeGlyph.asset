@@ -23,7 +23,7 @@ MonoBehaviour:
   ColliderScale: {x: 0.5, y: 0.1, z: 0.5}
   ScaleColliderIndependent: 0
   Name: "Hayat a\u011Fac\u0131 Kabartmas\u0131"
-  QuestNpc: 1
+  QuestNpc: 2
   QuestLines:
   - "Evet... \xC7ok ilgin\xE7..."
   - "Antik zamanlardan kalma Hayat a\u011Fac\u0131 inanc\u0131n\u0131 tasfir eden

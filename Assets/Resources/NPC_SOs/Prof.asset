@@ -13,7 +13,5 @@ MonoBehaviour:
   m_Name: Prof
   m_EditorClassIdentifier: 
   prefab: {fileID: 3617363553136737234, guid: a5071967ba1d13443b618cdf8e8a8d9b, type: 3}
-  name: Prof
-  startingPosition: {x: 0, y: 0, z: 0}
-  startingRotation: {x: 0, y: 0.8870109, z: 0, w: 0.4617486}
+  NpcName: 2
   startingScale: 1

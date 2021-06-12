@@ -22,7 +22,7 @@ MonoBehaviour:
   ColliderScale: {x: 0.5, y: 0.5, z: 0.5}
   ScaleColliderIndependent: 1
   Name: "Nyx Fig\xFCr\xFC"
-  QuestNpc: 2
+  QuestNpc: 3
   QuestLines:
   - Hah bir heykel daha.
   - "Alt taraf\u0131nda imzaya benzer bir\u015Fey var sanki."

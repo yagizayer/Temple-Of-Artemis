@@ -22,7 +22,7 @@ MonoBehaviour:
   ColliderScale: {x: 3, y: 3, z: 3}
   ScaleColliderIndependent: 0
   Name: Heykel
-  QuestNpc: 0
+  QuestNpc: 1
   QuestLines:
   - Demek bir heykel daha buldun Jones.
   - "Bu t\xFCr heykellerinin yap\u0131lmas\u0131 ve tap\u0131naklara b\u0131rak\u0131lmas\u0131
