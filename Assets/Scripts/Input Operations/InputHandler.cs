@@ -55,11 +55,5 @@ public class InputHandler : MonoBehaviour
 
     void Sandbox(InputAction.CallbackContext context)
     {
-        DialogManagement DM = FindObjectOfType<DialogManagement>();
-
-        string absouluteNextLine = DM.Storyline[PhaseNames.EarlyPhase].Quests[QuestNames.Tutorial].CurrentConvarsation.NextLine;
-        if (absouluteNextLine == null) absouluteNextLine = DM.Storyline[PhaseNames.EarlyPhase].Quests[QuestNames.Tutorial].NextConversation?.NextLine;
-
-        Debug.Log(absouluteNextLine);
     }
 }

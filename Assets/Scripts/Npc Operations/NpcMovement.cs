@@ -23,6 +23,7 @@ public class NpcMovement : MonoBehaviour
     // Accessable variables
     public Queue<Transform> TargetQueue => targetQueue;
     public bool IsMoving => isMoving;
+
     private void Start()
     {
         if (navMeshAgent == null) navMeshAgent = transform.GetComponent<NavMeshAgent>();
@@ -92,7 +93,6 @@ public class NpcMovement : MonoBehaviour
             targetQueue.Enqueue(item);
         }
     }
-
 
     public void MoveNextPosition()
     {

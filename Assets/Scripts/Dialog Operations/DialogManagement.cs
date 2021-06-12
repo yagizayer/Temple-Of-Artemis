@@ -41,6 +41,7 @@ public partial class DialogManagement : MonoBehaviour
     void Start()
     {
         SetStoryline();
+        InteractWithNpc();
     }
     void SetStoryline()
     {
@@ -640,11 +641,11 @@ public partial class DialogManagement : MonoBehaviour
         NextLineOrExit();
     }
 
-    public void InteractWithNpc(Npcs npcName, QuestObject_SO questObject = null, UnityAction callback = null)
+    public void InteractWithNpc(Npcs npcName = Npcs.Player, QuestObject_SO questObject = null, UnityAction callback = null)
     {
         _currentConversation = null;
         _currentObject = null;
-        if (questObject)
+        if (questObject != null && npcName != Npcs.Player)
         {
             Dictionary<string, QuestObject> currentQuestObjects = Storyline[QuestTracker.CurrentPhaseName].Quests[QuestTracker.CurrentQuestName].QuestObjects;
             foreach (KeyValuePair<string, QuestObject> item in currentQuestObjects)
@@ -655,7 +656,6 @@ public partial class DialogManagement : MonoBehaviour
                     callback();
                     SetupTalkingScreen(item.Value);
                     QuestTracker.questObjectTracker[(QuestTracker.CurrentPhaseName, item.Value.Name)] = true;
-
                 }
             }
         }
@@ -665,7 +665,6 @@ public partial class DialogManagement : MonoBehaviour
             SetupTalkingScreen(_currentConversation);
         }
     }
-
     public void SetupTalkingScreen(QuestObject questObject)
     {
         _conversationType = ConversationType.ObjectConversation;

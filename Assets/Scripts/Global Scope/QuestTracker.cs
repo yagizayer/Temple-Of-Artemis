@@ -33,5 +33,6 @@ public static class QuestTracker
     };
 
     public static PhaseNames CurrentPhaseName { get; set; } = PhaseNames.EarlyPhase;
-    public static QuestNames CurrentQuestName { get; set; } = QuestNames.GatherInformationAroundTemple;
+    public static QuestNames CurrentQuestName { get; set; } = QuestNames.Tutorial;
+
 }

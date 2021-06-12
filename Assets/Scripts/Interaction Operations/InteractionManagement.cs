@@ -23,9 +23,6 @@ public class InteractionManagement : MonoBehaviour
     private bool _hasItem = false;
     private QuestObject_SO _holdingItem;
 
-
-
-
     private void Start()
     {
         mainCamera = Camera.main.transform;
@@ -66,13 +63,11 @@ public class InteractionManagement : MonoBehaviour
             if (!item.isMyUIElementActive) item.ShowUI();
         }
     }
-
     private void FixedUpdate()
     {
         _interactables = IdentifyInteractables(transform.position, InteractionRange);
         RotateUI(_interactables);
     }
-
     public void GetInteraction(float cursorPosx, float cursorPosy)
     {
         Vector2 cursorPos = new Vector2(cursorPosx, cursorPosy);
