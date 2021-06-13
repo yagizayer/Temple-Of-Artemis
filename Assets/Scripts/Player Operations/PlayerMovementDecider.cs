@@ -35,10 +35,10 @@ public partial class PlayerMovementDecider : MonoBehaviour
 
     private void FixedUpdate()
     {
-        // TODO : BURDA KALDIN. NpcMovement kapalı olmasına rağmen belirlenmiş hedefe gidiyor
-        //                      her fixedupdate call'ında 41. satır çalışıyor
-
-        if (!_npcMovement.IsMoving && _canBeChecked) MyMovementType = MovementType.ControlledMove;
+        if (!_npcMovement.IsMoving && _canBeChecked) {
+            MyMovementType = MovementType.ControlledMove;
+            _canBeChecked = false;
+        }
         if (MyMovementType == MovementType.AutoMove && _movementTypeChanged)
         {
             _complexMove.enabled = false;
@@ -50,9 +50,9 @@ public partial class PlayerMovementDecider : MonoBehaviour
         {
             Debug.Log(_movementTypeChanged);
             _npcMovement.enabled = false;
+            _npcMovement.TargetQueue.Clear();
             _complexMove.enabled = true;
             _movementTypeChanged = false;
-
         }
     }
 }

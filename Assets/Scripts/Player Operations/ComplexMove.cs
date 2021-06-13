@@ -32,7 +32,7 @@ public class ComplexMove : MonoBehaviour
 
     void MoveCharacterWithNavmesh()
     {
-        
+
         Vector3 rawMoveDir = Vector3.forward * vertical + Vector3.right * horizontal;
 
         Vector3 cameraForwardNormalized = Vector3.ProjectOnPlane(currentCamera.forward, Vector3.up);

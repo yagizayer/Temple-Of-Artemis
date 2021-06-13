@@ -24,6 +24,10 @@ public class NpcMovement : MonoBehaviour
     public Queue<Transform> TargetQueue => targetQueue;
     public bool IsMoving => isMoving;
 
+    private void OnDisable() {
+        navMeshAgent.ResetPath();
+    }
+
     private void Start()
     {
         if (navMeshAgent == null) navMeshAgent = transform.GetComponent<NavMeshAgent>();
