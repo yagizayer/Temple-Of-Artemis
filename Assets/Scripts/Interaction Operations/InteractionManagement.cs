@@ -23,6 +23,9 @@ public class InteractionManagement : MonoBehaviour
     private bool _hasItem = false;
     private QuestObject_SO _holdingItem;
 
+
+    private bool _interactecWithColumns = false;
+
     private void Start()
     {
         mainCamera = Camera.main.transform;
@@ -109,9 +112,8 @@ public class InteractionManagement : MonoBehaviour
             if (displayQuestObject)
             {
                 // Ancient Columns (specialCase)
-                Debug.Log(QuestTracker.CurrentQuestName);
                 dialogManagement.InteractWithNpc();
-                Debug.Log(QuestTracker.CurrentQuestName);
+                _interactecWithColumns = true;
             }
             else
             {
@@ -119,14 +121,16 @@ public class InteractionManagement : MonoBehaviour
                 if (_hasItem)
                 {
                     // Item Dialogs
+                    QuestTracker.questObjectTracker[(QuestTracker.CurrentPhaseName, _holdingItem.KeyName)] = true;
                     dialogManagement.InteractWithNpc(npc.NpcName, _holdingItem, () =>
                     {
                         AcquiredQuestObjectProjectionParent.transform.Clear();
                         _hasItem = false;
                         _holdingItem = null;
                     });
+
                 }
-                else
+                else if (_interactecWithColumns)
                 {
                     // Quest Dialogs
                     dialogManagement.InteractWithNpc(npc.NpcName);

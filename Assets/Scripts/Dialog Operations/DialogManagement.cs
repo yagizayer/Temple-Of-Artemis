@@ -38,6 +38,13 @@ public partial class DialogManagement : MonoBehaviour
     public Dictionary<PhaseNames, Phase> Storyline { get => _storyline; set => _storyline = value; }
     #endregion
 
+    #region OtherVariables
+    [Header("Others")]
+    [SerializeField] private TemplesAndQuestObjectsManagement TAQM;
+    [SerializeField] private List<NpcMovement> npcMovements;
+    #endregion
+
+
     void Start()
     {
         SetStoryline();
@@ -691,6 +698,19 @@ public partial class DialogManagement : MonoBehaviour
             {
                 TalkingScreen.SetActive(false);
                 QuestTracker.NextQuest();
+                Debug.Log(QuestTracker.CurrentPhaseName);
+                Debug.Log(QuestTracker.CurrentQuestName);
+                Debug.Log("-----------");
+                if (QuestTracker.CurrentQuestName == QuestNames.TalkToProfessor)
+                {
+                    foreach (NpcMovement item in npcMovements)
+                    {
+                        item.MoveNextPosition();
+                    }
+                    TAQM.ShowCurrentTemple();
+                }
+                if (QuestTracker.CurrentPhaseName == PhaseNames.FirstTemple) TAQM.ShowCurrentTemple();
+                if (QuestTracker.CurrentPhaseName == PhaseNames.LastTemple) TAQM.ShowCurrentTemple();
             }
             else
             {
@@ -715,8 +735,9 @@ public partial class DialogManagement : MonoBehaviour
             _reactedToObject = true;
             result = "Hmm bu ilginç Bir eşyaya benziyor. Belki de " + _objectsTargetNpc + " görse iyi olur";
         }
-        if (_conversationType == ConversationType.ObjectConversation)
+        if (_conversationType == ConversationType.ObjectConversation){
             result = _currentObject.NextLine;
+        }
         if (_conversationType == ConversationType.QuestConversation)
         {
             result = _currentConversation.NextLine;
@@ -730,6 +751,7 @@ public partial class DialogManagement : MonoBehaviour
                     if (_currentConversation.Speaker == Npcs.SanatTarihiUzmani) RightSprite.texture = ArtTexture;
                     if (_currentConversation.Speaker == Npcs.Jeolog) RightSprite.texture = MinerTexture;
                     result = _currentConversation.NextLine;
+
                 }
             }
         }
