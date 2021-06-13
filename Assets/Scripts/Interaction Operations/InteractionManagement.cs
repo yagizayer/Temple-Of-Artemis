@@ -109,7 +109,9 @@ public class InteractionManagement : MonoBehaviour
             if (displayQuestObject)
             {
                 // Ancient Columns (specialCase)
-
+                Debug.Log(QuestTracker.CurrentQuestName);
+                dialogManagement.InteractWithNpc();
+                Debug.Log(QuestTracker.CurrentQuestName);
             }
             else
             {

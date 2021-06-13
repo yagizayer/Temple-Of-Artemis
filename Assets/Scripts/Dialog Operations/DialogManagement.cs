@@ -87,10 +87,7 @@ public partial class DialogManagement : MonoBehaviour
                 }),
             new QuestConversation(Npcs.Profesor,new List<string>(){
                     "Acaba etrafta daha fazlası var mıdır?"
-                }),
-            new QuestConversation(Npcs.Player,new List<string>(){
-                    "Sanırım bunu arıyorsunuz Profesör."
-                }),
+                })
         };
         findAncientColumns.QuestConversations = tempConversationList;
 
@@ -685,7 +682,6 @@ public partial class DialogManagement : MonoBehaviour
         TalkingScreen.SetActive(true);
         NextLineOrExit();
     }
-
     public void NextLineOrExit()
     {
         if (!_currentlyWriting)
@@ -694,6 +690,7 @@ public partial class DialogManagement : MonoBehaviour
             if (_currentLine == null)
             {
                 TalkingScreen.SetActive(false);
+                QuestTracker.NextQuest();
             }
             else
             {
@@ -755,6 +752,4 @@ public partial class DialogManagement : MonoBehaviour
         _currentlyWriting = false;
 
     }
-
-
 }

@@ -35,4 +35,39 @@ public static class QuestTracker
     public static PhaseNames CurrentPhaseName { get; set; } = PhaseNames.EarlyPhase;
     public static QuestNames CurrentQuestName { get; set; } = QuestNames.Tutorial;
 
+    public static void NextQuest()
+    {
+        if (CurrentQuestName == QuestNames.GatherInformationAroundTemple) CurrentPhaseCheck();
+        if (CurrentQuestName == QuestNames.TalkToProfessor) CurrentQuestName = QuestNames.GatherInformationAroundTemple;
+        if (CurrentQuestName == QuestNames.FindAncientColumns) CurrentQuestName = QuestNames.TalkToProfessor;
+        if (CurrentQuestName == QuestNames.Tutorial) CurrentQuestName = QuestNames.FindAncientColumns;
+    }
+    private static void NextPhase()
+    {
+        if (CurrentPhaseName == PhaseNames.EarlyPhase) CurrentPhaseName = PhaseNames.FirstTemple;
+        if (CurrentPhaseName == PhaseNames.FirstTemple) CurrentPhaseName = PhaseNames.LastTemple;
+
+    }
+
+    public static bool CurrentPhaseCheck()
+    {
+        bool phaseCompleted = false;
+        foreach (KeyValuePair<(PhaseNames, string), bool> questObject in questObjectTracker)
+        {
+            if (questObject.Key.Item1 == CurrentPhaseName)
+            {
+                if (!questObject.Value)
+                {
+                    phaseCompleted = false;
+                    break;
+                }
+                else
+                {
+                    phaseCompleted = true;
+                }
+            }
+        }
+        return phaseCompleted;
+    }
+
 }
