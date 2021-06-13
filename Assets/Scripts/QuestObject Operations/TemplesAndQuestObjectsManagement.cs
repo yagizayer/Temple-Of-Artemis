@@ -20,6 +20,7 @@ public class TemplesAndQuestObjectsManagement : MonoBehaviour
 
     public void ShowCurrentTemple(bool LastTemple = false)
     {
+        HideEverything();
         if (QuestTracker.CurrentPhaseName == PhaseNames.EarlyPhase)
         {
             Temple_0.SetActive(true);
@@ -48,6 +49,7 @@ public class TemplesAndQuestObjectsManagement : MonoBehaviour
         {
             Temple_3.SetActive(true);
         }
+        HideInteractedItems();
     }
     private void HideEverything()
     {
@@ -61,7 +63,27 @@ public class TemplesAndQuestObjectsManagement : MonoBehaviour
             item.SetActive(false);
         foreach (GameObject item in Level_3)
             item.SetActive(false);
+    }
 
+    private void HideInteractedItems()
+    {
+        List<GameObject> currentQuestObjects = new List<GameObject>();
+        if (QuestTracker.CurrentPhaseName == PhaseNames.EarlyPhase) currentQuestObjects = Level_1;
+        if (QuestTracker.CurrentPhaseName == PhaseNames.FirstTemple) currentQuestObjects = Level_2;
+        if (QuestTracker.CurrentPhaseName == PhaseNames.LastTemple) currentQuestObjects = Level_3;
+        foreach (KeyValuePair<(PhaseNames, string), bool> questObject in QuestTracker.questObjectTracker)
+        {
+            if (questObject.Key.Item1 == QuestTracker.CurrentPhaseName)
+            {
+                foreach (GameObject item in currentQuestObjects)
+                {
+                    if (item.GetComponent<DisplayQuestObject>().MyQuestObject.KeyName == questObject.Key.Item2)
+                    {
+                        item.SetActive(!questObject.Value);
+                    }
+                }
+            }
+        }
     }
 
 }

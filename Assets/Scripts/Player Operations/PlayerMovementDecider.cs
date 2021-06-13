@@ -48,7 +48,6 @@ public partial class PlayerMovementDecider : MonoBehaviour
         }
         if (MyMovementType == MovementType.ControlledMove && _movementTypeChanged)
         {
-            Debug.Log(_movementTypeChanged);
             _npcMovement.enabled = false;
             _npcMovement.TargetQueue.Clear();
             _complexMove.enabled = true;

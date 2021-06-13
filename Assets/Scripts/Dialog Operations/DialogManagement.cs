@@ -42,6 +42,9 @@ public partial class DialogManagement : MonoBehaviour
     [Header("Others")]
     [SerializeField] private TemplesAndQuestObjectsManagement TAQM;
     [SerializeField] private List<NpcMovement> npcMovements;
+
+    private bool _templeChanged = false;
+    private PhaseNames _lastKnownTemple = PhaseNames.EarlyPhase;
     #endregion
 
 
@@ -698,9 +701,6 @@ public partial class DialogManagement : MonoBehaviour
             {
                 TalkingScreen.SetActive(false);
                 QuestTracker.NextQuest();
-                Debug.Log(QuestTracker.CurrentPhaseName);
-                Debug.Log(QuestTracker.CurrentQuestName);
-                Debug.Log("-----------");
                 if (QuestTracker.CurrentQuestName == QuestNames.TalkToProfessor)
                 {
                     foreach (NpcMovement item in npcMovements)
@@ -709,8 +709,13 @@ public partial class DialogManagement : MonoBehaviour
                     }
                     TAQM.ShowCurrentTemple();
                 }
-                if (QuestTracker.CurrentPhaseName == PhaseNames.FirstTemple) TAQM.ShowCurrentTemple();
-                if (QuestTracker.CurrentPhaseName == PhaseNames.LastTemple) TAQM.ShowCurrentTemple();
+                if (QuestTracker.CurrentPhaseName != _lastKnownTemple) _templeChanged = true;
+                if (_templeChanged)
+                {
+                    TAQM.ShowCurrentTemple();
+                    _templeChanged = false;
+                    _lastKnownTemple = QuestTracker.CurrentPhaseName;
+                }
             }
             else
             {
@@ -735,7 +740,8 @@ public partial class DialogManagement : MonoBehaviour
             _reactedToObject = true;
             result = "Hmm bu ilginç Bir eşyaya benziyor. Belki de " + _objectsTargetNpc + " görse iyi olur";
         }
-        if (_conversationType == ConversationType.ObjectConversation){
+        if (_conversationType == ConversationType.ObjectConversation)
+        {
             result = _currentObject.NextLine;
         }
         if (_conversationType == ConversationType.QuestConversation)
