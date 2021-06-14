@@ -25,9 +25,13 @@ public class InteractionManagement : MonoBehaviour
 
 
     private bool _interactecWithColumns = false;
+    private PrefabDatabaseManager _db;
+    private DrawQuestTargetPath _pathCreator;
 
     private void Start()
     {
+        if (_pathCreator == null) _pathCreator = FindObjectOfType<DrawQuestTargetPath>();
+        if (_db == null) _db = FindObjectOfType<PrefabDatabaseManager>();
         mainCamera = Camera.main.transform;
         dialogManagement = FindObjectOfType<DialogManagement>();
     }
@@ -97,6 +101,7 @@ public class InteractionManagement : MonoBehaviour
             // Acquired questItem
             _hasItem = true;
             _holdingItem = id.GetComponent<DisplayQuestObject>().MyQuestObject;
+            _pathCreator.Target = _db.PrefabDB[_holdingItem.QuestNpc.ToString()].transform;
             if (!AcquiredQuestObjectProjectionParent.transform.HasChild())
             {
                 id.GetComponent<InteractableIdentifier>().MyUIElement.gameObject.SetActive(false);
@@ -126,12 +131,14 @@ public class InteractionManagement : MonoBehaviour
                         _hasItem = false;
                         _holdingItem = null;
                     });
+                    _pathCreator.DrawingLine = false;
 
                 }
                 else if (_interactecWithColumns)
                 {
                     // Quest Dialogs
                     dialogManagement.InteractWithNpc(npc.NpcName);
+                    _pathCreator.DrawingLine = false;
                 }
             }
             else
@@ -141,6 +148,7 @@ public class InteractionManagement : MonoBehaviour
                     // Ancient Columns (specialCase)
                     dialogManagement.InteractWithNpc();
                     _interactecWithColumns = true;
+                    _pathCreator.Target = _db.PrefabDB["Profesor"].transform;
                 }
             }
         }

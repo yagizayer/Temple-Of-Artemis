@@ -36,7 +36,7 @@ public class DrawQuestTargetPath : MonoBehaviour
     {
         NavMeshPath path = new NavMeshPath();
         Vector3 targetPos = target.Modify(Vector3Values.Y, transform.position.y);
-        if ((targetPos - transform.position).sqrMagnitude < 100) DrawingLine = false;
+        // if ((targetPos - transform.position).sqrMagnitude < 100) DrawingLine = false;
 
         
         _navMeshAgent.CalculatePath(targetPos, path);
@@ -53,7 +53,10 @@ public class DrawQuestTargetPath : MonoBehaviour
     {
         if (DrawingLine)
         {
+            _line.enabled = true;
             DrawPathToTarget(Target.position);
+        }else{
+            _line.enabled = false;
         }
     }
 }

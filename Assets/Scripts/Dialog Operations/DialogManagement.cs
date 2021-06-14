@@ -646,6 +646,7 @@ public partial class DialogManagement : MonoBehaviour
         TalkingScreen.SetActive(true);
         _objectsTargetNpc = GlobalVariables.NpcNames[targetNpc];
         NextLineOrExit();
+
     }
 
     public void InteractWithNpc(Npcs npcName = Npcs.Player, QuestObject_SO questObject = null, UnityAction callback = null)
