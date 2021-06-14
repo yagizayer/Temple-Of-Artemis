@@ -1,8 +1,47 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 
+public enum Vector3Values
+{
+    X, Y, Z, XY, XZ, YZ, XYZ
+}
+
 public static class _Extesions
 {
+    public static Vector3 Modify(this Vector3 oldValues, Vector3Values axis, float newValue)
+    {
+        switch (axis)
+        {
+            case Vector3Values.X:
+                return new Vector3(newValue, oldValues.y, oldValues.z);
+            case Vector3Values.Y:
+                return new Vector3(oldValues.x, newValue, oldValues.z);
+            case Vector3Values.Z:
+                return new Vector3(oldValues.x, oldValues.y, newValue);
+        }
+        return oldValues;
+    }
+    public static Vector3 Modify(this Vector3 oldValues, Vector3Values axis, Vector3 newValues)
+    {
+        switch (axis)
+        {
+            case Vector3Values.X:
+                return new Vector3(newValues.x, oldValues.y, oldValues.z);
+            case Vector3Values.Y:
+                return new Vector3(oldValues.x, newValues.y, oldValues.z);
+            case Vector3Values.Z:
+                return new Vector3(oldValues.x, oldValues.y, newValues.z);
+            case Vector3Values.XY:
+                return new Vector3(newValues.x, newValues.y, oldValues.z);
+            case Vector3Values.XZ:
+                return new Vector3(newValues.x, oldValues.y, newValues.z);
+            case Vector3Values.YZ:
+                return new Vector3(oldValues.x, newValues.y, newValues.z);
+            case Vector3Values.XYZ:
+                return newValues;
+        }
+        return oldValues;
+    }
     public static Vector3 toVector3(this Vector2 vector2)
     {
         return new Vector3(vector2.x, vector2.y, 0);
