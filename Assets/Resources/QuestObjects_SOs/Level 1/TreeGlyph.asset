@@ -17,6 +17,7 @@ MonoBehaviour:
   Materials:
   - {fileID: 6059251622083746725, guid: 24434421f9f91b941a1a3e03668f17b9, type: 3}
   - {fileID: -4600259663389162779, guid: 24434421f9f91b941a1a3e03668f17b9, type: 3}
+  RotateEulers: {x: 90, y: 180, z: 0}
   Scale: 3
   colliderType: 0
   ColliderOffset: {x: 0, y: 0, z: 0}

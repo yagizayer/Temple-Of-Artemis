@@ -11,6 +11,7 @@ public class QuestObject_SO : ScriptableObject
     [FormerlySerializedAs("Model")]
     public Mesh mesh;
     public Material[] Materials;
+    public Vector3 RotateEulers = Vector3.zero;
     [Range(.001f, 100f)] public float Scale = 1;
     public ColliderType colliderType = ColliderType.Cube;
     public Vector3 ColliderOffset = Vector3.zero;

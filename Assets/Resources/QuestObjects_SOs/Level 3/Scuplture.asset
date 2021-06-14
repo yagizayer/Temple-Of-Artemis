@@ -16,6 +16,7 @@ MonoBehaviour:
   mesh: {fileID: -7970692908322782736, guid: 9622d15486a48454c8f27901c06d1c86, type: 3}
   Materials:
   - {fileID: -4600259663389162779, guid: 9622d15486a48454c8f27901c06d1c86, type: 3}
+  RotateEulers: {x: 0, y: 0, z: 180}
   Scale: 50
   colliderType: 4
   ColliderOffset: {x: 0, y: 0, z: 0}

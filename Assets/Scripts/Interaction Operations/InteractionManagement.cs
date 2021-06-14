@@ -100,8 +100,12 @@ public class InteractionManagement : MonoBehaviour
             if (!AcquiredQuestObjectProjectionParent.transform.HasChild())
             {
                 id.GetComponent<InteractableIdentifier>().MyUIElement.gameObject.SetActive(false);
+
                 GameObject questObjectSpriter = GameObject.Instantiate(id.gameObject, AcquiredQuestObjectProjectionParent.transform, false);
                 questObjectSpriter.transform.Reset();
+
+                questObjectSpriter.transform.Rotate(_holdingItem.RotateEulers);
+
                 dialogManagement.InteractWithQuestObject(_holdingItem.QuestNpc);
                 id.gameObject.SetActive(false);
             }
@@ -109,13 +113,7 @@ public class InteractionManagement : MonoBehaviour
         if (id.interactionType == InteractionType.Npc)
         {
             DisplayQuestObject displayQuestObject = id.GetComponent<DisplayQuestObject>();
-            if (displayQuestObject)
-            {
-                // Ancient Columns (specialCase)
-                dialogManagement.InteractWithNpc();
-                _interactecWithColumns = true;
-            }
-            else
+            if (!displayQuestObject)
             {
                 Npc_SO npc = id.GetComponent<NpcDisplay>().MyNPC;
                 if (_hasItem)
@@ -134,6 +132,15 @@ public class InteractionManagement : MonoBehaviour
                 {
                     // Quest Dialogs
                     dialogManagement.InteractWithNpc(npc.NpcName);
+                }
+            }
+            else
+            {
+                if (!_interactecWithColumns)
+                {
+                    // Ancient Columns (specialCase)
+                    dialogManagement.InteractWithNpc();
+                    _interactecWithColumns = true;
                 }
             }
         }
