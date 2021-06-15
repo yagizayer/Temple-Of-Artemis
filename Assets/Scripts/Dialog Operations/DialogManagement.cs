@@ -40,16 +40,15 @@ public partial class DialogManagement : MonoBehaviour
 
     #region OtherVariables
     [Header("Others")]
-    [SerializeField] private TemplesAndQuestObjectsManagement TAQM;
     [SerializeField] private List<NpcMovement> npcMovements;
 
-    private bool _templeChanged = false;
-    private PhaseNames _lastKnownTemple = PhaseNames.EarlyPhase;
+    private TemplesAndQuestObjectsManagement TAQM;
     #endregion
 
 
     void Start()
     {
+        TAQM = FindObjectOfType<TemplesAndQuestObjectsManagement>();
         SetStoryline();
         InteractWithNpc();
     }
@@ -709,13 +708,6 @@ public partial class DialogManagement : MonoBehaviour
                         item.MoveNextPosition();
                     }
                     TAQM.ShowCurrentTemple();
-                }
-                if (QuestTracker.CurrentPhaseName != _lastKnownTemple) _templeChanged = true;
-                if (_templeChanged)
-                {
-                    TAQM.ShowCurrentTemple();
-                    _templeChanged = false;
-                    _lastKnownTemple = QuestTracker.CurrentPhaseName;
                 }
             }
             else
