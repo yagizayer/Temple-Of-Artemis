@@ -2,5 +2,6 @@ public enum PhaseNames
 {
     EarlyPhase, 
     FirstTemple, 
-    LastTemple
+    LastTemple,
+    EndPhase,
 }

@@ -88,13 +88,11 @@ public static class _Extesions
             me.Add(item.Key, item.Value);
         return me;
     }
-
     public static Transform LookTarget(this Transform me, Transform target)
     {
         me.rotation = Quaternion.LookRotation(me.position - target.position, Vector3.up);
         return me;
     }
-
     public static Transform GetFirstChild(this Transform me)
     {
         foreach (Transform item in me)
@@ -103,6 +101,5 @@ public static class _Extesions
         }
         return null;
     }
-
 
 }

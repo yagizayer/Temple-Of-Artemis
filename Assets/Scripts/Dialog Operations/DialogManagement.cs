@@ -606,7 +606,6 @@ public partial class DialogManagement : MonoBehaviour
                 "MÖ 323",
                 new List<string>(){
                     "Mimar : Endoeus (ve daha pek çok mimar), Efesliler tarafından fonlandı.",
-                    "\n",
                     "\tBüyük iskender ve Artemis Tapınağının Öyküsü : ",
                     "Büyük iskender Savaştan çıkmış ve yorgun şekilde çadırında dinlenirken dışarıda konuşan bir konu dikkatini çeker.",
                     "Askerler Bir tapınaktan bahsetmektedir. Savaştıkları bölgeye yakın bir kentte kurulmuş fakat yıllar önce yıkılmış olan bir tapınaktır bu.",
@@ -620,7 +619,6 @@ public partial class DialogManagement : MonoBehaviour
                     "Yöneticinin bu sözünden etkilenen Büyük İskender, övgüden memnun kalarak efes kentinden tapınağı onarmadan ayrılır.",
                     "Aradan geçen zamanda Büyük İskender anadoluda ve sonrasında pers imparatorluğu ile savaşırken efes kentinin halkı da yavaş yavaş Tapınağı onarmaya başlarlar.",
                     "Önceki iki tapınaktan bile büyük olacak şekilde neredeyse bir stadyum boyutunda olacaktır(137m x 69m x 18m). Ortasında devasa bir Artemis Heykeli bulunan Cella'yı 127 den fazla sütun çevreleyecektir. Haliyle bu muazzam yapıyı bitirmeleri yıllar alır. ",
-                    "\n",
                     "\tTanrıça Artemisin Unutulması ve Tapınağın yıkılışı",
                     "Tapınak onarıldıktan sonra yaklaşık 600 yıl ayakta kaldı. Hristiyanlığın yayılması ile birlikte Gerçekleşen haçlı seferlerinde Efesliler Tapınağın hristiyanlılar tarafından lekelenmesinden endişe duysalarda ellerinden bir şey gelmemekteydi.",
                     "Milattan sonra 2. yüzyılda gerçekleşen Tapınakta yapılan bir Hristiyan Şeytan çıkarma ayini sırasında Artemisin sunağı bir anda paramparça olunca, oradaki efeslilerin çoğu kaçsa da bir kısmı da hristiyan olmayı kabul etti. ",
@@ -635,6 +633,63 @@ public partial class DialogManagement : MonoBehaviour
         Storyline.Add(PhaseNames.LastTemple, lastTemple);
 
         #endregion LastTemple
+    
+        
+        #region EndTemple
+
+        Phase endTemple = new Phase();
+
+        gatherInformationAroundTemple = new Quest();
+        gatherInformationAroundTemple.QuestObjects.AddRange<string, QuestObject>(new Dictionary<string, QuestObject>(){
+            {
+                "PlaceHolder",
+                new QuestObject(
+                    "Büyük İskender'in tablosu",
+                    Npcs.SanatTarihiUzmani,
+                    new List<string>(){
+                        "Evet bu kişiyi tanıyorum. Kendisi zamanında asya kıtasının neredeyse tamamını ve afrika ve avrupanın da bazı bölgelerini yönetmiş olan pek çok sanatçı ve tarihçi tarafından adı sıkça duyulmuş olan Büyük İskender.",
+                        "Tam olarak bu tablosunu hiç görmemiştim ama yapıldığı tarihe bakacak olursak kesinlikle Büyük iskender hala hayattayken yapıldığını söyleyebiliriz."
+                    }
+                )
+            },
+            
+        });
+
+        tempConversationList = new List<QuestConversation>(){
+            new QuestConversation(Npcs.Profesor,new List<string>(){
+                "Demek \"Herostratik ün\" bu yangını başlatan kişinin adından dolayı çıkmış. ",
+                "Sonra ne oldu acaba? Yani milattan önce 356 yılında Büyük iskender doğduktan sonra buraya hiç yolu düştü mü?",
+                "Peki ya yerel halk? Krallar, tüccarlar, burayı yuva edinen kişiler yıkıldıktan sonra bir daha geri dönmediler mi?",
+                "Daha fazla araştırmalıyız. Hikaye burada bitemez!"
+            })
+        };
+        gatherInformationAroundTemple.QuestConversations = tempConversationList;
+
+        endTemple.Quests.AddRange<QuestNames, Quest>(new Dictionary<QuestNames, Quest>(){
+            {QuestNames.GatherInformationAroundTemple,gatherInformationAroundTemple}
+        });
+
+        endTemple.PhaseEnd = new PhaseEnd
+        (
+            new List<string>()
+            {
+                GlobalVariables.PlayerName + " topladığın Parşömen parçalarını bir araya getirip Tercüme ettim. Ve muhteşem bir Efsane yazıyordu."
+            },
+            new TempleInfo(
+                "",
+                "",
+                new List<string>(){
+                }
+            ),
+            new List<string>()
+            {
+            }
+        );
+
+        Storyline.Add(PhaseNames.EndPhase, endTemple);
+
+        #endregion EndTemple
+    
     }
 
     public void InteractWithQuestObject(Npcs targetNpc)

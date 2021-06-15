@@ -12,6 +12,7 @@ public static class QuestTracker
         {(PhaseNames.EarlyPhase, QuestNames.GatherInformationAroundTemple),false},
         {(PhaseNames.FirstTemple, QuestNames.GatherInformationAroundTemple),false},
         {(PhaseNames.LastTemple, QuestNames.GatherInformationAroundTemple),false},
+        {(PhaseNames.EndPhase, QuestNames.GatherInformationAroundTemple),false},
     };
 
     public static Dictionary<(PhaseNames, string), bool> questObjectTracker = new Dictionary<(PhaseNames, string), bool>(){
@@ -30,6 +31,7 @@ public static class QuestTracker
         {(PhaseNames.LastTemple, "TalePiece1"), false},
         {(PhaseNames.LastTemple, "TalePiece2"), false},
         {(PhaseNames.LastTemple, "TalePiece3"), false},
+        {(PhaseNames.EndPhase, "PlaceHolder"), false},
     };
 
     public static PhaseNames CurrentPhaseName { get; set; } = PhaseNames.EarlyPhase;
@@ -46,6 +48,7 @@ public static class QuestTracker
     {
         if (CurrentPhaseName == PhaseNames.EarlyPhase && CurrentPhaseCheck()) CurrentPhaseName = PhaseNames.FirstTemple;
         if (CurrentPhaseName == PhaseNames.FirstTemple && CurrentPhaseCheck()) CurrentPhaseName = PhaseNames.LastTemple;
+        if (CurrentPhaseName == PhaseNames.LastTemple && CurrentPhaseCheck()) CurrentPhaseName = PhaseNames.EndPhase;
 
     }
 
