@@ -55,6 +55,6 @@ public class InputHandler : MonoBehaviour
 
     void Sandbox(InputAction.CallbackContext context)
     {
-        Debug.Log(FindObjectOfType<EndPhaseManagement>()._lastKnownPhase);
+        FindObjectOfType<TempleChangeEffects>().FirstPhaseEffect();
     }
 }

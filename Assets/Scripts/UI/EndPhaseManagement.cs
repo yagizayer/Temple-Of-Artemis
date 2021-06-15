@@ -11,14 +11,17 @@ public class EndPhaseManagement : MonoBehaviour
     [SerializeField] private Text Header;
     [SerializeField] private Text Construction;
     [SerializeField] private Text TempleInfo;
+    [SerializeField] private Camera EffectsCam;
 
     private TemplesAndQuestObjectsManagement TAQM;
     private DialogManagement _dialogManagement;
     private DrawQuestTargetPath _drawPath;
-    public PhaseNames _lastKnownPhase = PhaseNames.EarlyPhase;
+    private PhaseNames _lastKnownPhase = PhaseNames.EarlyPhase;
     private PrefabDatabaseManager _db;
+    TempleChangeEffects _templeChange;
     private void Start()
     {
+        _templeChange = FindObjectOfType<TempleChangeEffects>();
         TAQM = FindObjectOfType<TemplesAndQuestObjectsManagement>();
         _db = FindObjectOfType<PrefabDatabaseManager>();
         _dialogManagement = FindObjectOfType<DialogManagement>();
@@ -28,6 +31,7 @@ public class EndPhaseManagement : MonoBehaviour
     public void DeactivateEndScreen()
     {
         MainScreen.SetActive(true);
+        EffectsCam.enabled = false;
     }
 
     public void ActivateEndScreen()
@@ -48,14 +52,22 @@ public class EndPhaseManagement : MonoBehaviour
             TAQM.ShowCurrentTemple(true);
         else
             TAQM.ShowCurrentTemple();
+
+        _lastKnownPhase = QuestTracker.CurrentPhaseName;
+        _templeChange.ChangeTempleNow = false;
     }
 
     private void FixedUpdate()
     {
-        if (QuestTracker.CurrentPhaseName != _lastKnownPhase)
+        if (QuestTracker.CurrentPhaseName != _lastKnownPhase && _templeChange.EffectsEnded)
         {
-            ActivateEndScreen();
-            _lastKnownPhase = QuestTracker.CurrentPhaseName;
+            EffectsCam.enabled = true;
+            if (QuestTracker.CurrentPhaseName == PhaseNames.FirstTemple)
+            {
+                _templeChange.FirstPhaseEffect();
+            }
         }
+        if (_templeChange.ChangeTempleNow)
+                ActivateEndScreen();
     }
 }
