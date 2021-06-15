@@ -66,6 +66,10 @@ public class EndPhaseManagement : MonoBehaviour
             {
                 _templeChange.FirstPhaseEffect();
             }
+            if (QuestTracker.CurrentPhaseName == PhaseNames.LastTemple)
+            {
+                _templeChange.SecondPhaseEffect();
+            }
         }
         if (_templeChange.ChangeTempleNow)
                 ActivateEndScreen();
