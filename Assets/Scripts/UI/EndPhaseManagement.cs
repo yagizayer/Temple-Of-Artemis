@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class EndPhaseManagement : MonoBehaviour
 {
-    public UnityAction EndScreenClosing, EndScreenOpening;
+    [SerializeField] private GameObject EndScreen;
     [SerializeField] private Text Header;
     [SerializeField] private Text Construction;
     [SerializeField] private Text TempleInfo;
@@ -22,34 +22,31 @@ public class EndPhaseManagement : MonoBehaviour
         _db = FindObjectOfType<PrefabDatabaseManager>();
         _dialogManagement = FindObjectOfType<DialogManagement>();
         _drawPath = FindObjectOfType<DrawQuestTargetPath>();
-        EndScreenClosing += DeactivateEndScreen;
     }
     private void OnDisable()
     {
-        EndScreenClosing.Invoke();
+        DeactivateEndScreen();
     }
-    private void DeactivateEndScreen()
+    public void DeactivateEndScreen()
     {
 
     }
 
-    private void ActivateEndScreen()
+    public void ActivateEndScreen()
     {
+        EndScreen.SetActive(true);
         TempleInfo currentTempleInfo = _dialogManagement.Storyline[_lastKnownPhase].PhaseEnd.templeInfo;
         Header.text = currentTempleInfo.Header;
         Construction.text = currentTempleInfo.BuildingDate;
         string totalStrings = "";
         foreach (string item in currentTempleInfo.Lines)
             totalStrings += item + "\n";
+        TempleInfo.text = totalStrings;
+        
+
         _drawPath.Target = _db.PrefabDB[Npcs.Profesor.ToString()].transform;
 
         TAQM.ShowCurrentTemple();
-
-        // Debug.Log(_dialogManagement.Storyline[_lastKnownPhase].PhaseEnd.BeforeInfo);
-        // Debug.Log(_dialogManagement.Storyline[_lastKnownPhase].PhaseEnd.templeInfo.Header);
-        // Debug.Log(_dialogManagement.Storyline[_lastKnownPhase].PhaseEnd.templeInfo.BuildingDate);
-        // Debug.Log(_dialogManagement.Storyline[_lastKnownPhase].PhaseEnd.templeInfo.Lines.Count);
-        // Debug.Log(_dialogManagement.Storyline[_lastKnownPhase].PhaseEnd.AfterInfo);
     }
 
     private void FixedUpdate()

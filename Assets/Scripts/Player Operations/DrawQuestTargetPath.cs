@@ -4,6 +4,19 @@ using UnityEngine.AI;
 [RequireComponent(typeof(LineRenderer), typeof(NavMeshAgent))]
 public class DrawQuestTargetPath : MonoBehaviour
 {
+    // kullanımı : 
+    /*
+    DrawQuestTargetPath questPath ;
+    private void Start() {
+        questPath = FindObjectOfType<DrawQuestTargetPath>();
+    }
+    private void Foo(){
+        questPath.Target = bar.transform;
+        // otomatik olarak çizgiyi çizmeye başlar
+    }
+    
+    */
+    
     [SerializeField] private Material LineMaterial;
     public Transform Target
     {
@@ -34,8 +47,11 @@ public class DrawQuestTargetPath : MonoBehaviour
 
     private void DrawPathToTarget(Vector3 target)
     {
+        
         NavMeshPath path = new NavMeshPath();
         Vector3 targetPos = target.Modify(Vector3Values.Y, transform.position.y);
+
+        // belli bir mesafedeb kısa ise çizgiyi sil (mesafenin karesini al)
         // if ((targetPos - transform.position).sqrMagnitude < 100) DrawingLine = false;
 
         
