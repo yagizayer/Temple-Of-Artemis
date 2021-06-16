@@ -70,6 +70,10 @@ public class EndPhaseManagement : MonoBehaviour
             {
                 _templeChange.SecondPhaseEffect();
             }
+            if (QuestTracker.CurrentPhaseName == PhaseNames.EndPhase)
+            {
+                _templeChange.ThirdPhaseEffect();
+            }
         }
         if (_templeChange.ChangeTempleNow)
                 ActivateEndScreen();

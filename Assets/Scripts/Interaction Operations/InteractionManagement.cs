@@ -83,7 +83,7 @@ public class InteractionManagement : MonoBehaviour
             Ray r = mainCamera.GetComponent<Camera>().ScreenPointToRay(cursorPos);
             if (Physics.Raycast(r, out RaycastHit hit, 100f, ~Ignore))
             {
-                InteractableIdentifier id = hit.transform.GetComponent<InteractableIdentifier>() ?? hit.transform.parent.GetComponent<InteractableIdentifier>();
+                InteractableIdentifier id = hit.transform.GetComponent<InteractableIdentifier>() ?? hit.transform.parent.GetComponent<InteractableIdentifier>() ?? hit.transform?.parent?.parent?.GetComponent<InteractableIdentifier>();
                 if (id)
                 {
                     if (_interactables.Contains(id))

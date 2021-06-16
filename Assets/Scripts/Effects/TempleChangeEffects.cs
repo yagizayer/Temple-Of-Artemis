@@ -13,10 +13,12 @@ public class TempleChangeEffects : MonoBehaviour
     [SerializeField] [Range(.1f, 10)] float RisingTime = 2.5f;
     [SerializeField] [Range(.1f, 20)] float RisingLevel = 5f;
     [Header("Second Change")]
-    [SerializeField] private GameObject Explosions;
-    [SerializeField] [Range(.1f, 20)] float ExplosionTime = 5f;
+    [SerializeField] private GameObject ExplosionEffects;
+    [SerializeField] [Range(.1f, 20)] float ExplosionEffectTime = 5f;
 
     [Header("Last Change")]
+    [SerializeField] private GameObject DustEffects;
+    [SerializeField] [Range(.1f, 20)] float DustEffectTime = 5f;
 
 
     [HideInInspector]
@@ -57,20 +59,19 @@ public class TempleChangeEffects : MonoBehaviour
 
     public void SecondPhaseEffect()
     {
-        StartCoroutine(MakeArgon(ExplosionTime));
+        StartCoroutine(MakeArgon(ExplosionEffectTime));
         StopCoroutine("MakeArgon");
     }
-
     IEnumerator MakeArgon(float explosionTime)
     {
-        Explosions.SetActive(true);
+        ExplosionEffects.SetActive(true);
         float startScale = 0;
-        float endScale = Explosions.transform.localScale.x;
+        float endScale = ExplosionEffects.transform.localScale.x;
         EffectsEnded = false;
         float effectTime = 0f;
         while (effectTime < explosionTime / 2)
         {
-            Explosions.transform.localScale = Vector3.one * Mathf.Lerp(startScale, endScale, effectTime);
+            ExplosionEffects.transform.localScale = Vector3.one * Mathf.Lerp(startScale, endScale, effectTime);
             yield return null;
             effectTime += Time.deltaTime;
         }
@@ -80,13 +81,46 @@ public class TempleChangeEffects : MonoBehaviour
 
         while (effectTime < explosionTime / 2)
         {
-            Explosions.transform.localScale = Vector3.one * Mathf.Lerp(endScale, startScale, effectTime);
+            ExplosionEffects.transform.localScale = Vector3.one * Mathf.Lerp(endScale, startScale, effectTime);
             yield return null;
             effectTime += Time.deltaTime;
         }
         EffectsEnded = true;
         ChangeTempleNow = false;
-        Explosions.SetActive(false);
+        ExplosionEffects.SetActive(false);
+    }
+
+    public void ThirdPhaseEffect()
+    {
+        StartCoroutine(CreateDustStorm(DustEffectTime));
+        StopCoroutine("CreateDustStorm");
+    }
+    IEnumerator CreateDustStorm(float stormTime)
+    {
+        DustEffects.SetActive(true);
+        float startScale = 0;
+        float endScale = DustEffects.transform.localScale.x;
+        EffectsEnded = false;
+        float effectTime = 0f;
+        while (effectTime < stormTime / 2)
+        {
+            DustEffects.transform.localScale = Vector3.one * Mathf.Lerp(startScale, endScale, effectTime);
+            yield return null;
+            effectTime += Time.deltaTime;
+        }
+
+        ChangeTempleNow = true;
+        effectTime = 0;
+
+        while (effectTime < stormTime / 2)
+        {
+            DustEffects.transform.localScale = Vector3.one * Mathf.Lerp(endScale, startScale, effectTime);
+            yield return null;
+            effectTime += Time.deltaTime;
+        }
+        EffectsEnded = true;
+        ChangeTempleNow = false;
+        DustEffects.SetActive(false);
     }
 
 

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6952030924080870545}
   - component: {fileID: 6634698832308990140}
   - component: {fileID: 2186974801241668738}
+  - component: {fileID: 709769592060958529}
   m_Layer: 14
   m_Name: Interaction_UI
   m_TagString: Untagged
@@ -76,6 +77,19 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!65 &709769592060958529
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5143564527075330960}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 1, y: 2, z: 0}
 --- !u!1 &7070021991589903852
 GameObject:
   m_ObjectHideFlags: 0
