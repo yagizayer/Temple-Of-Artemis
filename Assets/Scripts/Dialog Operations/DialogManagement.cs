@@ -75,11 +75,11 @@ public partial class DialogManagement : MonoBehaviour
                 "Sızlanmayı bırak küçük bebek yerel halk Antik kalıntıların buralarda bir yerde olduğunu söyledi."
             }),
             new QuestConversation(Npcs.Jeolog,new List<string>(){
-                "Muhtemelen yine sadece bir kaç eski çanak çömlek için bu kadar yol tepmiş olucaz zaten."
+                "Muhtemelen yine sadece birkaç eski çanak çömlek için bu kadar yol tepmiş olacağız zaten."
             }),
             new QuestConversation(Npcs.Profesor,new List<string>(){
-                "Sallanmayı bırakın baksanıza ne kadar güzel her yer yeşillik biraz doğanın keyfini çıkartın.",
-                "Sen ne düşünüyorsun Jones ? Buralara kadar gelmeye değer bir manzarayla karşılaşır mıyız sence?"
+                "Sallanmayı bırakın baksanıza ne kadar güzel, her yer yeşillik biraz doğanın keyfini çıkarın.",
+                "Sen ne düşünüyorsun Jones? Buralara kadar gelmeye değer bir manzarayla karşılaşır mıyız sence?"
             }),
             new QuestConversation(Npcs.Player,new List<string>(){
                 "Yerel halkın bahsettiği kalıntıları bulamasak bile bu doğal çevre buraya gelmeye değer."
@@ -93,14 +93,14 @@ public partial class DialogManagement : MonoBehaviour
         Quest findAncientColumns = new Quest();
         tempConversationList = new List<QuestConversation>(){
             new QuestConversation(Npcs.Profesor,new List<string>(){
-                    "Vay anassını neler bulmuşsun Jones."
+                    "Vay canına! Neler bulmuşsun Jones."
                 }),
             new QuestConversation(Npcs.Jeolog,new List<string>(){
                     "Sanırım çömleklerden fazlası varmış burada.",
                     "Ölçümlerime göre bu sütunlar en az 2000 yıllık."
                 }),
             new QuestConversation(Npcs.SanatTarihiUzmani,new List<string>(){
-                    "Üzerlerindeki işlemeler çok enteresan dana önce hiç böyle motifler görmemiştim."
+                    "Üzerlerindeki işlemeler çok enteresan daha önce hiç böyle motifler görmemiştim."
                 }),
             new QuestConversation(Npcs.Profesor,new List<string>(){
                     "Acaba etrafta daha fazlası var mıdır?"
@@ -113,8 +113,8 @@ public partial class DialogManagement : MonoBehaviour
         tempConversationList = new List<QuestConversation>(){
             new QuestConversation(Npcs.Profesor,new List<string>(){
                 "Bu yapının bunca yıl gizli kalmış olmasına inanabiliyor musun?",
-                "Jeoloğun dedine bakacak olursak en az 2000 yıllık bir tapınak kalıntısına bakıyoruz şu an.",
-                "Acaba kim ne zaman yaptı, biraz etrafa bakınalım belki ipucu olabilecek bazı eşyalara rastlarız."
+                "Jeoloğun dediğine bakacak olursak en az 2000 yıllık bir tapınak kalıntısına bakıyoruz şu an.",
+                "Acaba kim, ne zaman yaptı, hadi biraz etrafa bakınalım; belki ipucu olabilecek bazı eşyalara rastlarız."
             }),
         };
         talkToProfessor.QuestConversations = tempConversationList;
@@ -129,7 +129,7 @@ public partial class DialogManagement : MonoBehaviour
                     new List<string>(){
                         GlobalVariables.PlayerName + "! Bu tabloyu nereden buldun bunca zamandır neredeyse hiç zarar görmemiş.",
                         "Hmmm. Bu tür dayanıklı tabloları yapan Antik çağda yaşamış olan tek medeniyet Amazonlardı. ",
-                        "Sanırım bu tabloyu da onlar yapmış olmalı. "
+                        "Sanırım bu tabloyu da onlar yapmış olmalı."
                     }
                 )
             },
@@ -273,8 +273,8 @@ public partial class DialogManagement : MonoBehaviour
                 "MÖ 3300 ~ MÖ 1200 arası",
                 new List<string>(){
                     "Mimar : Amazonlar",
-                    "Yapım Sebebi : Tanrı Dionysus ve yandaşları Amazonlara savaş açtığında Avcılık ve bereket tanrıçası olan Artemise sığınmak için bu tapınağı yaptılar.",
-                    "Yıkım Sebebi : MÖ 700 lü yıllarda Ege denizindeki bir fırtına sonucunda oluşan devasa bir sel"
+                    "Yapım Sebebi : Tanrı Dionysus ve yandaşları Amazonlara savaş açtığında Avcılık ve Bereket Tanrıçası olan Artemise sığınmak için bu tapınağı yaptılar.",
+                    "Yıkım Sebebi : MÖ 700 lü yıllarda Ege Denizindeki bir fırtına sonucunda oluşan devasa bir sel"
                 }
             ),
             new List<string>()
@@ -295,7 +295,7 @@ public partial class DialogManagement : MonoBehaviour
 
         tempConversationList = new List<QuestConversation>(){
             new QuestConversation(Npcs.Profesor,new List<string>(){
-                "Demek efsanelerde bahsedilen kayıp artemis tapınağı burasıymış.",
+                "Demek efsanelerde bahsedilen kayıp Artemis Tapınağı burasıymış.",
                 "Peki ama sonra ne oldu acaba. Yani milattan önce 7. yüzyıldan bu yana hiç kimse gelmedi mi acaba bu tapınağa?",
                 "Bence bu doğru olamaz ipuçları aramalıyız! Buranın tarihini öğrenmeliyiz!"
             })
@@ -321,8 +321,8 @@ public partial class DialogManagement : MonoBehaviour
                     "Altın Sikkeler",
                     Npcs.Jeolog,
                     new List<string>(){
-                        "Ah. her zamanki gibi küçük taşlar kayalar bana gelir. ",
-                        "Neden sanat tarihi okumadım ki sank... Bir saniye bu normal bir taş değil.",
+                        "Ah! Her zamanki gibi küçük taşlar kayalar bana gelir. ",
+                        "Neden sanat tarihi okumadım ki sanki... Bir saniye, bu normal bir taş değil!",
                         "Altın! Bu Altın! Hemde sıradan bir altın para değil. ",
                         "Şimdiye kadar bilinen en eski altın paralardan bile eski bir altın bu!",
                         "Milattan önce 6. yüzyıldan kalma bir altın bu Jones!"
@@ -343,11 +343,11 @@ public partial class DialogManagement : MonoBehaviour
             {
                 "PieceOfFineClothing",
                 new QuestObject(
-                    "Kralın birinden Bir parça kumaş",
+                    "Kralın birinden bir parça kumaş",
                     Npcs.Profesor,
                     new List<string>(){
-                        GlobalVariables.PlayerName + " bu bulduğun kumaş parçası döneminin en kaliteli terzileri tarafından çok pahalı kumaşlardan yapılmış bir kıyafete ait gibi görünüyor.",
-                        "Muhtemelen bir krala yada çok zengin bir tüccara aitti bu kıyafet.",
+                        GlobalVariables.PlayerName + " Bu bulduğun kumaş parçası döneminin en kaliteli terzileri tarafından çok pahalı kumaşlardan yapılmış bir kıyafete ait gibi görünüyor.",
+                        "Muhtemelen bir krala ya da çok zengin bir tüccara aitti bu kıyafet.",
                         "Düşünce şaşırtıcı değil. Zamanında bu tür tapınaklar çok az bulunurdu ve dünyanın dört bir yanından zenginleri kendisine çekerdi.",
                         "Bu tapınaklara gelen zenginler başıta bulunup dua ederler ve ihtiyacı olanlar da buralarda toplanarak gelen zenginlerden yardım kabul ederlerdi."
                     }
@@ -421,10 +421,10 @@ public partial class DialogManagement : MonoBehaviour
                 "MÖ 550",
                 new List<string>(){
                     "Mimar : Chersiphron ve onun oğlu Metagenes(Vitruvius), Kral Croesus tarafından fonlandı.",
-                    "Kullanımı : Krallar ve Tacirler tarafından sıkça ziyaret edilen turistik bir yapı haline gelen bu tapınak, Aciz durumda olan veya Zulümden kaçanlar için de güvenli bir sığınak oldu. ",
-                    "Yıkımı : MÖ 356'da Herostratos adındaki bir meczup yerel halktaki kötü niyetli kişiler tarafından \"Bu tapınağı yıkan kişinin adı bütün tarih kitaplarında geçer\" söylemleri ile kışkırtılarak yangına teşfik edilmiştir. ",
+                    "Kullanımı : Krallar ve Tacirler tarafından sıkça ziyaret edilen turistik bir yapı haline gelen bu tapınak, aciz durumda olan veya zulümden kaçanlar için de güvenli bir sığınak oldu. ",
+                    "Yıkımı : MÖ 356'da Herostratos adındaki bir meczup yerel halktaki kötü niyetli kişiler tarafından \"Bu tapınağı yıkan kişinin adı bütün tarih kitaplarında geçer\" söylemleri ile kışkırtılarak yangına teşvik edilmiştir. ",
                     "Günümüzde \"Herostratik ün\" deyimi \"Ne pahasına olursa olsun ünlenmek\" manasında kullanılmaktadır. ",
-                    "Efsanelerde bu yangın sırasında bereket tanrıçası Artemis'in neden tapınağını korumak için burada olmadığı, çok önemli bir kişinin doğumuna yardım etmek için gittiğinden dolayı burada olmamasına bağlanmaktadır."
+                    "Efsanelerde bu yangın sırasında Bereket Tanrıçası Artemis'in neden tapınağını korumak için burada olmadığı, çok önemli bir kişinin doğumuna yardım etmek için gittiğinden burada olmamasına bağlanmaktadır."
                 }
             ),
             new List<string>()
@@ -452,7 +452,7 @@ public partial class DialogManagement : MonoBehaviour
                     "Büyük İskender'in tablosu",
                     Npcs.SanatTarihiUzmani,
                     new List<string>(){
-                        "Evet bu kişiyi tanıyorum. Kendisi zamanında asya kıtasının neredeyse tamamını ve afrika ve avrupanın da bazı bölgelerini yönetmiş olan pek çok sanatçı ve tarihçi tarafından adı sıkça duyulmuş olan Büyük İskender.",
+                        "Evet bu kişiyi tanıyorum. Kendisi zamanında asya kıtasının neredeyse tamamını ve Afrika ve Avrupanın da bazı bölgelerini yönetmiş olan pek çok sanatçı ve tarihçi tarafından adı sıkça duyulmuş olan Büyük İskender.",
                         "Tam olarak bu tablosunu hiç görmemiştim ama yapıldığı tarihe bakacak olursak kesinlikle Büyük iskender hala hayattayken yapıldığını söyleyebiliriz."
                     }
                 )
@@ -460,7 +460,7 @@ public partial class DialogManagement : MonoBehaviour
             {
                 "PaintingOfArtemis",
                 new QuestObject(
-                    "Bereket tanrıçası Artemisin, bir doğuma yardım edişinin tablosu",
+                    "Bereket Tanrıçası Artemisin, bir doğuma yardım edişinin tablosu",
                     Npcs.SanatTarihiUzmani,
                     new List<string>(){
                         "Bu da ne böyle? Daha önce hiç görmediğim bir sanat jenerasyonunda yapılmışa benziyor.",
@@ -476,9 +476,9 @@ public partial class DialogManagement : MonoBehaviour
                     Npcs.Jeolog,
                     new List<string>(){
                         "Hah bir heykel daha. ",
-                        "Alt tarafında imzaya benzer birşey var sanki.",
+                        "Alt tarafında imzaya benzer bir şey var sanki.",
                         "Bu? Bu Rhoecus'un Nyx figürü! ",
-                        "Şuan elimizde tuttuğumuz şey zamanının en değerli Sanatçısının Şaheseri.",
+                        "Şu an elimizde tuttuğumuz şey zamanının en değerli sanatçısının şaheseri.",
                         "Daha önce bulduğun altın sikkeden sonra daha ilginç bir şey bulamayacağımızı düşünmüştüm.",
                         "Yanılmışım. Hem de ne yanılmak. Bu heykel altından bile daha değerli!"
                     }
@@ -607,7 +607,7 @@ public partial class DialogManagement : MonoBehaviour
         (
             new List<string>()
             {
-                GlobalVariables.PlayerName + " topladığın Parşömen parçalarını bir araya getirip Tercüme ettim. Ve muhteşem bir Efsane yazıyordu."
+                GlobalVariables.PlayerName + " Topladığın Parşömen parçalarını bir araya getirip tercüme ettim. Ve muhteşem bir efsane yazıyordu."
             },
             new TempleInfo(
                 "Artemis Tapınağı",
@@ -615,22 +615,22 @@ public partial class DialogManagement : MonoBehaviour
                 new List<string>(){
                     "Mimar : Endoeus (ve daha pek çok mimar), Efesliler tarafından fonlandı.",
                     "\tBüyük iskender ve Artemis Tapınağının Öyküsü : ",
-                    "Büyük iskender Savaştan çıkmış ve yorgun şekilde çadırında dinlenirken dışarıda konuşan bir konu dikkatini çeker.",
-                    "Askerler Bir tapınaktan bahsetmektedir. Savaştıkları bölgeye yakın bir kentte kurulmuş fakat yıllar önce yıkılmış olan bir tapınaktır bu.",
-                    "Büyük iskender bu tapınak hakkında ne bildiğini sorduğunda şaşıran asker : \"Bereket ve av tanrıçası Artemis tapınağı efendim. yıllar önce yıkılmış.\" demiştir.",
-                    "Bu olay üstüne rotasını değiştirerek tapınağa yönelen Büyük iskender ne ile karşılaşacağını çok iyi bilmektedir. Bu aynı zamanda Doğurganlık tanrıçası da olan Tanrıça Artemisin Tapınağıdır.",
-                    "Tapınağa vardıklarında yıkık dökük bir mermer yığınıyla karşılaşan Büyük iskender, tapınağın yapılmış olduğu kentin halkı olan Efeslilerin yöneticileri ile konuşarak onlardan tapınağı onarmak için izin almak ister.",
-                    "Çünkü Tanrıça Artemisin Kendi tapınağını koruyamamasına sebep olan yangın sırasında Kendisinin doğumu için annesine yardımcı olduğunu düşünmektedir.",
+                    "Büyük iskender savaştan çıkmış ve yorgun şekilde çadırında dinlenirken dışarıda konuşan bir konu dikkatini çeker.",
+                    "Askerler bir tapınaktan bahsetmektedir. Savaştıkları bölgeye yakın bir kentte kurulmuş fakat yıllar önce yıkılmış olan bir tapınaktır bu.",
+                    "Büyük iskender bu tapınak hakkında ne bildiğini sorduğunda şaşıran asker : \"Bereket ve av tanrıçası Artemis'in tapınağı efendim. Yıllar önce yıkılmış.\" demiştir.",
+                    "Bu olay üstüne rotasını değiştirerek tapınağa yönelen Büyük iskender ne ile karşılaşacağını çok iyi bilmektedir. Bu aynı zamanda Doğurganlık Tanrıçası da olan Tanrıça Artemisin Tapınağıdır.",
+                    "Tapınağa vardıklarında yıkık dökük bir mermer yığınıyla karşılaşan Büyük İskender, tapınağın yapılmış olduğu kentin halkı olan Efeslilerin yöneticileri ile konuşarak onlardan tapınağı onarmak için izin almak ister.",
+                    "Çünkü Tanrıça Artemisin kendi tapınağını koruyamamasına sebep olan yangın sırasında Kendisinin doğumu için annesine yardımcı olduğunu düşünmektedir.",
                     "Efeslilerden tek dileği tapınağın yapımı tamamlandığında kendisinin de bu tapınakta adına yer verilmesidir.",
                     "Efes halkının yöneticileri Büyük iskenderin bu isteğini hiç hoş görmezler, fakat yanında getirdiği orduyu göz önüne alarak isteğini reddetmekten çekinirler.",
                     "Yöneticilerden biri sonunda Büyük iskenderin huzuruna çıkarak der ki : \"Bir tanrı bir başka tanrının tapınağını yapmamalı.\"",
                     "Yöneticinin bu sözünden etkilenen Büyük İskender, övgüden memnun kalarak efes kentinden tapınağı onarmadan ayrılır.",
-                    "Aradan geçen zamanda Büyük İskender anadoluda ve sonrasında pers imparatorluğu ile savaşırken efes kentinin halkı da yavaş yavaş Tapınağı onarmaya başlarlar.",
+                    "Aradan geçen zamanda Büyük İskender, Anadoluda ve sonrasında Pers İmparatorluğu ile savaşırken Efes Kentinin halkı da yavaş yavaş tapınağı onarmaya başlarlar.",
                     "Önceki iki tapınaktan bile büyük olacak şekilde neredeyse bir stadyum boyutunda olacaktır(137m x 69m x 18m). Ortasında devasa bir Artemis Heykeli bulunan Cella'yı 127 den fazla sütun çevreleyecektir. Haliyle bu muazzam yapıyı bitirmeleri yıllar alır. ",
                     "\tTanrıça Artemisin Unutulması ve Tapınağın yıkılışı",
-                    "Tapınak onarıldıktan sonra yaklaşık 600 yıl ayakta kaldı. Hristiyanlığın yayılması ile birlikte Gerçekleşen haçlı seferlerinde Efesliler Tapınağın hristiyanlılar tarafından lekelenmesinden endişe duysalarda ellerinden bir şey gelmemekteydi.",
-                    "Milattan sonra 2. yüzyılda gerçekleşen Tapınakta yapılan bir Hristiyan Şeytan çıkarma ayini sırasında Artemisin sunağı bir anda paramparça olunca, oradaki efeslilerin çoğu kaçsa da bir kısmı da hristiyan olmayı kabul etti. ",
-                    "Böylece Artemis tapınağı İhtiyacı olanlar için bir sığınak, Büyük tüccarlar için bir turizm mekanı olmaktan çıkıp tarihin tozlu sayfalarına gömülmeye başladı."
+                    "Tapınak onarıldıktan sonra yaklaşık 600 yıl ayakta kaldı. Hristiyanlığın yayılması ile birlikte gerçekleşen Haçlı Seferlerinde Efesliler tapınağın Hristiyanlılar tarafından lekelenmesinden endişe duysalarda ellerinden bir şey gelmemekteydi.",
+                    "Milattan sonra 2. yüzyılda gerçekleşen tapınakta yapılan bir Hristiyan Şeytan çıkarma ayini sırasında Artemisin Sunağı bir anda paramparça olunca, oradaki Efeslilerin çoğu kaçsa da bir kısmı da hristiyan olmayı kabul etti. ",
+                    "Böylece Artemis tapınağı ihtiyacı olanlar için bir sığınak, büyük tüccarlar için bir turizm mekanı olmaktan çıkıp tarihin tozlu sayfalarına gömülmeye başladı."
                 }
             ),
             new List<string>()
@@ -641,7 +641,6 @@ public partial class DialogManagement : MonoBehaviour
         Storyline.Add(PhaseNames.LastTemple, lastTemple);
 
         #endregion LastTemple
-
 
         #region EndTemple
 
@@ -817,7 +816,7 @@ public partial class DialogManagement : MonoBehaviour
         {
             if (_reactedToObject) return null;
             _reactedToObject = true;
-            result = "Hmm bu ilginç Bir eşyaya benziyor. Belki de " + _objectsTargetNpc + " görse iyi olur";
+            result = "Hmm... Bu ilginç Bir eşyaya benziyor. Belki de " + _objectsTargetNpc + " görse iyi olur";
             SoundManager.StartSound(SoundManager.EffectSounds[EffectSound.Player]);
 
         }
