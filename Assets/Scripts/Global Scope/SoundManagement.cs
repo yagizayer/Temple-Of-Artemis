@@ -1,13 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class SoundManagement : MonoBehaviour
 {
-    public void RaiseOrLowerEffectSounds(){
-        
+    private Dictionary<EffectSounds, AudioSource> EffectSounds;
+
+
+
+    public void RaiseOrLowerEffectSounds()
+    {
+
     }
-    public void RaiseOrLowerMusicSounds(){
+    public void RaiseOrLowerMusicSounds()
+    {
 
     }
 }
