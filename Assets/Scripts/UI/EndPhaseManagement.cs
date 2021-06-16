@@ -30,6 +30,8 @@ public class EndPhaseManagement : MonoBehaviour
 
     public void DeactivateEndScreen()
     {
+        if (QuestTracker.CurrentPhaseName == PhaseNames.EndPhase)
+            FindObjectOfType<SceneManagement>().DirectScene("MainMenu");
         MainScreen.SetActive(true);
         EffectsCam.enabled = false;
     }
@@ -76,6 +78,6 @@ public class EndPhaseManagement : MonoBehaviour
             }
         }
         if (_templeChange.ChangeTempleNow)
-                ActivateEndScreen();
+            ActivateEndScreen();
     }
 }
