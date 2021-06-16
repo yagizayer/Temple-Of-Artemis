@@ -25,8 +25,15 @@ public class TempleChangeEffects : MonoBehaviour
     public bool ChangeTempleNow = false;
     [HideInInspector]
     public bool EffectsEnded = true;
+    
+    [SerializeField] private SoundManagement SoundManager;
+    private void Start() {
+        
+        if (SoundManager == null) SoundManager = FindObjectOfType<SoundManagement>();
+    }
     public void FirstPhaseEffect()
     {
+        SoundManager.StartSound(SoundManager.EffectSounds[EffectSound.Temple_Water]);
         StartCoroutine(RiseAndLowerSea(RisingTime, RisingLevel));
         StopCoroutine("RiseAndLowerSea");
     }
@@ -59,6 +66,8 @@ public class TempleChangeEffects : MonoBehaviour
 
     public void SecondPhaseEffect()
     {
+        SoundManager.StartSound(SoundManager.EffectSounds[EffectSound.Temple_Explosion]);
+
         StartCoroutine(MakeArgon(ExplosionEffectTime));
         StopCoroutine("MakeArgon");
     }
@@ -92,6 +101,8 @@ public class TempleChangeEffects : MonoBehaviour
 
     public void ThirdPhaseEffect()
     {
+        SoundManager.StartSound(SoundManager.EffectSounds[EffectSound.Temple_Sandstorm]);
+
         StartCoroutine(CreateDustStorm(DustEffectTime));
         StopCoroutine("CreateDustStorm");
     }
