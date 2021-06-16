@@ -14,12 +14,13 @@ public class ComplexMove : MonoBehaviour
     public float moveSpeed = 12f, rotationSpeed = 200;
     public bool isMoveable = true;
     bool moving = false, isSprinting = false;
-
-
     float horizontal = 0, vertical = 0;
+
+    private SoundManagement _soundManager;
 
     private void Start()
     {
+        if (_soundManager == null) _soundManager = FindObjectOfType<SoundManagement>();
         if (navMeshAgent == null) navMeshAgent = GetComponent<NavMeshAgent>();
         if (controller == null) controller = GetComponent<CharacterController>();
         if (currentCamera == null) currentCamera = Camera.main.transform;
@@ -48,6 +49,10 @@ public class ComplexMove : MonoBehaviour
             moving = true;
         }
 
+        if (moving && _soundManager.EffectSounds[EffectSound.Running]) _soundManager.StartSound(_soundManager.EffectSounds[EffectSound.Running]);
+        else if (_soundManager.EffectSounds[EffectSound.Running]) _soundManager.StopSound(_soundManager.EffectSounds[EffectSound.Running]);
+
+
         animator.SetBool("Moving", moving);
         animator.SetFloat("VerticalSpeed", vertical);
 
@@ -63,6 +68,5 @@ public class ComplexMove : MonoBehaviour
     {
         this.isSprinting = sprintInput;
     }
-
 
 }

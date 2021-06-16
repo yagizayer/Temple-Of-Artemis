@@ -55,5 +55,6 @@ public class InputHandler : MonoBehaviour
 
     void Sandbox(InputAction.CallbackContext context)
     {
+        Debug.Log(FindObjectOfType<SoundManagement>().MusicSounds.Count);
     }
 }

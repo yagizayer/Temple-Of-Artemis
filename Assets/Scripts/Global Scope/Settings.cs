@@ -18,6 +18,8 @@ public class Settings : MonoBehaviour
     [SerializeField] private SoundManagement SoundManager;
     #endregion
 
+
+
     private void Start()
     {
         SetCurrentValues();
@@ -30,11 +32,9 @@ public class Settings : MonoBehaviour
         MusicSounds.value = GlobalVariables.MusicSoundLevel;
         InvertCamYCheckSign.isOn = GlobalVariables.IsCamYInverted;
 
+        SoundManager.RaiseOrLowerMusicSounds(GlobalVariables.MusicSoundLevel);
+        SoundManager.RaiseOrLowerEffectSounds(GlobalVariables.EffectSoundLevel);
 
-        Debug.Log(GlobalVariables.EffectSoundLevel);
-        Debug.Log(GlobalVariables.MusicSoundLevel);
-        Debug.Log(GlobalVariables.IsCamYInverted);
-        Debug.Log("-----------");
 
     }
 

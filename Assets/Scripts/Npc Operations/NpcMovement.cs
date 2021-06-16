@@ -24,8 +24,10 @@ public class NpcMovement : MonoBehaviour
     public bool IsMoving => isMoving;
 
 
+    private SoundManagement _soundManager;
     private void Start()
     {
+        if (_soundManager == null) _soundManager = FindObjectOfType<SoundManagement>();
         if (navMeshAgent == null) navMeshAgent = transform.GetComponent<NavMeshAgent>();
         if (animator == null) animator = transform.GetComponent<NpcDisplay>().NpcGameObject.GetComponent<Animator>();
 
@@ -64,10 +66,14 @@ public class NpcMovement : MonoBehaviour
         if (isMoving)
         {
             animator.SetBool("NPC Walking", true);
+            if (_soundManager.EffectSounds.ContainsKey(EffectSound.Walking))
+                _soundManager.StartSound(_soundManager.EffectSounds[EffectSound.Walking]);
         }
         else
         {
             animator.SetBool("NPC Walking", false);
+            if (_soundManager.EffectSounds.ContainsKey(EffectSound.Walking))
+                _soundManager.StopSound(_soundManager.EffectSounds[EffectSound.Walking]);
         }
     }
 
