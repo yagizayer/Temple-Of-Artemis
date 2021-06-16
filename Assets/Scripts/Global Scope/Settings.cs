@@ -10,42 +10,60 @@ public class Settings : MonoBehaviour
     [SerializeField] private Slider EffectSounds;
     [SerializeField] private Slider MusicSounds;
     [SerializeField] private Toggle InvertCamYCheckSign;
-    private static float _effectSoundLevel = 15;
-    private static float _musicSoundLevel = 15;
-    private static bool _isCamYInverted = false;
-    public static float EffectSoundLevel => _effectSoundLevel;
-    public static float MusicSoundLevel => _musicSoundLevel;
-    public static bool IsCamYInverted => _isCamYInverted;
 
     #endregion
 
     #region OutputVariables
     [SerializeField] private CinemachineFreeLook MainCam;
-    [SerializeField] private SoundManagement soundManagement;
-
+    [SerializeField] private SoundManagement SoundManager;
     #endregion
 
+    private void Start()
+    {
+        SetCurrentValues();
+    }
+
+    public void SetCurrentValues()
+    {
+        if (SoundManager == null) SoundManager = FindObjectOfType<SoundManagement>();
+        EffectSounds.value = GlobalVariables.EffectSoundLevel;
+        MusicSounds.value = GlobalVariables.MusicSoundLevel;
+        InvertCamYCheckSign.isOn = GlobalVariables.IsCamYInverted;
+
+
+        Debug.Log(GlobalVariables.EffectSoundLevel);
+        Debug.Log(GlobalVariables.MusicSoundLevel);
+        Debug.Log(GlobalVariables.IsCamYInverted);
+        Debug.Log("-----------");
+
+    }
 
     public void SetEffectSounds(Slider value)
     {
         EffectSounds = value;
-        _effectSoundLevel = EffectSounds.value;
-
+        GlobalVariables.EffectSoundLevel = EffectSounds.value;
+        SoundManager.RaiseOrLowerEffectSounds(GlobalVariables.EffectSoundLevel);
     }
+
     public void SetMusicSounds(Slider value)
     {
         MusicSounds = value;
-        _musicSoundLevel = MusicSounds.value;
-
+        GlobalVariables.MusicSoundLevel = MusicSounds.value;
+        SoundManager.RaiseOrLowerMusicSounds(GlobalVariables.MusicSoundLevel);
     }
 
     public void SetInvertCamYCheckSign(Toggle value)
     {
         InvertCamYCheckSign = value;
-        _isCamYInverted = value.isOn;
-        AxisState temp = MainCam.m_YAxis;
-        temp.m_InvertInput = value.isOn;
-        MainCam.m_YAxis = temp;
+        GlobalVariables.IsCamYInverted = value.isOn;
+
+        if (MainCam)
+        {
+            AxisState temp = MainCam.m_YAxis;
+            temp.m_InvertInput = GlobalVariables.IsCamYInverted;
+            MainCam.m_YAxis = temp;
+        }
+
     }
 
 }

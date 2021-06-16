@@ -42,14 +42,12 @@ public class MainMenuManager : MonoBehaviour
     private void CreateNewSave()
     {
         // ToDo : Create Save System
-        Debug.Log("yeni kayıt oluşturuldu");
         UpdateMenuContent();
         CloseWarningWindow();
         SceneManager.LoadScene("Gameplay");
     }
     private void CancelCreatingNewSave()
     {
-        Debug.Log("yeni kayıt oluşturma iptal edildi");
         CloseWarningWindow();
     }
     private void CloseWarningWindow()

@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.AI;
 using UnityEngine;
 
 [RequireComponent(typeof(ComplexMove), typeof(NpcMovement))]
@@ -48,6 +49,7 @@ public partial class PlayerMovementDecider : MonoBehaviour
         }
         if (MyMovementType == MovementType.ControlledMove && _movementTypeChanged)
         {
+            _npcMovement.GetComponent<NavMeshAgent>().ResetPath();
             _npcMovement.enabled = false;
             _npcMovement.TargetQueue.Clear();
             _complexMove.enabled = true;

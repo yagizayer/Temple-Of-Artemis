@@ -15,5 +15,8 @@ static public class GlobalVariables
         {Npcs.Profesor, "Profesör"},
     };
 
+    public static float EffectSoundLevel = 100;
+    public static float MusicSoundLevel = 100;
+    public static bool IsCamYInverted = false;
 
 }

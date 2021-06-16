@@ -675,7 +675,7 @@ PlayerSettings:
   webGLThreadsSupport: 0
   webGLWasmStreaming: 0
   scriptingDefineSymbols:
-    7: LETAI_TRUESHADOW
+    7: LETAI_TRUESHADOW;RH_SerializedDictionary
   platformArchitecture: {}
   scriptingBackend:
     Standalone: 1

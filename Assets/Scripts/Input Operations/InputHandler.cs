@@ -55,6 +55,5 @@ public class InputHandler : MonoBehaviour
 
     void Sandbox(InputAction.CallbackContext context)
     {
-        FindObjectOfType<TempleChangeEffects>().FirstPhaseEffect();
     }
 }

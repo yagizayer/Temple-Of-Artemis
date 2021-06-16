@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-using UnityEngine.InputSystem; // TODO : remove this
 
 [RequireComponent(typeof(NavMeshAgent))]
 public class NpcMovement : MonoBehaviour
@@ -24,9 +23,6 @@ public class NpcMovement : MonoBehaviour
     public Queue<Transform> TargetQueue => targetQueue;
     public bool IsMoving => isMoving;
 
-    private void OnDisable() {
-        navMeshAgent.ResetPath();
-    }
 
     private void Start()
     {
@@ -37,14 +33,6 @@ public class NpcMovement : MonoBehaviour
         {
             EnqueueTargets(targetPoints);
             currentTarget = targetQueue.Dequeue();
-        }
-    }
-
-    private void Update()
-    {
-        if (InputSystem.GetDevice<Keyboard>().spaceKey.wasPressedThisFrame && !trigger)
-        {
-            MoveNextPosition();
         }
     }
 
