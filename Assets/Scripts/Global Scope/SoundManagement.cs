@@ -30,9 +30,6 @@ public class SoundManagement : MonoBehaviour
     {
         yield return new WaitForSecondsRealtime(waitForSec);
 
-
-
-
         StartSound(MusicSounds[MusicSound.MenuMusic]);
         if (SceneManager.GetActiveScene().name == "GamePlay")
         {

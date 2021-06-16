@@ -46,10 +46,18 @@ public partial class DialogManagement : MonoBehaviour
     #endregion
 
 
+    [SerializeField] private SoundManagement SoundManager;
     void Start()
     {
+        if (SoundManager == null) SoundManager = FindObjectOfType<SoundManagement>();
         TAQM = FindObjectOfType<TemplesAndQuestObjectsManagement>();
         SetStoryline();
+
+        StartCoroutine(RotaredStart(.5f));
+    }
+    private IEnumerator RotaredStart(float waitForSec)
+    {
+        yield return new WaitForSecondsRealtime(waitForSec);
         InteractWithNpc();
     }
     void SetStoryline()
@@ -633,8 +641,8 @@ public partial class DialogManagement : MonoBehaviour
         Storyline.Add(PhaseNames.LastTemple, lastTemple);
 
         #endregion LastTemple
-    
-        
+
+
         #region EndTemple
 
         Phase endTemple = new Phase();
@@ -652,7 +660,7 @@ public partial class DialogManagement : MonoBehaviour
                     }
                 )
             },
-            
+
         });
 
         tempConversationList = new List<QuestConversation>(){
@@ -678,7 +686,8 @@ public partial class DialogManagement : MonoBehaviour
             new TempleInfo(
                 "",
                 "",
-                new List<string>(){
+                new List<string>()
+                {
                 }
             ),
             new List<string>()
@@ -689,7 +698,7 @@ public partial class DialogManagement : MonoBehaviour
         Storyline.Add(PhaseNames.EndPhase, endTemple);
 
         #endregion EndTemple
-    
+
     }
 
     public void InteractWithQuestObject(Npcs targetNpc)
@@ -754,6 +763,11 @@ public partial class DialogManagement : MonoBehaviour
             _currentLine = GetNextLine();
             if (_currentLine == null)
             {
+                SoundManager.StopSound(SoundManager.EffectSounds[EffectSound.Npc_Prof]);
+                SoundManager.StopSound(SoundManager.EffectSounds[EffectSound.Npc_Art]);
+                SoundManager.StopSound(SoundManager.EffectSounds[EffectSound.Npc_Miner]);
+                SoundManager.StopSound(SoundManager.EffectSounds[EffectSound.Player]);
+
                 TalkingScreen.SetActive(false);
                 QuestTracker.NextQuest();
                 if (QuestTracker.CurrentQuestName == QuestNames.TalkToProfessor)
@@ -767,6 +781,23 @@ public partial class DialogManagement : MonoBehaviour
             }
             else
             {
+                if (_currentConversation != null && _currentConversation.Speaker == Npcs.Profesor)
+                    SoundManager.StartSound(SoundManager.EffectSounds[EffectSound.Npc_Prof]);
+                if (_currentConversation != null && _currentConversation.Speaker == Npcs.SanatTarihiUzmani)
+                    SoundManager.StartSound(SoundManager.EffectSounds[EffectSound.Npc_Art]);
+                if (_currentConversation != null && _currentConversation.Speaker == Npcs.Jeolog)
+                    SoundManager.StartSound(SoundManager.EffectSounds[EffectSound.Npc_Miner]);
+                if (_currentConversation != null && _currentConversation.Speaker == Npcs.Player)
+                    SoundManager.StartSound(SoundManager.EffectSounds[EffectSound.Player]);
+
+                if (_currentObject != null && _currentObject.TargetNpc == Npcs.Profesor)
+                    SoundManager.StartSound(SoundManager.EffectSounds[EffectSound.Npc_Prof]);
+                if (_currentObject != null && _currentObject.TargetNpc == Npcs.SanatTarihiUzmani)
+                    SoundManager.StartSound(SoundManager.EffectSounds[EffectSound.Npc_Art]);
+                if (_currentObject != null && _currentObject.TargetNpc == Npcs.Jeolog)
+                    SoundManager.StartSound(SoundManager.EffectSounds[EffectSound.Npc_Miner]);
+
+
                 _breakLoop = false;
                 StartCoroutine(CreateEffect(Context, _currentLine));
             }
@@ -787,6 +818,8 @@ public partial class DialogManagement : MonoBehaviour
             if (_reactedToObject) return null;
             _reactedToObject = true;
             result = "Hmm bu ilginç Bir eşyaya benziyor. Belki de " + _objectsTargetNpc + " görse iyi olur";
+            SoundManager.StartSound(SoundManager.EffectSounds[EffectSound.Player]);
+
         }
         if (_conversationType == ConversationType.ObjectConversation)
         {

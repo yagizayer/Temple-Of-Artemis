@@ -2,7 +2,7 @@ public enum EffectSound
 {
     Walking,
     Running,
-    Wind,
+    Player,
     Npc_Prof,
     Npc_Miner,
     Npc_Art,
