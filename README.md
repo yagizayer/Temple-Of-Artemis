@@ -43,8 +43,9 @@ After finding relics player must go to related Npc to reveal its history and/or 
 
 ![Image4](https://raw.githubusercontent.com/yagizayer/Temple-Of-Artemis/main/ReadMeSources/InGameImages/Img4.bmp)&#9;![Image4.2](https://raw.githubusercontent.com/yagizayer/Temple-Of-Artemis/main/ReadMeSources/InGameImages/Img4.2.bmp)
 <hr>
+
 After revealing enough history about temple, level ends and shows some more information about temple's related version. <br>
-**Note :** Temple of artemis build and destroyed at least 3 times, so there are 3 levels.<br>
+**Note :** Temple of artemis build and destroyed at least 3 times, so there are 3 levels. <br>
 ![Image5](https://raw.githubusercontent.com/yagizayer/Temple-Of-Artemis/main/ReadMeSources/InGameImages/Img5.bmp)
 
 ## Technology Details
