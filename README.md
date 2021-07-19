@@ -49,7 +49,7 @@ After revealing enough history about temple, level ends and shows some more info
 ![Image5](https://raw.githubusercontent.com/yagizayer/Temple-Of-Artemis/main/ReadMeSources/InGameImages/Img5.bmp)
 
 ## Technology Details
-Used technologies in this project are :
+Technologies used in this project are :
  - ScriptableObjects<br>
 ![TechImg1](https://raw.githubusercontent.com/yagizayer/Temple-Of-Artemis/main/ReadMeSources/Technologies/Img2.bmp)&#9;![TechImg2](https://raw.githubusercontent.com/yagizayer/Temple-Of-Artemis/main/ReadMeSources/Technologies/Img1.bmp)
  - High Level Navigation Elements<br>
