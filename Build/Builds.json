@@ -1,0 +1,17 @@
+{
+"companyName": "Yağız Ayer",
+"productName": "Temple Of Artemis",
+"productVersion": "1.0",
+"dataUrl": "Builds.data.unityweb",
+"wasmCodeUrl": "Builds.wasm.code.unityweb",
+"wasmFrameworkUrl": "Builds.wasm.framework.unityweb",
+"graphicsAPI": ["WebGL 2.0"],
+"webglContextAttributes": {"preserveDrawingBuffer": false},
+"backgroundUrl": "Builds.jpg",
+"splashScreenStyle": "Light",
+"backgroundColor": "#FFFFFF",
+"cacheControl": {"default": "must-revalidate"},
+"developmentBuild": false,
+"multithreading": false,
+"unityVersion": "2019.4.18f1"
+}
