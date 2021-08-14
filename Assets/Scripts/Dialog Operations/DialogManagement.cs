@@ -270,7 +270,7 @@ public partial class DialogManagement : MonoBehaviour
             },
             new TempleInfo(
                 "Lost Temple of Artemis",
-                "Between BC 3300 ~ BC 1200",
+                "Between 3300 BC ~ 1200 BC ",
                 new List<string>(){
                     "Architect: Amazons",
                     "Reason for Construction : When God Dionysus and his followers declared war on the Amazons, they built this temple to take shelter in Artemis, the Goddess of Hunting and Fertility.",
@@ -295,9 +295,9 @@ public partial class DialogManagement : MonoBehaviour
 
         tempConversationList = new List<QuestConversation>(){
             new QuestConversation(Npcs.Profesor,new List<string>(){
-                "Demek efsanelerde bahsedilen kayıp Artemis Tapınağı burasıymış.",
-                "Peki ama sonra ne oldu acaba. Yani milattan önce 7. yüzyıldan bu yana hiç kimse gelmedi mi acaba bu tapınağa?",
-                "Bence bu doğru olamaz ipuçları aramalıyız! Buranın tarihini öğrenmeliyiz!"
+                "So this is the lost temple of artemis mentioned in the legends.",
+                "Well, then what happened? I mean, no one has come to this temple since the 7th century BC?",
+                "I think that can't be true, we have to look for clues! We should learn the history of this place!"
             })
         };
 
@@ -306,100 +306,99 @@ public partial class DialogManagement : MonoBehaviour
             {
                 "Sculpture",
                 new QuestObject(
-                    "Heykel",
+                    "Sculpture",
                     Npcs.SanatTarihiUzmani,
                     new List<string>(){
-                        "Demek bir heykel daha buldun Jones. ",
-                        "Bu tür heykellerinin yapılması ve tapınaklara bırakılması çok pahalıya mal olurmuş o zamanlar.",
-                        "Bu küçük çocuğun ailesi oldukça varlıklı olmalı. "
+                        "So you found another statue, Jones. ",
+                        "It was very costly to make such statues and leave them in temples back then.",
+                        "This little kid's family must be quite wealthy. "
                     }
                 )
             },
             {
                 "GoldCoins",
                 new QuestObject(
-                    "Altın Sikkeler",
+                    "Gold Coins",
                     Npcs.Jeolog,
                     new List<string>(){
-                        "Ah! Her zamanki gibi küçük taşlar kayalar bana gelir. ",
-                        "Neden sanat tarihi okumadım ki sanki... Bir saniye, bu normal bir taş değil!",
-                        "Altın! Bu Altın! Hemde sıradan bir altın para değil. ",
-                        "Şimdiye kadar bilinen en eski altın paralardan bile eski bir altın bu!",
-                        "Milattan önce 6. yüzyıldan kalma bir altın bu Jones!"
+                        "Ah! Small stones and rocks come to me as always. ",
+                        "It's like why didn't I study art history... Wait a minute, this is not a normal stone!",
+                        "Gold! This is Gold! And It is not an ordinary gold coin either. ",
+                        "This is gold even older than the oldest known gold coins ever!",
+                        "It's gold from the 6th century BC, Jones!"
                     }
                 )
             },
             {
                 "BurnMarks",
                 new QuestObject(
-                    "Yanık izleri",
+                    "Burn Marks",
                     Npcs.Jeolog,
                     new List<string>(){
-                        "Evet etrafta dolaşırken bazı yanık izleri görmüştüm. Çok eski yanık izleri olmalarına rağmen solmamışlardı bile.",
-                        "Mermerin bile içine işleyecek kadar güçlü izler oluşturduğuna göre devasa bir yangın olmalı."
+                        "Yes, I saw some burn marks walking around. Although they were very old burn marks, they had not even faded.",
+                        "It must have been a huge fire, since the marks penetrate even the marble."
                     }
                 )
             },
             {
                 "PieceOfFineClothing",
                 new QuestObject(
-                    "Kralın birinden bir parça kumaş",
+                    "Piece Of Fine Clothing From a King",
                     Npcs.Profesor,
                     new List<string>(){
-                        GlobalVariables.PlayerName + " Bu bulduğun kumaş parçası döneminin en kaliteli terzileri tarafından çok pahalı kumaşlardan yapılmış bir kıyafete ait gibi görünüyor.",
-                        "Muhtemelen bir krala ya da çok zengin bir tüccara aitti bu kıyafet.",
-                        "Düşünce şaşırtıcı değil. Zamanında bu tür tapınaklar çok az bulunurdu ve dünyanın dört bir yanından zenginleri kendisine çekerdi.",
-                        "Bu tapınaklara gelen zenginler başıta bulunup dua ederler ve ihtiyacı olanlar da buralarda toplanarak gelen zenginlerden yardım kabul ederlerdi."
+                        GlobalVariables.PlayerName + " Jones, This piece of cloth you found looks like it belonged to an outfit made from very expensive fabrics by the finest tailors of the time.",
+                        "It probably belonged to a king or a very wealthy merchant.",
+                        "Not surprising when you think about it. Such temples were rare in their time and attracted wealthy people from all over the world.",
+                        "The rich people who came to these temples would donate and pray, and those in need would gather here and accept help from the rich people."
                     }
                 )
-            },
-            {
+            },{
                 "0",
                 new QuestObject(
-                    "Heykel",
+                    "Sculpture",
                     Npcs.SanatTarihiUzmani,
                     new List<string>(){
-                        "Demek bir heykel daha buldun Jones. ",
-                        "Bu tür heykellerinin yapılması ve tapınaklara bırakılması çok pahalıya mal olurmuş o zamanlar.",
-                        "Bu küçük çocuğun ailesi oldukça varlıklı olmalı. "
+                        "So you found another statue, Jones. ",
+                        "It was very costly to make such statues and leave them in temples back then.",
+                        "This little kid's family must be quite wealthy. "
                     }
                 )
             },
             {
                 "1",
                 new QuestObject(
-                    "Altın Sikkeler",
+                    "Gold Coins",
                     Npcs.Jeolog,
                     new List<string>(){
-                        "Ah. her zamanki gibi küçük taşlar kayalar bana gelir. ",
-                        "Neden sanat tarihi okumadım ki sank... Bir saniye bu normal bir taş değil.",
-                        "Altın! Bu Altın! Hemde sıradan bir altın para değil. ",
-                        "Şimdiye kadar bilinen en eski altın paralardan bile eski bir altın bu!",
-                        "Milattan önce 6. yüzyıldan kalma bir altın bu Jones!"
+                        "Ah! Small stones and rocks come to me as always. ",
+                        "It's like why didn't I study art history... Wait a minute, this is not a normal stone!",
+                        "Gold! This is Gold! And It is not an ordinary gold coin either. ",
+                        "This is gold even older than the oldest known gold coins ever!",
+                        "It's gold from the 6th century BC, Jones!"
                     }
                 )
             },
             {
                 "2",
                 new QuestObject(
-                    "Yanık izleri",
+                    "Burn Marks",
                     Npcs.Jeolog,
                     new List<string>(){
-                        "Evet etrafta dolaşırken bazı yanık izleri görmüştüm. Çok eski yanık izleri olmalarına rağmen solmamışlardı bile.",
-                        "Mermerin bile içine işleyecek kadar güçlü izler oluşturduğuna göre devasa bir yangın olmalı."
+                        "Yes, I saw some burn marks walking around. Although they were very old burn marks, they had not even faded.",
+                        "It must have been a huge fire, since the marks penetrate even the marble."
                     }
                 )
             },
             {
                 "3",
                 new QuestObject(
-                    "Kralın birinden Bir parça kumaş",
+                    "Piece Of Fine Clothing From a King",
                     Npcs.Profesor,
                     new List<string>(){
-                        GlobalVariables.PlayerName + " bu bulduğun kumaş parçası döneminin en kaliteli terzileri tarafından çok pahalı kumaşlardan yapılmış bir kıyafete ait gibi görünüyor.",
-                        "Muhtemelen bir krala yada çok zengin bir tüccara aitti bu kıyafet.",
-                        "Düşünce şaşırtıcı değil. Zamanında bu tür tapınaklar çok az bulunurdu ve dünyanın dört bir yanından zenginleri kendisine çekerdi.",
-                        "Bu tapınaklara gelen zenginler başıta bulunup dua ederler ve ihtiyacı olanlar da buralarda toplanarak gelen zenginlerden yardım kabul ederlerdi."
+                        GlobalVariables.PlayerName + " Jones, This piece of cloth you found looks like it belonged to an outfit made from very expensive fabrics by the finest tailors of the time.",
+                        "It probably belonged to a king or a very wealthy merchant.",
+                        "Not surprising when you think about it. Such temples were rare in their time and attracted wealthy people from all over the world.",
+                        "The rich people who came to these temples would donate and pray, and those in need would gather here and accept help from the rich people."
                     }
                 )
             }
@@ -414,25 +413,24 @@ public partial class DialogManagement : MonoBehaviour
         (
             new List<string>()
             {
-                GlobalVariables.PlayerName + " topladığın ipuçlarını bir araya geldiğinde Antik Artemis Tapınağına ne olduğu ve burada neler yaşandığı biraz daha açıklanıyor."
+                GlobalVariables.PlayerName + " when we put together the clues you've gathered, it explains what happened to the Ancient Temple of Artemis and what happened there."
             },
             new TempleInfo(
-                "Artemis Tapınağı",
-                "MÖ 550",
+                "The Temple of Artemis",
+                "550 BC",
                 new List<string>(){
-                    "Mimar : Chersiphron ve onun oğlu Metagenes(Vitruvius), Kral Croesus tarafından fonlandı.",
-                    "Kullanımı : Krallar ve Tacirler tarafından sıkça ziyaret edilen turistik bir yapı haline gelen bu tapınak, aciz durumda olan veya zulümden kaçanlar için de güvenli bir sığınak oldu. ",
-                    "Yıkımı : MÖ 356'da Herostratos adındaki bir meczup yerel halktaki kötü niyetli kişiler tarafından \"Bu tapınağı yıkan kişinin adı bütün tarih kitaplarında geçer\" söylemleri ile kışkırtılarak yangına teşvik edilmiştir. ",
-                    "Günümüzde \"Herostratik ün\" deyimi \"Ne pahasına olursa olsun ünlenmek\" manasında kullanılmaktadır. ",
-                    "Efsanelerde bu yangın sırasında Bereket Tanrıçası Artemis'in neden tapınağını korumak için burada olmadığı, çok önemli bir kişinin doğumuna yardım etmek için gittiğinden burada olmamasına bağlanmaktadır."
+                    "Architect: Chersiphron and his son Metagenes(Vitruvius), funded by King Croesus.",
+                    "Usage: This temple, which has become a touristic structure frequently visited by Kings and Merchants, has also been a safe haven for the helpless or those fleeing persecution.",
+                    "Destruction: In 356 BC, a madman named Herostratos was incited by malicious people in the local community with the words \"The name of the person who destroyed this temple is mentioned in all history books\" and incited the arson. ",
+                    "Today, the phrase \"herostratic fame\" is used to mean \"to be famous at any cost\".",
+                    "In the legends, it is connected why Artemis, the Goddess of Fertility, was not here to protect her temple during this arson, because she went to help the birth of a very important person."
                 }
             ),
             new List<string>()
             {
-                "Demek \"Herostratik ün\" bu yangını başlatan kişinin adından dolayı çıkmış. ",
-                "Sonra ne oldu acaba? Yani milattan önce 356 yılında Büyük iskender doğduktan sonra buraya hiç yolu düştü mü?",
-                "Peki ya yerel halk? Krallar, tüccarlar, burayı yuva edinen kişiler yıkıldıktan sonra bir daha geri dönmediler mi?",
-                "Daha fazla araştırmalıyız. Hikaye burada bitemez!"
+                "So the \"Herostratic fame\" came from the name of the person who started this arson.",
+                "What happened next? Didn't the kings, the merchants, the people who made this place their home, never come back after it was destroyed?",
+                "We should investigate further. The story cannot end here!"
             }
         );
 
