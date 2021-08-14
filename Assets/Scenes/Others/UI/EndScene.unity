@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -189,9 +189,11 @@ MonoBehaviour:
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: "Sayende Artemis Tap\u0131na\u011F\u0131n\u0131n s\u0131rr\u0131n\u0131
-    \xE7\xF6zd\xFCk.\n\u0130zmir'in Efes Kenti'nde yeni s\u0131rlar ke\u015Ffedebilirsin."
+    m_LineSpacing: 1.5
+  m_Text: 'Thanks to you, we have solved the mystery of the Temple of Artemis.
+
+    You
+    can discover new secrets in Izmir''s Ephesus City.'
 --- !u!222 &65564553
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -350,7 +352,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "TEBR\u0130KLER!"
+  m_Text: CONGRATULATIONS!
 --- !u!222 &596932682
 CanvasRenderer:
   m_ObjectHideFlags: 0
