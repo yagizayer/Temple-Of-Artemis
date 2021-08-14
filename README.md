@@ -2,7 +2,7 @@
 ## General Info About Game
 ### Platform and Engine
 
- - **Platform :** Android (4.0 or above)
+ - **Platform :** Android (4.0 or above) and WebGL
  - **Engine :** Unity 2019.4.18f1 
  - **Prototype :** https://yagizayer.github.io/Temple-Of-Artemis/
 
