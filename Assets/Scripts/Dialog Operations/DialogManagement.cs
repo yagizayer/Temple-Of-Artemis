@@ -69,23 +69,23 @@ public partial class DialogManagement : MonoBehaviour
         Quest tutorial = new Quest();
         List<QuestConversation> tempConversationList = new List<QuestConversation>(){
             new QuestConversation(Npcs.Jeolog,new List<string>(){
-                "Daha ne kadar yürümemiz gerek? Güneş beni baymaya başladı."
+                "How much further do we have to walk? The sun began to faint on me."
             }),
             new QuestConversation(Npcs.SanatTarihiUzmani,new List<string>(){
-                "Sızlanmayı bırak küçük bebek yerel halk Antik kalıntıların buralarda bir yerde olduğunu söyledi."
+                "Stop whining little baby locals said Ancient ruins are out there somewhere."
             }),
             new QuestConversation(Npcs.Jeolog,new List<string>(){
-                "Muhtemelen yine sadece birkaç eski çanak çömlek için bu kadar yol tepmiş olacağız zaten."
+                "We will probably have come this far for just a few old pottery again."
             }),
             new QuestConversation(Npcs.Profesor,new List<string>(){
-                "Sallanmayı bırakın baksanıza ne kadar güzel, her yer yeşillik biraz doğanın keyfini çıkarın.",
-                "Sen ne düşünüyorsun Jones? Buralara kadar gelmeye değer bir manzarayla karşılaşır mıyız sence?"
+                "Stop swaying, look how beautiful it is, green everywhere, enjoy a little nature.",
+                "What do you think, Jones? Do you think we will encounter a sight worth coming this far?"
             }),
             new QuestConversation(Npcs.Player,new List<string>(){
-                "Yerel halkın bahsettiği kalıntıları bulamasak bile bu doğal çevre buraya gelmeye değer."
+                "Even if we can't find the ruins that the locals talk about, this natural environment is worth coming here."
             }),
             new QuestConversation(Npcs.Profesor,new List<string>(){
-                "Sanırım haklısın buranın havası çok güzel. Ama yine de antik zamanlardan bazı kalıntılar bulmak zarar vermezdi."
+                "I think you're right, the weather here is very nice. But it still wouldn't hurt to find some relics from ancient times."
             }),
         };
         tutorial.QuestConversations = tempConversationList;
@@ -93,17 +93,17 @@ public partial class DialogManagement : MonoBehaviour
         Quest findAncientColumns = new Quest();
         tempConversationList = new List<QuestConversation>(){
             new QuestConversation(Npcs.Profesor,new List<string>(){
-                    "Vay canına! Neler bulmuşsun Jones."
+                    "Wow! What did you find, Jones?"
                 }),
             new QuestConversation(Npcs.Jeolog,new List<string>(){
-                    "Sanırım çömleklerden fazlası varmış burada.",
-                    "Ölçümlerime göre bu sütunlar en az 2000 yıllık."
+                    "I think there's more than pottery here.",
+                    "According to my measurements, these columns are at least 2000 years old."
                 }),
             new QuestConversation(Npcs.SanatTarihiUzmani,new List<string>(){
-                    "Üzerlerindeki işlemeler çok enteresan daha önce hiç böyle motifler görmemiştim."
+                    "The glyph on them are very interesting, I have never seen such motifs before."
                 }),
             new QuestConversation(Npcs.Profesor,new List<string>(){
-                    "Acaba etrafta daha fazlası var mıdır?"
+                    "Are there any more around?"
                 })
         };
         findAncientColumns.QuestConversations = tempConversationList;
@@ -112,9 +112,9 @@ public partial class DialogManagement : MonoBehaviour
         Quest talkToProfessor = new Quest();
         tempConversationList = new List<QuestConversation>(){
             new QuestConversation(Npcs.Profesor,new List<string>(){
-                "Bu yapının bunca yıl gizli kalmış olmasına inanabiliyor musun?",
-                "Jeoloğun dediğine bakacak olursak en az 2000 yıllık bir tapınak kalıntısına bakıyoruz şu an.",
-                "Acaba kim, ne zaman yaptı, hadi biraz etrafa bakınalım; belki ipucu olabilecek bazı eşyalara rastlarız."
+                "Can you believe that this structure has been hidden for so many years?",
+                "If we look at what the geologist said, we are looking at the ruins of a temple that is at least 2000 years old.",
+                "I wonder who did it when, let's take a look around; maybe we'll come across some items that might be clues."
             }),
         };
         talkToProfessor.QuestConversations = tempConversationList;
@@ -124,123 +124,123 @@ public partial class DialogManagement : MonoBehaviour
             {
                 "PaintingOfAmazons",
                 new QuestObject(
-                    "Amazonların Resmi",
+                    "Painting Of Amazons",
                     Npcs.SanatTarihiUzmani,
                     new List<string>(){
-                        GlobalVariables.PlayerName + "! Bu tabloyu nereden buldun bunca zamandır neredeyse hiç zarar görmemiş.",
-                        "Hmmm. Bu tür dayanıklı tabloları yapan Antik çağda yaşamış olan tek medeniyet Amazonlardı. ",
-                        "Sanırım bu tabloyu da onlar yapmış olmalı."
+                        GlobalVariables.PlayerName + "! Where did you get this painting, it's been virtually unharmed all this time.",
+                        "Hmmm. The Amazons were the only civilizations to have lived in ancient times that made such durable paintings. ",
+                        "I think they must have made this painting as well."
                     }
                 )
             },
             {
                 "PaintingOfTreeOfLife",
                 new QuestObject(
-                    "Hayat Ağacının resmi",
+                    "Painting Of Tree Of Life",
                     Npcs.SanatTarihiUzmani,
                     new List<string>(){
-                        "Vaovv şu güzelliğe bak. Bu ağaç sanırım eski şiirlere konu olmuş Hayat Ağacı.",
-                        "Milattan önce 300 yıllarında Amazonlar İyonyadan buraya göçerken bu tür eserleri ve hikayelerini de yanlarında getirmişlerdi."
+                        "Wow look at this beauty. I think this tree is the Tree of Life, which has been the subject of old poems.",
+                        "When the Amazons migrated here from Ionia in 300 BC, they brought such works and stories with them."
                     }
                 )
             },
             {
                 "BrokenSculpture",
                 new QuestObject(
-                    "Kırık Heykelcik",
+                    "Broken Sculpture",
                     Npcs.Jeolog,
                     new List<string>(){
-                        "Vay canına. Ne kadar da iyi muhafaza edilmiş bir heykel bu böyle.",
-                        "Bakalım kaç yaşındaymışsın sen... ",
-                        GlobalVariables.PlayerName + ". Bu minik dostumuz neredeyse profesörün yaşında... Tabii 40 katı olduğunu saymazsak!",
-                        "Bu şey tam 2200 yıldır kırılmadan, bozulmadan burada duruyormuş."
+                        "Wow. Such a well preserved statue.",
+                        "Let's see how old are you... ",
+                        GlobalVariables.PlayerName + ". This little friend of ours is almost the professor's age... unless you count that it's 40 times as old!",
+                        "This thing has been standing here for 2200 years without breaking, intact."
                     }
                 )
             },
             {
                 "AmberNecklace",
                 new QuestObject(
-                    "Kehribar Kolye",
+                    "Amber Necklace",
                     Npcs.Jeolog,
                     new List<string>(){
-                        "O elindeki ne öyle Jones? ",
-                        "Bakalım... Görünüşe göre bu bir kolye ucu.",
-                        "Bak iki yanında delikler var. Büyük ihtimalle bu tapınağın ithaf edildiği Tanrıça için yapılmış bir eser.",
-                        "Zamanında bu tür kolyeler çok kıymetliydi. Kimsenin bunca zaman çalmamış olmasına şaşırdım doğrusu."
+                        "What is that thing in your hand, Jones?",
+                        "Let's see... It looks like it's a pendant.",
+                        "Look, there are holes on both sides. It is most likely an artifact made for the Goddess to which this temple is dedicated.",
+                        "Such necklaces were very valuable in their time. I'm surprised no one has stole it all this time."
                     }
                 )
             },
             {
                 "FigureOfTreeOfLife",
                 new QuestObject(
-                    "Hayat ağacı Kabartması",
+                    "Glyph Of Tree Of Life",
                     Npcs.Profesor,
                     new List<string>(){
-                        "Evet... Çok ilginç...",
-                        "Antik zamanlardan kalma Hayat ağacı inancını tasfir eden bir kabartma bulmuşsun Jones.",
-                        "Bu öyle bir ağaçmış ki Cennet ve Cehennemi birbirine bağlar, Tüm yaşam bu ağaçtan ortaya çıkar ve yine bu ağaca dönermiş. ",
-                        "Pek çok din, felsefe ve mitoloji bu ağaçtan bahseder. Sanırım bu da Hayat Ağacının işlediği ilk eserlerden biri."
+                        "Yes... It's very interesting...",
+                        "You have found a glyph depicting the ancient belief in the Tree of Life, Jones.",
+                        "It was such a tree that it connects Heaven and Hell, All life emerges from this tree and returns to this tree again. ",
+                        "Many religions, philosophies and mythologies speak of this tree. I think this is one of the first works on the Tree of Life."
                     }
                 )
             },{
                 "0",
                 new QuestObject(
-                    "Amazonların Resmi",
+                    "Painting Of Amazons",
                     Npcs.SanatTarihiUzmani,
                     new List<string>(){
-                        GlobalVariables.PlayerName + "! Bu tabloyu nereden buldun bunca zamandır neredeyse hiç zarar görmemiş.",
-                        "Hmmm. Bu tür dayanıklı tabloları yapan Antik çağda yaşamış olan tek medeniyet Amazonlardı. ",
-                        "Sanırım bu tabloyu da onlar yapmış olmalı. "
+                        GlobalVariables.PlayerName + "! Where did you get this painting, it's been virtually unharmed all this time.",
+                        "Hmmm. The Amazons were the only civilizations to have lived in ancient times that made such durable paintings. ",
+                        "I think they must have made this painting as well."
                     }
                 )
             },
             {
                 "1",
                 new QuestObject(
-                    "Hayat Ağacının resmi",
+                    "Painting Of Tree Of Life",
                     Npcs.SanatTarihiUzmani,
                     new List<string>(){
-                        "Vaovv şu güzelliğe bak. Bu ağaç sanırım eski şiirlere konu olmuş Hayat Ağacı.",
-                        "Milattan önce 300 yıllarında Amazonlar İyonyadan buraya göçerken bu tür eserleri ve hikayelerini de yanlarında getirmişlerdi."
+                        "Wow look at this beauty. I think this tree is the Tree of Life, which has been the subject of old poems.",
+                        "When the Amazons migrated here from Ionia in 300 BC, they brought such works and stories with them."
                     }
                 )
             },
             {
                 "2",
                 new QuestObject(
-                    "Kırık Heykelcik",
+                    "Broken Sculpture",
                     Npcs.Jeolog,
                     new List<string>(){
-                        "Vay canına. Ne kadar da iyi muhafaza edilmiş bir heykel bu böyle.",
-                        "Bakalım kaç yaşındaymışsın sen... ",
-                        GlobalVariables.PlayerName + ". Bu minik dostumuz neredeyse profesörün yaşında... Tabii 40 katı olduğunu saymazsak!",
-                        "Bu şey tam 2200 yıldır kırılmadan, bozulmadan burada duruyormuş."
+                        "Wow. Such a well preserved statue.",
+                        "Let's see how old are you... ",
+                        GlobalVariables.PlayerName + ". This little friend of ours is almost the professor's age... unless you count that it's 40 times as old!",
+                        "This thing has been standing here for 2200 years without breaking, intact."
                     }
                 )
             },
             {
                 "3",
                 new QuestObject(
-                    "Kehribar Kolye",
+                    "Amber Necklace",
                     Npcs.Jeolog,
                     new List<string>(){
-                        "O elindeki ne öyle Jones? ",
-                        "Bakalım... Görünüşe göre bu bir kolye ucu.",
-                        "Bak iki yanında delikler var. Büyük ihtimalle bu tapınağın ithaf edildiği Tanrıça için yapılmış bir eser.",
-                        "Zamanında bu tür kolyeler çok kıymetliydi. Kimsenin bunca zaman çalmamış olmasına şaşırdım doğrusu."
+                        "What is that thing in your hand, Jones?",
+                        "Let's see... It looks like it's a pendant.",
+                        "Look, there are holes on both sides. It is most likely an artifact made for the Goddess to which this temple is dedicated.",
+                        "Such necklaces were very valuable in their time. I'm surprised no one has stole it all this time."
                     }
                 )
             },
             {
                 "4",
                 new QuestObject(
-                    "Hayat ağacı Kabartması",
+                    "Glyph Of Tree Of Life",
                     Npcs.Profesor,
                     new List<string>(){
-                        "Evet... Çok ilginç...",
-                        "Antik zamanlardan kalma Hayat ağacı inancını tasfir eden bir kabartma bulmuşsun Jones.",
-                        "Bu öyle bir ağaçmış ki Cennet ve Cehennemi birbirine bağlar, Tüm yaşam bu ağaçtan ortaya çıkar ve yine bu ağaca dönermiş. ",
-                        "Pek çok din, felsefe ve mitoloji bu ağaçtan bahseder. Sanırım bu da Hayat Ağacının işlediği ilk eserlerden biri."
+                        "Yes... It's very interesting...",
+                        "You have found a glyph depicting the ancient belief in the Tree of Life, Jones.",
+                        "It was such a tree that it connects Heaven and Hell, All life emerges from this tree and returns to this tree again. ",
+                        "Many religions, philosophies and mythologies speak of this tree. I think this is one of the first works on the Tree of Life."
                     }
                 )
             }
@@ -248,9 +248,9 @@ public partial class DialogManagement : MonoBehaviour
 
         tempConversationList = new List<QuestConversation>(){
             new QuestConversation(Npcs.Profesor,new List<string>(){
-                "Bu yapının bunca yıl gizli kalmış olmasına inanabiliyor musun?",
-                "Jeoloğun dedine bakacak olursak en az 2000 yıllık bir tapınak kalıntısına bakıyoruz şu an.",
-                "Acaba kim ne zaman yaptı, biraz etrafa bakınalım belki ipucu olabilecek bazı eşyalara rastlarız."
+                "Can you believe that this structure has been hidden for so many years?",
+                "If we look at what the geologist said, we are looking at the ruins of a temple that is at least 2000 years old.",
+                "I wonder who did it when, let's take a look around; maybe we'll come across some items that might be clues."
             })
         };
         gatherInformationAroundTemple.QuestConversations = tempConversationList;
@@ -266,22 +266,22 @@ public partial class DialogManagement : MonoBehaviour
         (
             new List<string>()
             {
-                GlobalVariables.PlayerName + " topladığın ipuçlarını bir araya geldiğinde bu tapınağın ne olduğu ve ne zaman kimler tarafından yapıldığı anlaşılıyor."
+                GlobalVariables.PlayerName + " when you gather the clues you have gathered, it becomes clear what this temple was, when and by whom it was built."
             },
             new TempleInfo(
-                "Kayıp Artemis Tapınağı",
-                "MÖ 3300 ~ MÖ 1200 arası",
+                "Lost Temple of Artemis",
+                "Between BC 3300 ~ BC 1200",
                 new List<string>(){
-                    "Mimar : Amazonlar",
-                    "Yapım Sebebi : Tanrı Dionysus ve yandaşları Amazonlara savaş açtığında Avcılık ve Bereket Tanrıçası olan Artemise sığınmak için bu tapınağı yaptılar.",
-                    "Yıkım Sebebi : MÖ 700 lü yıllarda Ege Denizindeki bir fırtına sonucunda oluşan devasa bir sel"
+                    "Architect: Amazons",
+                    "Reason for Construction : When God Dionysus and his followers declared war on the Amazons, they built this temple to take shelter in Artemis, the Goddess of Hunting and Fertility.",
+                    "Cause of Destruction: A huge flood that occurred as a result of a storm in the Aegean Sea in 700 BC"
                 }
             ),
             new List<string>()
             {
-                "Demek efsanelerde bahsedilen kayıp artemis tapınağı burasıymış.",
-                "Peki ama sonra ne oldu acaba. Yani milattan önce 7. yüzyıldan bu yana hiç kimse gelmedi mi acaba bu tapınağa?",
-                "Bence bu doğru olamaz ipuçları aramalıyız! Buranın tarihini öğrenmeliyiz!"
+                "So this is the lost temple of artemis mentioned in the legends.",
+                "Well, then what happened? I mean, no one has come to this temple since the 7th century BC?",
+                "I think that can't be true, we have to look for clues! We should learn the history of this place!"
             }
         );
 
