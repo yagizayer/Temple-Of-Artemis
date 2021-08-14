@@ -812,7 +812,7 @@ public partial class DialogManagement : MonoBehaviour
         {
             if (_reactedToObject) return null;
             _reactedToObject = true;
-            result = "Hmm... Bu ilginç Bir eşyaya benziyor. Belki de " + _objectsTargetNpc + " görse iyi olur";
+            result = "Hmm... This looks like an interesting item. Maybe I'd better show it to " + _objectsTargetNpc;
             SoundManager.StartSound(SoundManager.EffectSounds[EffectSound.Player]);
 
         }
