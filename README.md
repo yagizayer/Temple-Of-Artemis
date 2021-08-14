@@ -4,7 +4,7 @@
 
  - **Platform :** Android (4.0 or above) and WebGL
  - **Engine :** Unity 2019.4.18f1 
- - **Prototype :** https://yagizayer.github.io/Temple-Of-Artemis/
+ - **Prototype :** https://yagizayer.github.io/Temple-Of-Artemis/index.html
 
 ### Story 
 You and your archaeological team set out to explore an ancient ruin with the stories you received from the local people.  
