@@ -684,6 +684,7 @@ PlayerSettings:
   webGLWasmStreaming: 0
   scriptingDefineSymbols:
     7: LETAI_TRUESHADOW;RH_SerializedDictionary
+    13: LETAI_TRUESHADOW;RH_SerializedDictionary
   platformArchitecture: {}
   scriptingBackend:
     Standalone: 1
